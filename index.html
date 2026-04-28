@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0C0C0C;
+      --bg-card: #141414;
+      --bg-hover: #1A1A1A;
+      --bg-nav: rgba(12,12,12,0.9);
+      --text: #EFEFEF;
+      --muted: #666666;
+      --accent: #4F8EF7;
+      --accent-dim: rgba(79,142,247,0.12);
+      --border: #222222;
+      --max: 860px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    [data-theme="light"] {
+      --bg: #F5F5F5;
+      --bg-card: #FFFFFF;
+      --bg-hover: #EEEEEE;
+      --bg-nav: rgba(245,245,245,0.9);
+      --text: #111111;
+      --muted: #888888;
+      --accent: #2563EB;
+      --accent-dim: rgba(37,99,235,0.10);
+      --border: #DEDEDE;
+    }
+
+    * { transition: background-color 0.25s, border-color 0.25s, color 0.25s; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-nav);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: border-color 0.2s, color 0.2s;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2.5rem; }
+
+    section { padding: 6rem 0; }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-label::before { content: '//'; opacity: 0.5; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 5rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 5rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.1s;
+    }
+
+    .hero-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 1.75rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.25s;
+    }
+
+    .hero-title {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      letter-spacing: 0.04em;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.4s;
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 460px;
+      line-height: 1.85;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.55s;
+    }
+
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.7s;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #6BA3FF; }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
+
+    .hero-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards 0.3s;
+    }
+
+    .photo-ring {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      padding: 3px;
+      background: conic-gradient(var(--accent) 0deg, transparent 160deg, transparent 360deg);
+      position: relative;
+    }
+
+    .photo-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+    }
+
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .photo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .photo-placeholder .initials {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .photo-placeholder .hint {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-align: center;
+      text-transform: uppercase;
+      padding: 0 1rem;
+    }
+
+    .photo-status {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #3DDB75;
+      box-shadow: 0 0 6px #3DDB75;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+
+    .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.25rem; }
+
+    .detail-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .detail-value { font-size: 0.9rem; color: var(--text); font-weight: 400; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .skill-group { background: var(--bg-card); padding: 2rem; }
+
+    .skill-group-title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .skill-tag {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 0.3rem 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .skill-tag:hover { border-color: var(--accent); color: var(--text); }
+
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .project-card:hover { background: var(--bg-hover); }
+
+    .project-number {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.75; max-width: 520px; }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+
+    .project-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(79,142,247,0.2);
+    }
+
+    .project-arrow {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 1rem;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .project-card:hover .project-arrow {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .exp-list { display: flex; flex-direction: column; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 3rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:first-child { border-top: 1px solid var(--border); }
+
+    .exp-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      padding-top: 0.3rem;
+    }
+
+    .exp-role {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .exp-company {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .exp-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+
+    #contact { padding-bottom: 8rem; }
+
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+
+    .contact-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      margin-bottom: 1.25rem;
+    }
+    .contact-heading span { color: var(--accent); }
+
+    .contact-subtext { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+
+    .contact-links { display: flex; flex-direction: column; border: 1px solid var(--border); }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .contact-link:last-child { border-bottom: none; }
+    .contact-link:hover { background: var(--bg-hover); }
+
+    .contact-link-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 70px;
+    }
+
+    .contact-link-value { font-size: 0.88rem; color: var(--text); flex: 1; padding: 0 1rem; }
+
+    .contact-link-arrow { color: var(--muted); font-size: 0.9rem; transition: color 0.2s, transform 0.2s; }
+    .contact-link:hover .contact-link-arrow { color: var(--accent); transform: translate(2px, -2px); }
+
+    footer {
+      padding: 2rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.06em; color: var(--muted); }
+    footer .accent { color: var(--accent); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 700px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.5rem; }
+      .container { padding: 0 1.25rem; }
+      section { padding: 4rem 0; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo { order: -1; }
+      .photo-ring { width: 160px; height: 160px; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">YN_</a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#experience">Exp</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow">// Software Developer</p>
+          <h1 class="hero-name">Your<br/>Name</h1>
+          <p class="hero-title">Full Stack &nbsp;·&nbsp; System Design &nbsp;·&nbsp; City, Country</p>
+          <p class="hero-bio">
+            I build fast, reliable software — from scalable backends to sharp interfaces.
+            Focused on writing clean code that solves real problems.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View Work</a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <div class="photo-ring">
+            <div class="photo-frame">
+              <!-- Replace with: <img src="your-photo.jpg" alt="Your Name" /> -->
+              <div class="photo-placeholder">
+                <span class="initials">YN</span>
+                <span class="hint">Add your photo</span>
+              </div>
+            </div>
+          </div>
+          <div class="photo-status">
+            <span class="status-dot"></span>
+            Available for work
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <p class="section-label reveal">About</p>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm a software developer who builds things that work — and work well.
+            I care about performance, clean architecture, and shipping products that people actually use.
+          </p>
+          <p>
+            When I'm not at the keyboard you'll find me [your interests — gym, gaming, sports, etc.].
+            I bring the same focus and discipline to my code.
+          </p>
+        </div>
+        <div class="reveal">
+          <div class="detail-item">
+            <span class="detail-label">Location</span>
+            <span class="detail-value">City, Country</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Education</span>
+            <span class="detail-value">B.Sc. Computer Science</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Experience</span>
+            <span class="detail-value">5+ Years</span>
+          </div>
+          <div class="detail-item">
+            <span class="detail-label">Availability</span>
+            <span class="detail-value">Open to opportunities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <p class="section-label reveal">Skills</p>
+      <div class="skills-grid reveal">
+        <div class="skill-group">
+          <p class="skill-group-title">Frontend</p>
+          <ul class="skill-list">
+            <li class="skill-tag">React</li>
+            <li class="skill-tag">TypeScript</li>
+            <li class="skill-tag">Next.js</li>
+            <li class="skill-tag">Tailwind</li>
+            <li class="skill-tag">Vue</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Backend</p>
+          <ul class="skill-list">
+            <li class="skill-tag">Node.js</li>
+            <li class="skill-tag">Python</li>
+            <li class="skill-tag">PostgreSQL</li>
+            <li class="skill-tag">REST APIs</li>
+            <li class="skill-tag">GraphQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-title">Tools & Cloud</p>
+          <ul class="skill-list">
+            <li class="skill-tag">Git</li>
+            <li class="skill-tag">Docker</li>
+            <li class="skill-tag">AWS</li>
+            <li class="skill-tag">CI/CD</li>
+            <li class="skill-tag">Linux</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <p class="section-label reveal">Selected Work</p>
+      <div class="projects-list reveal">
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">01 ——</p>
+            <h3 class="project-name">Project Name One</h3>
+            <p class="project-desc">
+              Short description of what this does and the problem it solves.
+              Focus on impact — what changed because you built this?
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="project-arrow">↗</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">02 ——</p>
+            <h3 class="project-name">Project Name Two</h3>
+            <p class="project-desc">
+              Another project. What did you build? What tech did you use?
+              What makes it worth showing?
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Docker</span>
+            </div>
+          </div>
+          <div class="project-arrow">↗</div>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">03 ——</p>
+            <h3 class="project-name">Project Name Three</h3>
+            <p class="project-desc">
+              Personal, open source, or freelance — it all counts.
+              Show what you're capable of.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">AWS</span>
+              <span class="project-tag">Redis</span>
+            </div>
+          </div>
+          <div class="project-arrow">↗</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <p class="section-label reveal">Experience</p>
+      <div class="exp-list">
+
+        <div class="exp-item reveal">
+          <span class="exp-date">2022 — Present</span>
+          <div>
+            <h3 class="exp-role">Senior Software Developer</h3>
+            <p class="exp-company">Company Name</p>
+            <p class="exp-desc">
+              Key responsibilities and wins. Use numbers when you can —
+              "cut API latency by 60%", "led a team of 4", "shipped 3 major features".
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <span class="exp-date">2020 — 2022</span>
+          <div>
+            <h3 class="exp-role">Software Developer</h3>
+            <p class="exp-company">Previous Company</p>
+            <p class="exp-desc">
+              Your role and contributions. What problems did you own?
+              What systems did you build or improve?
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <span class="exp-date">2019 — 2020</span>
+          <div>
+            <h3 class="exp-role">Junior Developer</h3>
+            <p class="exp-company">First Company</p>
+            <p class="exp-desc">
+              Your first role. What did you learn and ship,
+              even if it was small?
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <p class="section-label reveal">Contact</p>
+      <div class="contact-inner">
+        <div class="reveal">
+          <h2 class="contact-heading">Let's<br/>build<br/><span>something.</span></h2>
+          <p class="contact-subtext">
+            Open to new roles, freelance projects, and interesting problems.
+            Reach out and let's talk.
+          </p>
+          <a href="mailto:you@email.com" class="btn btn-primary">Send a Message</a>
+        </div>
+        <div class="contact-links reveal">
+          <a href="mailto:you@email.com" class="contact-link">
+            <span class="contact-link-label">Email</span>
+            <span class="contact-link-value">you@email.com</span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+            <span class="contact-link-label">GitHub</span>
+            <span class="contact-link-value">github.com/yourusername</span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
+            <span class="contact-link-label">LinkedIn</span>
+            <span class="contact-link-value">linkedin.com/in/yourusername</span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="/resume.pdf" target="_blank" class="contact-link">
+            <span class="contact-link-label">Résumé</span>
+            <span class="contact-link-value">Download PDF</span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 <span class="accent">Your Name</span></p>
+    <p>Built clean. Deployed sharp.</p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const toggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+    toggle.textContent = saved === 'dark' ? '☀' : '☾';
+
+    toggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      toggle.textContent = next === 'dark' ? '☀' : '☾';
+      localStorage.setItem('theme', next);
+    });
+  </script>
+
+</body>
+</html>
