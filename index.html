@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name — Software Developer</title>
+  <title>Martin Nzau - Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -162,7 +162,10 @@
       opacity: 0;
       animation: fadeUp 0.6s ease forwards 0.25s;
     }
-
+.detail-value-list {
+  margin: 0;
+  padding-left: 70px;
+}
     .hero-title {
       font-size: 0.9rem;
       font-weight: 400;
@@ -410,6 +413,7 @@
       font-size: 1rem;
       transition: all 0.2s;
       flex-shrink: 0;
+      text-decoration: none;
     }
     .project-card:hover .project-arrow {
       background: var(--accent);
@@ -542,7 +546,7 @@
 <body>
 
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">YN_</a>
+    <a href="#hero" class="nav-logo">My Portfolio</a>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -559,12 +563,11 @@
       <div class="hero-inner">
         <div class="hero-text">
           <p class="hero-eyebrow">// Software Developer</p>
-          <h1 class="hero-name">Your<br/>Name</h1>
-          <p class="hero-title">Full Stack &nbsp;·&nbsp; System Design &nbsp;·&nbsp; City, Country</p>
+          <h1 class="hero-name">Martin<br/>Nzau</h1>
+          <p class="hero-title">Full Stack &nbsp;·&nbsp; System Design &nbsp;·&nbsp; Nairobi, Kenya</p>
           <p class="hero-bio">
-            I build fast, reliable software — from scalable backends to sharp interfaces.
-            Focused on writing clean code that solves real problems.
-          </p>
+            I build fast, reliable software - from scalable backends to sharp interfaces.
+            Focused on writing clean code that solves real problems and delivers value.
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">View Work</a>
             <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -574,11 +577,8 @@
         <div class="hero-photo">
           <div class="photo-ring">
             <div class="photo-frame">
-              <!-- Replace with: <img src="your-photo.jpg" alt="Your Name" /> -->
-              <div class="photo-placeholder">
-                <span class="initials">YN</span>
-                <span class="hint">Add your photo</span>
-              </div>
+              <img src="profile.png" alt="Martin Nzau" />
+
             </div>
           </div>
           <div class="photo-status">
@@ -596,26 +596,29 @@
       <div class="about-grid">
         <div class="about-text reveal">
           <p>
-            I'm a software developer who builds things that work — and work well.
+            I'm a software developer who builds things that work - and work well.
             I care about performance, clean architecture, and shipping products that people actually use.
           </p>
           <p>
-            When I'm not at the keyboard you'll find me [your interests — gym, gaming, sports, etc.].
-            I bring the same focus and discipline to my code.
+            When I'm not at the keyboard you'll find me gaming to ease my mind and having a fun time with my buddies.
+            I bring the same focus and discipline to my code—and I put it to good use running circles around my mates on <s>FIFA</s> EA Sports FC . <br><br>Gaming is truly my second hobby next to coding. I also enjoying taking part in hackathons and I have a few projects from those in my GitHub. I have a passion for learning new technologies and applying them to solve real-world problems.
           </p>
         </div>
         <div class="reveal">
           <div class="detail-item">
             <span class="detail-label">Location</span>
-            <span class="detail-value">City, Country</span>
+            <span class="detail-value">Nairobi, Kenya</span>
           </div>
-          <div class="detail-item">
-            <span class="detail-label">Education</span>
-            <span class="detail-value">B.Sc. Computer Science</span>
-          </div>
+       <div class="detail-item">
+  <span class="detail-label">Education</span>
+  <ul class="detail-value-list" style="padding-left: 31%;">
+    <li>Bachelor in Business Information Technology</li><br>
+    <li>Diploma in Business Information Technology</li>
+  </ul>
+</div>
           <div class="detail-item">
             <span class="detail-label">Experience</span>
-            <span class="detail-value">5+ Years</span>
+            <span class="detail-value">3+ Years</span>
           </div>
           <div class="detail-item">
             <span class="detail-label">Availability</span>
@@ -626,43 +629,104 @@
     </div>
   </section>
 
-  <section id="skills">
-    <div class="container">
-      <p class="section-label reveal">Skills</p>
-      <div class="skills-grid reveal">
-        <div class="skill-group">
-          <p class="skill-group-title">Frontend</p>
-          <ul class="skill-list">
-            <li class="skill-tag">React</li>
-            <li class="skill-tag">TypeScript</li>
-            <li class="skill-tag">Next.js</li>
-            <li class="skill-tag">Tailwind</li>
-            <li class="skill-tag">Vue</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <p class="skill-group-title">Backend</p>
-          <ul class="skill-list">
-            <li class="skill-tag">Node.js</li>
-            <li class="skill-tag">Python</li>
-            <li class="skill-tag">PostgreSQL</li>
-            <li class="skill-tag">REST APIs</li>
-            <li class="skill-tag">GraphQL</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <p class="skill-group-title">Tools & Cloud</p>
-          <ul class="skill-list">
-            <li class="skill-tag">Git</li>
-            <li class="skill-tag">Docker</li>
-            <li class="skill-tag">AWS</li>
-            <li class="skill-tag">CI/CD</li>
-            <li class="skill-tag">Linux</li>
-          </ul>
-        </div>
+<section id="skills">
+  <div class="container">
+    <p class="section-label reveal">Skills</p>
+    <div class="skills-grid reveal">
+
+      <div class="skill-group">
+        <p class="skill-group-title">Core Engineering</p>
+        <ul class="skill-list">
+          <li class="skill-tag">Data Structures & Algorithms</li>
+          <li class="skill-tag">API Design</li>
+          <li class="skill-tag">Asynchronous Programming</li>
+          <li class="skill-tag">Problem Solving</li>
+        </ul>
       </div>
-    </div>
-  </section>
+
+      <div class="skill-group">
+        <p class="skill-group-title">Frontend</p>
+        <ul class="skill-list">
+          <li class="skill-tag">React</li>
+          <li class="skill-tag">Next.js</li>
+          <li class="skill-tag">TypeScript</li>
+          <li class="skill-tag">JavaScript (ES6+)</li>
+          <li class="skill-tag">HTML5 & CSS3</li>
+          <li class="skill-tag">Tailwind CSS</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-title">Backend</p>
+        <ul class="skill-list">
+          <li class="skill-tag">Node.js</li>
+          <li class="skill-tag">Express.js</li>
+          <li class="skill-tag">Python</li>
+          <li class="skill-tag">REST APIs</li>
+          <li class="skill-tag">Authentication (JWT)</li>
+          <li class="skill-tag">PHP</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-title">Databases</p>
+        <ul class="skill-list">
+          <li class="skill-tag">PostgreSQL</li>
+          <li class="skill-tag">MongoDB</li>
+          <li class="skill-tag">Redis</li>
+          <li class="skill-tag">MySQL</li>
+          <li class="skill-tag">Firebase Realtime Database</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-title">Blockchain & Web3</p>
+        <ul class="skill-list">
+          <li class="skill-tag">Solidity</li>
+          <li class="skill-tag">Foundry</li>
+          <li class="skill-tag">Ethers.js</li>
+          <li class="skill-tag">Smart Contracts</li>
+          <li class="skill-tag">Wallet Integration</li>
+          <li class="skill-tag">ERC-20 Tokens</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-title">AI & Automation</p>
+        <ul class="skill-list">
+          <li class="skill-tag">LLM API Integration</li>
+          <li class="skill-tag">Gemini AI</li>
+          <li class="skill-tag">Prompt Engineering</li>
+          <li class="skill-tag">AI Agents</li>
+          <li class="skill-tag">Workflow Automation</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-title">Tools & DevOps</p>
+        <ul class="skill-list">
+          <li class="skill-tag">Flutter</li>
+          <li class="skill-tag">Git & GitHub</li>
+          <li class="skill-tag">Docker</li>
+          <li class="skill-tag">CI/CD</li>
+          <li class="skill-tag">Linux</li>
+          <li class="skill-tag">Vercel</li>
+          <li class="skill-tag">Firebase</li>
+          
+        </ul>
+      </div>
+
+   <div class="skill-group">
+  <p class="skill-group-title">Cloud & Backend Services</p>
+  <ul class="skill-list">
+    <li class="skill-tag">Firebase Authentication</li>
+    <li class="skill-tag">Firestore</li>
+    <li class="skill-tag">Cloud Functions</li>
+    <li class="skill-tag">Vercel</li>
+  </ul>
+</div></div>
+  </div>
+</section>
 
   <section id="projects">
     <div class="container">
@@ -671,41 +735,51 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">01 ——</p>
-            <h3 class="project-name">Project Name One</h3>
+            <p class="project-number">01 — —</p>
+            <h3 class="project-name">Custom RR</h3>
             <p class="project-desc">
-              Short description of what this does and the problem it solves.
-              Focus on impact — what changed because you built this?
+              A Hub For Custom ROMS and Recoveries. I built a platform to simplify the process of finding and installing custom ROMs for Android devices. Integrated with multiple ROM repositories and provided a user-friendly interface for browsing, downloading, and installing ROMs.
             </p>
             <div class="project-tags">
-              <span class="project-tag">React</span>
+              <span class="project-tag">Flutter</span>
+              <span class="project-tag">Dart</span>
+              <span class="project-tag">Android Development</span>
+                          <span class="project-tag">Mobile Application</span>
+
+            </div>
+          </div>
+<a href="https://github.com/monsiu/Custom-RR" class="project-arrow" target="_blank" rel="noopener noreferrer">↗</a>        </div>
+
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">02 — —</p>
+            <h3 class="project-name">NanoPay</h3>
+            <p class="project-desc">
+              Built a per-request AI API where every query costs $0.001 USDC, settled onchain on Arc blockchain. Deployed a Solidity smart contract that accepts USDC micropayments, built a Node.js API server that verifies payments before returning Gemini AI responses, and demonstrated 57+ live onchain transactions. The project proves sub-cent API monetization is only economically viable on Arc, where gas costs are 100,000x cheaper than Ethereum. <br><br>This was part of a hackathon submission for the Arc Blockchain Hackathon which you can view the details 
+<a href="https://lablab.ai/ai-hackathons/nano-payments-arc" target="_blank" rel="noopener noreferrer">
+  here
+</a> <br><br>You can also demo this system <a href="https://lablab.ai/ai-hackathons/nano-payments-arc" target="_blank" rel="noopener noreferrer">
+  here
+</a>
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Solidity</span>
+              <span class="project-tag">Foundry</span>
               <span class="project-tag">Node.js</span>
-              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">Ethers.js</span>
+              <span class="project-tag">Gemini AI</span>
+              <span class="project-tag">Arc Blockchain</span>
+              <span class="project-tag">USDC</span>
+              <span class="project-tag">Hackathon</span>
             </div>
           </div>
-          <div class="project-arrow">↗</div>
+          <a href="https://lablab.ai/ai-hackathons/nano-payments-arc/lone-pringle/nanopay-arc-ai-nanopayment-api-on-arc" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" style="display: none;">
           <div>
-            <p class="project-number">02 ——</p>
-            <h3 class="project-name">Project Name Two</h3>
-            <p class="project-desc">
-              Another project. What did you build? What tech did you use?
-              What makes it worth showing?
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">FastAPI</span>
-              <span class="project-tag">Docker</span>
-            </div>
-          </div>
-          <div class="project-arrow">↗</div>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <p class="project-number">03 ——</p>
+            <p class="project-number">03 — —</p>
             <h3 class="project-name">Project Name Three</h3>
             <p class="project-desc">
               Personal, open source, or freelance — it all counts.
@@ -717,7 +791,7 @@
               <span class="project-tag">Redis</span>
             </div>
           </div>
-          <div class="project-arrow">↗</div>
+          <a href="https://your-project-3-link.com" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
         </div>
 
       </div>
@@ -730,37 +804,34 @@
       <div class="exp-list">
 
         <div class="exp-item reveal">
-          <span class="exp-date">2022 — Present</span>
+          <span class="exp-date">2026</span>
           <div>
-            <h3 class="exp-role">Senior Software Developer</h3>
-            <p class="exp-company">Company Name</p>
+            <h3 class="exp-role">Business Application Support Attachee</h3>
+            <p class="exp-company">Kenya Revenue Authority - KRA </p>
             <p class="exp-desc">
-              Key responsibilities and wins. Use numbers when you can —
-              "cut API latency by 60%", "led a team of 4", "shipped 3 major features".
+             Partook in an attachment program at Kenya Revenue Authority where I provided support for business applications. Assisted in troubleshooting and resolving technical issues, ensuring smooth operation of critical systems. Gained valuable experience in IT support and application management within a large organizational environment. With mentors from the IT department, I developed skills in problem-solving, communication, and teamwork while contributing to the overall efficiency of the organization's technology infrastructure.
             </p>
           </div>
         </div>
 
         <div class="exp-item reveal">
-          <span class="exp-date">2020 — 2022</span>
+          <span class="exp-date">2023 — 2024</span>
           <div>
-            <h3 class="exp-role">Software Developer</h3>
-            <p class="exp-company">Previous Company</p>
+            <h3 class="exp-role">Freelancer</h3>
+            <p class="exp-company">UpWork</p>
             <p class="exp-desc">
-              Your role and contributions. What problems did you own?
-              What systems did you build or improve?
+              Worked with clients to offer my services as a freelancer on UpWork. Completed various projects ranging from IT support to software consulting, consistently receiving positive feedback and repeat business from satisfied clients.
             </p>
           </div>
         </div>
 
         <div class="exp-item reveal">
-          <span class="exp-date">2019 — 2020</span>
+          <span class="exp-date">2020-2022</span>
           <div>
-            <h3 class="exp-role">Junior Developer</h3>
-            <p class="exp-company">First Company</p>
+            <h3 class="exp-role">Freelance Web Developer</h3>
+            <p class="exp-company">Self Employed</p>
             <p class="exp-desc">
-              Your first role. What did you learn and ship,
-              even if it was small?
+              Fine tuned my skills by building websites and applications for local businesses and personal projects. Delivered custom solutions that met client needs and received positive feedback for quality and reliability. 
             </p>
           </div>
         </div>
@@ -779,22 +850,22 @@
             Open to new roles, freelance projects, and interesting problems.
             Reach out and let's talk.
           </p>
-          <a href="mailto:you@email.com" class="btn btn-primary">Send a Message</a>
+          <a href="mailto:martinnzau679@gmail.com" class="btn btn-primary">Send a Message</a>
         </div>
         <div class="contact-links reveal">
-          <a href="mailto:you@email.com" class="contact-link">
+          <a href="mailto:martinnzau679@gmail.com" class="contact-link">
             <span class="contact-link-label">Email</span>
-            <span class="contact-link-value">you@email.com</span>
+            <span class="contact-link-value">martinnzau679@gmail.com</span>
             <span class="contact-link-arrow">↗</span>
           </a>
-          <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+          <a href="https://github.com/monsiu" target="_blank" class="contact-link">
             <span class="contact-link-label">GitHub</span>
-            <span class="contact-link-value">github.com/yourusername</span>
+            <span class="contact-link-value">github.com/monsiu</span>
             <span class="contact-link-arrow">↗</span>
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
+          <a href="https://linkedin.com/in/martinnzau" target="_blank" class="contact-link">
             <span class="contact-link-label">LinkedIn</span>
-            <span class="contact-link-value">linkedin.com/in/yourusername</span>
+            <span class="contact-link-value">linkedin.com/in/martinnzau</span>
             <span class="contact-link-arrow">↗</span>
           </a>
           <a href="/resume.pdf" target="_blank" class="contact-link">
@@ -808,11 +879,11 @@
   </section>
 
   <footer>
-    <p>© 2025 <span class="accent">Your Name</span></p>
-    <p>Built clean. Deployed sharp.</p>
+<p>© <span id="year"></span> <span class="accent">Martin Nzau Portfolio</span></p>    <p>Built clean. Deployed sharp.</p>
   </footer>
 
   <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 20);
