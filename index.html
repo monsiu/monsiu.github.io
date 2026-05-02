@@ -50,6 +50,18 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+    a:hover { color: #6BA3FF; }
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -100,11 +112,16 @@
       font-size: 0.72rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--text);
+      opacity: 0.72;
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.2s, opacity 0.2s;
     }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent);
+      opacity: 1;
+    }
 
     .container { max-width: var(--max); margin: 0 auto; padding: 0 2.5rem; }
 
@@ -405,11 +422,12 @@
     .project-arrow {
       width: 36px;
       height: 36px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(79,142,247,0.35);
+      background: var(--accent-dim);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--muted);
+      color: var(--accent);
       font-size: 1rem;
       transition: all 0.2s;
       flex-shrink: 0;
@@ -490,6 +508,7 @@
     }
     .contact-link:last-child { border-bottom: none; }
     .contact-link:hover { background: var(--bg-hover); }
+    .contact-link:hover .contact-link-value { color: var(--accent); }
 
     .contact-link-label {
       font-family: 'IBM Plex Mono', monospace;
@@ -731,6 +750,10 @@
   <section id="projects">
     <div class="container">
       <p class="section-label reveal">Selected Work</p>
+      <p class="project-desc reveal" style="margin-bottom: 1.5rem; max-width: 100%;">
+        You can find all my projects on GitHub:
+        <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a>.
+      </p>
       <div class="projects-list reveal">
 
         <div class="project-card">
@@ -759,7 +782,7 @@
               Built a per-request AI API where every query costs $0.001 USDC, settled onchain on Arc blockchain. Deployed a Solidity smart contract that accepts USDC micropayments, built a Node.js API server that verifies payments before returning Gemini AI responses, and demonstrated 57+ live onchain transactions. The project proves sub-cent API monetization is only economically viable on Arc, where gas costs are 100,000x cheaper than Ethereum. <br><br>This was part of a hackathon submission for the Arc Blockchain Hackathon which you can view the details 
 <a href="https://lablab.ai/ai-hackathons/nano-payments-arc" target="_blank" rel="noopener noreferrer">
   here
-</a> <br><br>You can also demo this system <a href="https://lablab.ai/ai-hackathons/nano-payments-arc" target="_blank" rel="noopener noreferrer">
+</a> <br><br>You can also demo this system <a href="https://agentic-economy-on-arc-production.up.railway.app" target="_blank" rel="noopener noreferrer">
   here
 </a>
             </p>
@@ -776,23 +799,27 @@
           </div>
           <a href="https://lablab.ai/ai-hackathons/nano-payments-arc/lone-pringle/nanopay-arc-ai-nanopayment-api-on-arc" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
         </div>
-
-        <div class="project-card" style="display: none;">
-          <div>
-            <p class="project-number">03 — —</p>
-            <h3 class="project-name">Project Name Three</h3>
-            <p class="project-desc">
-              Personal, open source, or freelance — it all counts.
-              Show what you're capable of.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">TypeScript</span>
-              <span class="project-tag">AWS</span>
-              <span class="project-tag">Redis</span>
-            </div>
-          </div>
-          <a href="https://your-project-3-link.com" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
-        </div>
+<div class="project-card">
+  <div>
+    <p class="project-number">03 — —</p>
+    <h3 class="project-name">GeminEYE</h3>
+    <p class="project-desc">
+      AI-powered contract risk analyzer that turns complex legal documents into clear, actionable insights. Upload PDFs, DOCX files, or paste text to automatically extract clauses, identify high-risk provisions across areas like liability, indemnity, data privacy, and IP, and generate structured investigator-style memos with evidence-backed findings, risk scoring, and negotiation-ready recommendations.
+   <br><br>This was part of a hackathon submission for the Transforming Enterprise Through AI Hackathon which you can view the details 
+<a href="https://lablab.ai/ai-hackathons/techex-intelligent-enterprise-solutions-hackathon" target="_blank" rel="noopener noreferrer">
+  here
+</a> <br><br>You can also demo this system <a href="https://gemineye-production.up.railway.app" target="_blank" rel="noopener noreferrer">
+  here
+</a> </p>
+    <div class="project-tags">
+      <span class="project-tag">Next.js</span>
+      <span class="project-tag">TypeScript</span>
+      <span class="project-tag">Gemini 3.1</span>
+      <span class="project-tag">AI/ML API</span>
+    </div>
+  </div>
+  <a href="https://your-project-3-link.com" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
+</div>
 
       </div>
     </div>
