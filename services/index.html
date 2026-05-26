@@ -419,7 +419,17 @@
   <section id="request">
     <div class="container">
       <p class="section-label">Request a Service</p>
-      <form id="requestForm" class="form-card" novalidate>
+      <form id="requestForm" class="form-card"
+            action="https://formsubmit.co/martinnzau679@gmail.com"
+            method="POST">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New Service Request from monsiu.github.io" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="hidden" name="_next" value="https://monsiu.github.io/services/thanks.html" />
+        <!-- Honeypot for bots -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
         <div class="form-row">
           <div class="form-field">
             <label for="name">Your Name</label>
@@ -504,7 +514,7 @@
         </div>
 
         <p class="form-note">
-          Submitting this form opens your email client with the request pre-filled and addressed to me.
+          Your request is sent securely via FormSubmit and delivered straight to my inbox. No account needed.
         </p>
 
         <div class="alt-contact">
@@ -542,36 +552,8 @@
       localStorage.setItem('theme', next);
     });
 
-    const form = document.getElementById('requestForm');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const name = (data.get('name') || '').toString().trim();
-      const email = (data.get('email') || '').toString().trim();
-      const company = (data.get('company') || '').toString().trim();
-      const budget = (data.get('budget') || '').toString();
-      const timeline = (data.get('timeline') || '').toString();
-      const details = (data.get('details') || '').toString().trim();
-      const services = data.getAll('service').join(', ') || 'Not specified';
-
-      if (!name || !email || !details) {
-        alert('Please fill in your name, email, and project details.');
-        return;
-      }
-
-      const subject = `Service Request from ${name}`;
-      const body =
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Company: ${company || 'N/A'}\n` +
-        `Service(s): ${services}\n` +
-        `Budget: ${budget}\n` +
-        `Timeline: ${timeline}\n\n` +
-        `Project Details:\n${details}\n`;
-
-      const mailto = `mailto:martinnzau679@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-    });
+    // Form posts directly to FormSubmit. No JS submit handler needed.
+    // The browser handles required-field validation natively.
   </script>
 
 </body>
