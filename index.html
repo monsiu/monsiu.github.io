@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Martin Nzau - Software Developer</title>
+  <meta name="description" content="Martin Nzau (Monsiu) is a full-stack developer in Nairobi, Kenya building production web and mobile apps. React, Next.js, Node, Flutter, Solidity. Verified Upwork freelancer." />
+  <meta name="author" content="Martin Nzau" />
+  <link rel="canonical" href="https://monsiu.github.io/" />
+  <link rel="icon" type="image/png" href="/profile.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Martin Nzau - Software Developer" />
+  <meta property="og:description" content="Full-stack developer building production web and mobile apps. Recent work: GeminEYE AI contract analyzer, NanoPay onchain micropayments, Custom RR Android hub." />
+  <meta property="og:url" content="https://monsiu.github.io/" />
+  <meta property="og:image" content="https://monsiu.github.io/profile.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Martin Nzau - Software Developer" />
+  <meta name="twitter:description" content="Full-stack developer (web + mobile). Verified Upwork freelancer." />
+  <meta name="twitter:image" content="https://monsiu.github.io/profile.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,8 +28,8 @@
       --bg-card: #141414;
       --bg-hover: #1A1A1A;
       --bg-nav: rgba(12,12,12,0.9);
-      --text: #EFEFEF;
-      --muted: #666666;
+      --text: #F2F2F2;
+      --muted: #A8A8A8;
       --accent: #4F8EF7;
       --accent-dim: rgba(79,142,247,0.12);
       --border: #222222;
@@ -30,7 +43,7 @@
       --bg-hover: #EEEEEE;
       --bg-nav: rgba(245,245,245,0.9);
       --text: #111111;
-      --muted: #888888;
+      --muted: #555555;
       --accent: #2563EB;
       --accent-dim: rgba(37,99,235,0.10);
       --border: #DEDEDE;
@@ -44,7 +57,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'IBM Plex Sans', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: 16px;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
@@ -371,6 +384,15 @@
       margin-bottom: 0.75rem;
     }
 
+    .project-metric {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin: 0.75rem 0 0.25rem;
+    }
+    .project-metric strong { color: var(--text); font-weight: 500; }
+
     .project-name {
       font-family: 'Syne', sans-serif;
       font-size: 1.5rem;
@@ -567,8 +589,11 @@
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">View Work</a>
             <a href="/services/" class="btn btn-ghost">Hire Me</a>
-            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
           </div>
+          <p style="margin-top: 1.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted);">
+            Trusted on Upwork -
+            <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">read client reviews ↗</a>
+          </p>
         </div>
 
         <div class="hero-photo">
@@ -594,7 +619,7 @@
           </p>
           <p>
             When I'm not at the keyboard you'll find me gaming to ease my mind and having a fun time with my buddies.
-            I bring the same focus and discipline to my code—and I put it to good use running circles around my mates on <s>FIFA</s> EA Sports FC . <br><br>Gaming is truly my second hobby next to coding. I also enjoying taking part in hackathons and I have a few projects from those in my GitHub. I have a passion for learning new technologies and applying them to solve real-world problems.
+            I bring the same focus and discipline to my code, and I put it to good use running circles around my mates on <s>FIFA</s> EA Sports FC . <br><br>Gaming is truly my second hobby next to coding. I also enjoying taking part in hackathons and I have a few projects from those in my GitHub. I have a passion for learning new technologies and applying them to solve real-world problems.
           </p>
         </div>
         <div class="reveal">
@@ -602,13 +627,10 @@
             <span class="detail-label">Location</span>
             <span class="detail-value">Nairobi, Kenya</span>
           </div>
-       <div class="detail-item">
-  <span class="detail-label">Education</span>
-  <ul class="detail-value-list" style="padding-left: 31%;">
-    <li>Bachelor in Business Information Technology</li><br>
-    <li>Diploma in Business Information Technology</li>
-  </ul>
-</div>
+          <div class="detail-item">
+            <span class="detail-label">Education</span>
+            <span class="detail-value">BSc &amp; Diploma, Business Information Technology</span>
+          </div>
           <div class="detail-item">
             <span class="detail-label">Experience</span>
             <span class="detail-value">3+ Years</span>
@@ -628,96 +650,59 @@
     <div class="skills-grid reveal">
 
       <div class="skill-group">
-        <p class="skill-group-title">Core Engineering</p>
-        <ul class="skill-list">
-          <li class="skill-tag">Data Structures & Algorithms</li>
-          <li class="skill-tag">API Design</li>
-          <li class="skill-tag">Asynchronous Programming</li>
-          <li class="skill-tag">Problem Solving</li>
-        </ul>
-      </div>
-
-      <div class="skill-group">
         <p class="skill-group-title">Frontend</p>
         <ul class="skill-list">
           <li class="skill-tag">React</li>
           <li class="skill-tag">Next.js</li>
           <li class="skill-tag">TypeScript</li>
-          <li class="skill-tag">JavaScript (ES6+)</li>
-          <li class="skill-tag">HTML5 & CSS3</li>
           <li class="skill-tag">Tailwind CSS</li>
         </ul>
       </div>
 
       <div class="skill-group">
-        <p class="skill-group-title">Backend</p>
+        <p class="skill-group-title">Backend &amp; APIs</p>
         <ul class="skill-list">
           <li class="skill-tag">Node.js</li>
-          <li class="skill-tag">Express.js</li>
+          <li class="skill-tag">Express</li>
           <li class="skill-tag">Python</li>
           <li class="skill-tag">REST APIs</li>
-          <li class="skill-tag">Authentication (JWT)</li>
-          <li class="skill-tag">PHP</li>
+          <li class="skill-tag">JWT Auth</li>
         </ul>
       </div>
 
       <div class="skill-group">
-        <p class="skill-group-title">Databases</p>
+        <p class="skill-group-title">Mobile</p>
+        <ul class="skill-list">
+          <li class="skill-tag">Flutter</li>
+          <li class="skill-tag">Dart</li>
+          <li class="skill-tag">React Native</li>
+          <li class="skill-tag">Android / iOS</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <p class="skill-group-title">Data &amp; Cloud</p>
         <ul class="skill-list">
           <li class="skill-tag">PostgreSQL</li>
           <li class="skill-tag">MongoDB</li>
-          <li class="skill-tag">Redis</li>
-          <li class="skill-tag">MySQL</li>
-          <li class="skill-tag">Firebase Realtime Database</li>
+          <li class="skill-tag">Firebase</li>
+          <li class="skill-tag">Vercel</li>
+          <li class="skill-tag">Docker</li>
         </ul>
       </div>
 
       <div class="skill-group">
-        <p class="skill-group-title">Blockchain & Web3</p>
+        <p class="skill-group-title">AI &amp; Web3</p>
         <ul class="skill-list">
+          <li class="skill-tag">LLM Integration</li>
+          <li class="skill-tag">Gemini</li>
           <li class="skill-tag">Solidity</li>
           <li class="skill-tag">Foundry</li>
           <li class="skill-tag">Ethers.js</li>
-          <li class="skill-tag">Smart Contracts</li>
-          <li class="skill-tag">Wallet Integration</li>
-          <li class="skill-tag">ERC-20 Tokens</li>
         </ul>
       </div>
 
-      <div class="skill-group">
-        <p class="skill-group-title">AI & Automation</p>
-        <ul class="skill-list">
-          <li class="skill-tag">LLM API Integration</li>
-          <li class="skill-tag">Gemini AI</li>
-          <li class="skill-tag">Prompt Engineering</li>
-          <li class="skill-tag">AI Agents</li>
-          <li class="skill-tag">Workflow Automation</li>
-        </ul>
-      </div>
-
-      <div class="skill-group">
-        <p class="skill-group-title">Tools & DevOps</p>
-        <ul class="skill-list">
-          <li class="skill-tag">Flutter</li>
-          <li class="skill-tag">Git & GitHub</li>
-          <li class="skill-tag">Docker</li>
-          <li class="skill-tag">CI/CD</li>
-          <li class="skill-tag">Linux</li>
-          <li class="skill-tag">Vercel</li>
-          <li class="skill-tag">Firebase</li>
-          
-        </ul>
-      </div>
-
-   <div class="skill-group">
-  <p class="skill-group-title">Cloud & Backend Services</p>
-  <ul class="skill-list">
-    <li class="skill-tag">Firebase Authentication</li>
-    <li class="skill-tag">Firestore</li>
-    <li class="skill-tag">Cloud Functions</li>
-    <li class="skill-tag">Vercel</li>
-  </ul>
-</div></div>
+    </div>
   </div>
 </section>
 
@@ -732,11 +717,12 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">01 — —</p>
+            <p class="project-number">01 //</p>
             <h3 class="project-name">Custom RR</h3>
             <p class="project-desc">
               A Hub For Custom ROMS and Recoveries. I built a platform to simplify the process of finding and installing custom ROMs for Android devices. Integrated with multiple ROM repositories and provided a user-friendly interface for browsing, downloading, and installing ROMs.
             </p>
+            <p class="project-metric"><strong>44+ GitHub stars</strong> &nbsp;·&nbsp; Open source (GPL-3.0) &nbsp;·&nbsp; Earned the GitHub Starstruck achievement</p>
             <div class="project-tags">
               <span class="project-tag">Flutter</span>
               <span class="project-tag">Dart</span>
@@ -750,7 +736,7 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">02 — —</p>
+            <p class="project-number">02 //</p>
             <h3 class="project-name">NanoPay</h3>
             <p class="project-desc">
               Built a per-request AI API where every query costs $0.001 USDC, settled onchain on Arc blockchain. Deployed a Solidity smart contract that accepts USDC micropayments, built a Node.js API server that verifies payments before returning Gemini AI responses, and demonstrated 57+ live onchain transactions. The project proves sub-cent API monetization is only economically viable on Arc, where gas costs are 100,000x cheaper than Ethereum. <br><br>This was part of a hackathon submission for the Arc Blockchain Hackathon which you can view the details 
@@ -760,6 +746,7 @@
   here
 </a>
             </p>
+            <p class="project-metric"><strong>57+ live onchain transactions</strong> &nbsp;·&nbsp; Gas costs 100,000x cheaper than Ethereum &nbsp;·&nbsp; Arc Blockchain Hackathon submission</p>
             <div class="project-tags">
               <span class="project-tag">Solidity</span>
               <span class="project-tag">Foundry</span>
@@ -775,7 +762,7 @@
         </div>
 <div class="project-card">
   <div>
-    <p class="project-number">03 — —</p>
+    <p class="project-number">03 //</p>
     <h3 class="project-name">GeminEYE</h3>
     <p class="project-desc">
       AI-powered contract risk analyzer that turns complex legal documents into clear, actionable insights. Upload PDFs, DOCX files, or paste text to automatically extract clauses, identify high-risk provisions across areas like liability, indemnity, data privacy, and IP, and generate structured investigator-style memos with evidence-backed findings, risk scoring, and negotiation-ready recommendations.
@@ -785,6 +772,7 @@
 </a> <br><br>You can also demo this system <a href="https://gemineye-v1.up.railway.app/" target="_blank" rel="noopener noreferrer">
   here
 </a> </p>
+    <p class="project-metric"><strong>TechEx Intelligent Enterprise Hackathon submission</strong> &nbsp;·&nbsp; Handles PDF, DOCX, and raw text &nbsp;·&nbsp; Live demo deployed</p>
     <div class="project-tags">
       <span class="project-tag">Next.js</span>
       <span class="project-tag">TypeScript</span>
@@ -797,13 +785,14 @@
 
 <div class="project-card">
   <div>
-    <p class="project-number">04 — —</p>
+    <p class="project-number">04 //</p>
     <h3 class="project-name">GeminEYE V2</h3>
     <p class="project-desc">
       An evolved contract risk analyzer with voice intake, parallel provider checks, and automated alerts. Upload PDFs, DOCX files, paste text, or transcribe audio via Speechmatics. Runs Gemini (via the AI/ML API) alongside Featherless open-source models in parallel, consolidates scores and findings, and escalates high-risk contracts through Resend email alerts. Built with guardrails, prompt-injection detection, moderation, redaction, rate limiting, and a local security audit trail.
    <br><br>This was part of a hackathon submission for the AI Agent Olympics Hackathon (Milan AI Week) targeting the Google Gemini, Featherless, and Speechmatics tracks. <br><br>You can demo this system <a href="https://gemineye-v2.up.railway.app/" target="_blank" rel="noopener noreferrer">
   here
 </a> </p>
+    <p class="project-metric"><strong>AI Agent Olympics (Milan AI Week) submission</strong> &nbsp;·&nbsp; Targets Gemini, Featherless, and Speechmatics tracks &nbsp;·&nbsp; Built-in guardrails &amp; audit trail</p>
     <div class="project-tags">
       <span class="project-tag">Next.js 16</span>
       <span class="project-tag">React 19</span>
@@ -819,7 +808,42 @@
   <a href="https://github.com/monsiu/Gemineye-V2" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
 </div>
 
+<div class="project-card">
+  <div>
+    <p class="project-number">05 //</p>
+    <h3 class="project-name">Aegis, SRE Guardian</h3>
+    <p class="project-desc">
+      An autonomous incident-response system that monitors cloud infrastructure in real time, diagnoses issues with a three-agent AI pipeline (Monitor, Diagnosis, Remediation), and executes safe SSH-based fixes on remote servers. Streams live metrics over WebSockets, searches past incidents with a ChromaDB vector store, and auto-generates PDF post-mortems. Handles CPU surges, memory pressure, disk I/O, DDoS, and DB bottlenecks with a whitelisted command set, no arbitrary shell input.
+      <br><br>Built for the AMD Developer Hackathon 2025 under Track 1: AI Agents &amp; Agentic Workflows. You can demo this system <a href="https://autonomous-sre-self-healing-cloud-g.vercel.app/" target="_blank" rel="noopener noreferrer">here</a>.
+    </p>
+    <p class="project-metric"><strong>AMD Developer Hackathon 2025 submission</strong> &nbsp;·&nbsp; 3-agent autonomous pipeline &nbsp;·&nbsp; Real SSH remediation with whitelisted commands</p>
+    <div class="project-tags">
+      <span class="project-tag">Python</span>
+      <span class="project-tag">FastAPI</span>
+      <span class="project-tag">React</span>
+      <span class="project-tag">TypeScript</span>
+      <span class="project-tag">ChromaDB</span>
+      <span class="project-tag">WebSockets</span>
+      <span class="project-tag">Paramiko (SSH)</span>
+      <span class="project-tag">AMD Cloud</span>
+      <span class="project-tag">Hackathon</span>
+    </div>
+  </div>
+  <a href="https://github.com/monsiu/Autonomous-SRE-Self-Healing-Cloud-Guardian" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
+</div>
+
       </div>
+
+      <p class="section-label reveal" style="margin-top: 4rem;">Programs &amp; Hackathons</p>
+      <ul class="skill-list reveal" style="margin-top: 1rem;">
+        <li class="skill-tag">AMD Developer Hackathon 2025</li>
+        <li class="skill-tag">AI Agent Olympics, Milan AI Week</li>
+        <li class="skill-tag">TechEx Intelligent Enterprise Hackathon</li>
+        <li class="skill-tag">Arc Blockchain Hackathon</li>
+        <li class="skill-tag">Safaricom Decode, Google ADK Workshop</li>
+        <li class="skill-tag">Safaricom Decode, Cyber Defender Workshop</li>
+        <li class="skill-tag">GitHub Copilot Dev Days</li>
+      </ul>
     </div>
   </section>
 
@@ -829,7 +853,7 @@
       <div class="exp-list">
 
         <div class="exp-item reveal">
-          <span class="exp-date">2026</span>
+          <span class="exp-date">Jan 2026 - Mar 2026</span>
           <div>
             <h3 class="exp-role">Business Application Support Attachee</h3>
             <p class="exp-company">Kenya Revenue Authority - KRA </p>
@@ -840,7 +864,7 @@
         </div>
 
         <div class="exp-item reveal">
-          <span class="exp-date">2023 — 2024</span>
+          <span class="exp-date">2023 - 2024</span>
           <div>
             <h3 class="exp-role">Freelancer</h3>
             <p class="exp-company">UpWork</p>
@@ -872,7 +896,7 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">01 — —</p>
+            <p class="project-number">01 //</p>
             <h3 class="project-name">Web Services</h3>
             <p class="project-desc">
               Need a website or full-stack web app? I build fast, accessible, modern sites and
@@ -891,7 +915,7 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">02 — —</p>
+            <p class="project-number">02 //</p>
             <h3 class="project-name">Mobile App Development</h3>
             <p class="project-desc">
               Cross-platform Android and iOS apps built with Flutter and Firebase. From idea
@@ -913,6 +937,10 @@
         <a href="/services/" class="btn btn-primary">Request a Service</a>
         <a href="/services/" class="btn btn-ghost">See Details</a>
       </div>
+      <p class="reveal" style="margin-top: 1.25rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.06em; color: var(--muted);">
+        Want proof? I'm a verified freelancer on Upwork -
+        <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">check my client reviews ↗</a>
+      </p>
     </div>
   </section>
 
@@ -934,17 +962,22 @@
             <span class="contact-link-value">martinnzau679@gmail.com</span>
             <span class="contact-link-arrow">↗</span>
           </a>
-          <a href="https://github.com/monsiu" target="_blank" class="contact-link">
+          <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer" class="contact-link">
             <span class="contact-link-label">GitHub</span>
             <span class="contact-link-value">github.com/monsiu</span>
             <span class="contact-link-arrow">↗</span>
           </a>
-          <a href="https://linkedin.com/in/martinnzau" target="_blank" class="contact-link">
+          <a href="https://linkedin.com/in/martinnzau" target="_blank" rel="noopener noreferrer" class="contact-link">
             <span class="contact-link-label">LinkedIn</span>
             <span class="contact-link-value">linkedin.com/in/martinnzau</span>
             <span class="contact-link-arrow">↗</span>
           </a>
-          <a href="/resume.pdf" target="_blank" class="contact-link">
+          <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer" class="contact-link">
+            <span class="contact-link-label">Upwork</span>
+            <span class="contact-link-value">View profile &amp; client reviews</span>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="contact-link">
             <span class="contact-link-label">Résumé</span>
             <span class="contact-link-value">Download PDF</span>
             <span class="contact-link-arrow">↗</span>
