@@ -23,13 +23,17 @@
   <meta name="description" content="Martin Nzau (Monsiu): full-stack developer in Nairobi, Kenya. I build production web apps, Android apps with Flutter, and onchain smart contracts. Hackathon contributor across AMD, Arc Blockchain, TechEx, and Milan AI Week. Verified Upwork freelancer." />
   <meta name="keywords" content="Martin Nzau, Monsiu, full-stack developer Nairobi, Kenya software developer, Flutter Android developer, Solidity developer, React developer, Next.js developer, smart contract developer, AI integration, hackathon developer, Upwork freelancer" />
   <meta name="author" content="Martin Nzau" />
+  <meta name="geo.region" content="KE-30" />
+  <meta name="geo.placename" content="Nairobi" />
+  <meta name="geo.position" content="-1.2921;36.8219" />
+  <meta name="ICBM" content="-1.2921, 36.8219" />
   <link rel="canonical" href="https://monsiu.github.io/" />
   <link rel="icon" type="image/png" href="/profile.png" />
   <link rel="apple-touch-icon" href="/profile.png" />
   <meta name="theme-color" content="#0C0C0C" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Martin Nzau (Monsiu) - Full-Stack, Mobile & Solidity Developer" />
-  <meta property="og:description" content="Full-stack developer in Nairobi building web apps, Flutter Android apps, and onchain smart contracts. Recent work: GeminEYE AI contract analyzer, NanoPay onchain micropayments (Arc Blockchain), Custom RR Android hub (44+ GitHub stars), Aegis SRE Guardian." />
+  <meta property="og:description" content="Full-stack developer in Nairobi building web apps, Flutter Android apps, and onchain smart contracts. Recent work: Custom RR v0.2.1 (cross-platform ROM/recovery hub, 46+ GitHub stars, now with Root section, F-Droid build, and desktop builds), GeminEYE AI contract analyzer, NanoPay onchain micropayments (Arc Blockchain), Aegis SRE Guardian." />
   <meta property="og:url" content="https://monsiu.github.io/" />
   <meta property="og:image" content="https://monsiu.github.io/profile.png" />
   <meta name="twitter:card" content="summary" />
@@ -80,16 +84,45 @@
         "@type": "SoftwareApplication",
         "name": "Custom RR",
         "applicationCategory": "MobileApplication",
-        "operatingSystem": "Android",
-        "url": "https://github.com/monsiu/Custom-RR",
+        "applicationSubCategory": "Utilities",
+        "operatingSystem": "Android 5.0+, Windows 10/11, Linux",
+        "url": "https://monsiu.github.io/custom-rr/",
+        "sameAs": [
+          "https://github.com/monsiu/Custom-RR",
+          "https://github.com/monsiu/Custom-RR/releases/latest"
+        ],
+        "downloadUrl": "https://github.com/monsiu/Custom-RR/releases/tag/v0.2.1",
+        "installUrl": "https://github.com/monsiu/Custom-RR/releases/latest",
         "author": { "@id": "https://monsiu.github.io/#person" },
-        "description": "A hub for custom Android ROMs and recoveries. Integrates with multiple ROM repositories with a friendly browse, download, and install flow.",
+        "description": "A single home for popular Android custom ROMs and custom recoveries. 18 actively maintained ROMs, 4 recoveries, 700+ devices, with direct links to official builders, screenshots, nightly freshness signals, step-by-step flashing instructions, a Root section (Magisk, KernelSU, APatch), an F-Droid build variant, and native Windows and Linux desktop builds.",
+        "softwareVersion": "0.2.1",
+        "datePublished": "2026-05-31",
+        "releaseNotes": "https://github.com/monsiu/Custom-RR/releases/tag/v0.2.1",
         "programmingLanguage": ["Dart", "Flutter"],
         "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Curated custom ROMs (LineageOS, crDroid, PixelOS, Project Elixir, Evolution X, DerpFest, GrapheneOS, CalyxOS, /e/, and more)",
+          "Curated custom recoveries (TWRP, OrangeFox, PBRP, SHRP)",
+          "Root section (Magisk, KernelSU, KernelSU Next, APatch, SukiSU Ultra)",
+          "700+ supported devices sourced from LineageOS wiki and PixelOS official_devices",
+          "Nightly freshness signals (active / monthly / discontinued)",
+          "Treble and GSI hub with per-project status badges",
+          "Material 3 with dynamic color, light/dark/AMOLED themes",
+          "Deep links for every ROM, recovery, device, and brand",
+          "In-app update check against GitHub Releases",
+          "F-Droid build variant",
+          "Native Windows and Linux desktop builds",
+          "Zero tracking, no ads, no Play Services"
+        ],
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5",
-          "ratingCount": "44",
+          "ratingCount": "46",
           "bestRating": "5"
         }
       },
@@ -496,6 +529,17 @@
     }
     .project-card:hover { background: var(--bg-hover); }
 
+    .project-banner {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: 0 0 1.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+
     .project-number {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.68rem;
@@ -535,6 +579,76 @@
       color: var(--accent);
       background: var(--accent-dim);
       border: 1px solid rgba(79,142,247,0.2);
+    }
+
+    .release-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .release-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(255,255,255,0.7);
+      animation: pulse 1.8s infinite;
+    }
+    .release-badge:hover { background: #2F6FE0; color: #fff; transform: translateY(-1px); }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.6); }
+      70% { box-shadow: 0 0 0 6px rgba(255,255,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+
+    .hero-release {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      padding: 0.45rem 0.9rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .hero-release:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .hero-release .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse-dot 1.8s infinite; }
+    .hero-release:hover .dot { background: #fff; }
+    @keyframes pulse-dot {
+      0% { box-shadow: 0 0 0 0 rgba(79,142,247,0.45); }
+      70% { box-shadow: 0 0 0 5px rgba(79,142,247,0); }
+      100% { box-shadow: 0 0 0 0 rgba(79,142,247,0); }
+    }
+
+    .hero-role {
+      display: block;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0;
+      margin-top: 0.5rem;
     }
 
     .project-arrow {
@@ -688,6 +802,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Work</a></li>
+        <li><a href="/custom-rr/" data-ga="nav_custom_rr">Custom RR</a></li>
         <li><a href="#experience">Exp</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -701,15 +816,19 @@
       <div class="hero-inner">
         <div class="hero-text">
           <p class="hero-eyebrow">// Software Developer &nbsp;·&nbsp; aka Monsiu</p>
-          <h1 class="hero-name">Martin<br/>Nzau</h1>
+          <h1 class="hero-name">Martin<br/>Nzau<span class="hero-role">Full-Stack, Mobile &amp; Smart Contract Developer</span></h1>
           <p class="hero-title">Full Stack &nbsp;·&nbsp; System Design &nbsp;·&nbsp; Nairobi, Kenya</p>
           <p class="hero-bio">
             I build fast, reliable software - from scalable backends to sharp interfaces.
             Focused on writing clean code that solves real problems and delivers value.
           <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">View Work</a>
-            <a href="/services/" class="btn btn-ghost">Hire Me</a>
+            <a href="#projects" class="btn btn-primary" data-ga="hero_view_work">View Work</a>
+            <a href="/services/" class="btn btn-ghost" data-ga="hero_hire_me">Hire Me</a>
           </div>
+          <a href="https://github.com/monsiu/Custom-RR/releases/tag/v0.2.1" target="_blank" rel="noopener noreferrer" class="hero-release" data-ga="hero_release_chip" title="Custom RR v0.2.1 release notes on GitHub">
+            <span class="dot"></span>
+            Latest release: Custom RR v0.2.1 &nbsp;→
+          </a>
           <p style="margin-top: 1.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted);">
             Trusted on Upwork -
             <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">read client reviews ↗</a>
@@ -838,20 +957,32 @@
         <div class="project-card">
           <div>
             <p class="project-number">01 //</p>
-            <h3 class="project-name">Custom RR</h3>
+            <h3 class="project-name">Custom RR
+              <a href="https://github.com/monsiu/Custom-RR/releases/tag/v0.2.1" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_custom_rr_release" title="Custom RR v0.2.1 released, see full changelog on GitHub">New · v0.2.1</a>
+            </h3>
+            <a href="/custom-rr/" data-ga="project_custom_rr_banner" aria-label="Custom RR project page">
+              <img src="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" alt="Custom RR Android app banner: a hub for custom ROMs and recoveries" class="project-banner" loading="lazy" decoding="async" />
+            </a>
             <p class="project-desc">
-              A Hub For Custom ROMS and Recoveries. I built a platform to simplify the process of finding and installing custom ROMs for Android devices. Integrated with multiple ROM repositories and provided a user-friendly interface for browsing, downloading, and installing ROMs.
+              The single home for popular Android custom ROMs and custom recoveries. Curates <strong>18 actively maintained ROMs</strong> (LineageOS, crDroid, PixelOS, Project Elixir, Evolution X, DerpFest, GrapheneOS, CalyxOS, /e/, and more), 4 recoveries (TWRP, OrangeFox, PBRP, SHRP), and 700+ devices, sourced live from the LineageOS wiki and the PixelOS official_devices repo, refreshed nightly by GitHub Actions. Now ships a new <strong>Root section</strong> (Magisk, KernelSU, KernelSU Next, APatch, SukiSU Ultra), a dedicated <strong>F-Droid build variant</strong>, and native <strong>Windows and Linux desktop builds</strong> alongside Android. Material 3, dynamic color, zero tracking, no Play Services, GPL-3.0.
             </p>
-            <p class="project-metric"><strong>44+ GitHub stars</strong> &nbsp;·&nbsp; Open source (GPL-3.0) &nbsp;·&nbsp; Earned the GitHub Starstruck achievement</p>
+            <p class="project-metric"><strong>v0.2.1 released May 2026</strong> &nbsp;·&nbsp; <strong>46+ GitHub stars</strong> &nbsp;·&nbsp; 18 ROMs · 4 recoveries · 700+ devices &nbsp;·&nbsp; Android · Windows · Linux &nbsp;·&nbsp; GPL-3.0</p>
             <div class="project-tags">
               <span class="project-tag">Flutter</span>
               <span class="project-tag">Dart</span>
-              <span class="project-tag">Android Development</span>
-                          <span class="project-tag">Mobile Application</span>
-
+              <span class="project-tag">Android</span>
+              <span class="project-tag">Windows Desktop</span>
+              <span class="project-tag">Linux Desktop</span>
+              <span class="project-tag">Material 3</span>
+              <span class="project-tag">go_router</span>
+              <span class="project-tag">GitHub Actions</span>
+              <span class="project-tag">F-Droid</span>
+              <span class="project-tag">Magisk</span>
+              <span class="project-tag">KernelSU</span>
+              <span class="project-tag">Open Source</span>
             </div>
           </div>
-<a href="https://github.com/monsiu/Custom-RR" class="project-arrow" target="_blank" rel="noopener noreferrer">↗</a>        </div>
+<a href="https://github.com/monsiu/Custom-RR" class="project-arrow" target="_blank" rel="noopener noreferrer" title="Custom RR source on GitHub">↗</a>        </div>
 
 
         <div class="project-card">
@@ -1139,6 +1270,17 @@
       html.setAttribute('data-theme', next);
       toggle.textContent = next === 'dark' ? '☀' : '☾';
       localStorage.setItem('theme', next);
+    });
+
+    document.querySelectorAll('[data-ga]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag !== 'function') return;
+        gtag('event', 'cta_click', {
+          cta_id: el.getAttribute('data-ga'),
+          cta_text: (el.textContent || '').trim().slice(0, 60),
+          cta_href: el.getAttribute('href') || ''
+        });
+      });
     });
   </script>
 
