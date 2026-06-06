@@ -56,6 +56,43 @@ function escapeRe(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+function escapeHtml(s) {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Convert a single line of inline Markdown to safe HTML. Text is HTML-escaped
+// first, then only a fixed allow-list of constructs is reintroduced as tags:
+// http(s) links, bold and inline code. Nothing else can emit markup, so a
+// release body cannot inject arbitrary HTML.
+function mdInlineToHtml(text) {
+  let s = escapeHtml(text.trim());
+  s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    (m, label, url) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`);
+  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
+  return s;
+}
+
+// Pull the bullet lines out of the release body's "### Changes" section, stopping
+// at the next "### " heading (so Android / Desktop / Donation / Install noise is
+// skipped). Returns [] when the section is missing so existing copy is kept.
+function extractChanges(body) {
+  if (!body) return [];
+  const norm = body.replace(/\r\n/g, '\n');
+  const m = norm.match(/###\s+Changes[^\n]*\n([\s\S]*?)(?=\n###\s|$)/);
+  if (!m) return [];
+  const bullets = [];
+  for (const line of m[1].split('\n')) {
+    const bm = line.match(/^\s*[-*\u2022]\s+(.+?)\s*$/);
+    if (bm) bullets.push(bm[1]);
+  }
+  return bullets;
+}
+
 function rewrite(html, rel) {
   const tag = rel.tag_name;                         // e.g. v0.2.3
   const version = tag.replace(/^v/, '');            // e.g. 0.2.3
@@ -95,6 +132,14 @@ function rewrite(html, rel) {
   out = out.replace(/Custom RR v\d+\.\d+\.\d+ \(cross-platform/g, `Custom RR ${tag} (cross-platform`);
   out = out.replace(/ROM\/recovery hub, \d+\+ GitHub stars/g, `ROM/recovery hub, ${stars}+ GitHub stars`);
 
+  // "What's new" heading + auto-generated changelog bullets (custom-rr page only).
+  out = out.replace(/(<h2>What's new in )v[\d.]+(<\/h2>)/g, `$1${tag}$2`);
+  if (rel.changes && rel.changes.length) {
+    const lis = rel.changes.map((b) => `        <li>${mdInlineToHtml(b)}</li>`).join('\n');
+    const block = `<!-- cr:changelog:start (auto-generated from the latest release's "### Changes" section; edits here are overwritten) -->\n${lis}\n        <!-- cr:changelog:end -->`;
+    out = out.replace(/<!-- cr:changelog:start[\s\S]*?cr:changelog:end -->/, () => block);
+  }
+
   return out;
 }
 
@@ -107,9 +152,10 @@ async function main() {
     published_at: release.published_at,
     stars: typeof repo.stargazers_count === 'number' ? repo.stargazers_count : '',
     assets: (release.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url })),
+    changes: extractChanges(release.body),
   };
 
-  console.log(`Latest: ${rel.tag_name} (${prettyDate(rel.published_at)}), ${rel.stars} stars`);
+  console.log(`Latest: ${rel.tag_name} (${prettyDate(rel.published_at)}), ${rel.stars} stars, ${rel.changes.length} change bullet(s)`);
 
   let changed = 0;
   for (const file of files) {
