@@ -1,0 +1,49 @@
+name: Sync Custom RR release info
+
+# Keeps the static HTML (JSON-LD, meta tags, crawler-visible fallback text)
+# in step with the latest Custom-RR GitHub release. The client-side release.js
+# already updates what visitors see live; this keeps what crawlers see correct.
+#
+# Triggers:
+#   - schedule: polls a few times a day (release.js caches for 6h anyway)
+#   - workflow_dispatch: run on demand from the Actions tab
+#   - repository_dispatch: optional instant trigger; Custom-RR can POST
+#       event_type "customrr-release" with a PAT to update within seconds.
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  repository_dispatch:
+    types: [customrr-release]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-customrr-release
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update release info in HTML
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/sync-customrr-release.mjs
+
+      - name: Commit and push if changed
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: sync Custom RR release info to latest [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
