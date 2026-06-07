@@ -93,6 +93,20 @@ function extractChanges(body) {
   return bullets;
 }
 
+// Pull the one-line summary paragraph that sits between the "## Custom RR vX.Y.Z"
+// title and the first "### " heading. Returns '' when absent (or when the first
+// block is a heading/list/quote rather than prose) so existing copy is kept.
+function extractSummary(body) {
+  if (!body) return '';
+  const norm = body.replace(/\r\n/g, '\n').trim();
+  const afterTitle = norm.replace(/^##\s+[^\n]*\n/, '');
+  const m = afterTitle.match(/^([\s\S]*?)(?=\n###\s|$)/);
+  if (!m) return '';
+  const firstPara = (m[1].split(/\n\s*\n/).find((p) => p.trim()) || '').trim();
+  if (!firstPara || /^[#>\-*\u2022]/.test(firstPara)) return '';
+  return firstPara.replace(/\s*\n\s*/g, ' ');
+}
+
 function rewrite(html, rel) {
   const tag = rel.tag_name;                         // e.g. v0.2.3
   const version = tag.replace(/^v/, '');            // e.g. 0.2.3
@@ -134,6 +148,10 @@ function rewrite(html, rel) {
 
   // "What's new" heading + auto-generated changelog bullets (custom-rr page only).
   out = out.replace(/(<h2>What's new in )v[\d.]+(<\/h2>)/g, `$1${tag}$2`);
+  if (rel.summary) {
+    const block = `<!-- cr:summary:start (auto-generated from the latest release summary; edits here are overwritten) -->\n      <p>${mdInlineToHtml(rel.summary)}</p>\n      <!-- cr:summary:end -->`;
+    out = out.replace(/<!-- cr:summary:start[\s\S]*?cr:summary:end -->/, () => block);
+  }
   if (rel.changes && rel.changes.length) {
     const lis = rel.changes.map((b) => `        <li>${mdInlineToHtml(b)}</li>`).join('\n');
     const block = `<!-- cr:changelog:start (auto-generated from the latest release's "### Changes" section; edits here are overwritten) -->\n${lis}\n        <!-- cr:changelog:end -->`;
@@ -153,6 +171,7 @@ async function main() {
     stars: typeof repo.stargazers_count === 'number' ? repo.stargazers_count : '',
     assets: (release.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url })),
     changes: extractChanges(release.body),
+    summary: extractSummary(release.body),
   };
 
   console.log(`Latest: ${rel.tag_name} (${prettyDate(rel.published_at)}), ${rel.stars} stars, ${rel.changes.length} change bullet(s)`);
