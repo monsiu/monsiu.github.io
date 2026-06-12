@@ -336,6 +336,134 @@
     }
     footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { color: var(--accent); }
+
+    /* Screenshots */
+    .shots-lead { margin-bottom: 1.25rem; }
+    .shots-strip {
+      display: flex;
+      gap: 0.85rem;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      padding: 0.25rem 0.25rem 0.9rem;
+      margin: 0 -0.25rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .shots-strip::-webkit-scrollbar { height: 8px; }
+    .shots-strip::-webkit-scrollbar-track { background: transparent; }
+    .shots-strip::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    .shots-strip:hover::-webkit-scrollbar-thumb { background: var(--muted); }
+    .shot-thumb {
+      flex: 0 0 auto;
+      width: 148px;
+      aspect-ratio: 1080 / 2340;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      overflow: hidden;
+      padding: 0;
+      cursor: zoom-in;
+      scroll-snap-align: start;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .shot-thumb:hover, .shot-thumb:focus-visible {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .shot-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .shots-empty { color: var(--muted); font-size: 0.9rem; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.93);
+      display: none;
+      touch-action: none;
+      overscroll-behavior: contain;
+    }
+    .lightbox.open { display: block; }
+    .lightbox-stage {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .lightbox-img {
+      max-width: 100vw;
+      max-height: 100vh;
+      object-fit: contain;
+      transform: translate(0,0) scale(1);
+      transform-origin: center center;
+      will-change: transform;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-user-drag: none;
+      cursor: grab;
+    }
+    .lightbox-img.grabbing { cursor: grabbing; }
+    .lb-btn {
+      position: absolute;
+      z-index: 2;
+      background: rgba(20,20,20,0.6);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .lb-btn:hover { background: rgba(40,40,40,0.85); border-color: var(--accent); }
+    .lb-close {
+      top: 1rem; right: 1rem;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      font-size: 1.6rem; line-height: 1;
+    }
+    .lb-nav {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      font-size: 2rem; line-height: 1;
+    }
+    .lb-prev { left: 1rem; }
+    .lb-next { right: 1rem; }
+    .lb-counter {
+      position: absolute;
+      z-index: 2;
+      bottom: 1.1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: #fff;
+      background: rgba(20,20,20,0.6);
+      border: 1px solid rgba(255,255,255,0.15);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+    }
+    @media (max-width: 600px) {
+      .lb-nav { width: 42px; height: 42px; font-size: 1.6rem; }
+      .lb-prev { left: 0.5rem; }
+      .lb-next { right: 0.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .shot-thumb { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -374,8 +502,12 @@
       <!-- cr:summary:end -->
       <ul>
         <!-- cr:changelog:start (auto-generated from the latest release's "### Changes" section; edits here are overwritten) -->
-        <li><strong>Detail header images sit below the status bar.</strong> On ROM, recovery, device, and device model pages the header artwork no longer creeps up under the status bar; it always starts just beneath it.</li>
-        <li><strong>Easter egg tidy-up.</strong> Removed the persistent badge row on the hidden easter egg screen. Unlocking still shows its brief pop-up; only the always-on strip is gone.</li>
+        <li><strong>It knows your phone.</strong> On Android, Custom RR now detects your device and offers a one-tap jump to its page, with every ROM and recovery that supports it. Not in the catalog? It points you to Treble &amp; GSI or lets you request it. All on-device, no network or tracking.</li>
+        <li><strong>Suggest what to add.</strong> Can't find a ROM, recovery, GSI, or root solution? Request it straight from the app: from the menu (and the desktop side bar), or the quick prompt at the bottom of each list.</li>
+        <li><strong>Request a missing device.</strong> If &quot;Find my phone&quot; turns up nothing, tap &quot;Request this device&quot; to ask for it, with your search prefilled.</li>
+        <li><strong>Device codenames on tap.</strong> Every supported-device chip on ROM and recovery pages now shows the codename next to the model, so you can match a build to your exact phone at a glance.</li>
+        <li><strong>More trustworthy freshness badges.</strong> crDroid, Evolution X, OrangeFox and Project Infinity X now update their &quot;last build&quot; status automatically from their official sources, and a few entries that looked newer than they really were now read correctly.</li>
+        <li><strong>Treble &amp; GSI safety notice up top.</strong> The flashing-risk disclaimer now greets you before the walkthrough instead of hiding at the bottom.</li>
         <!-- cr:changelog:end -->
         <li><a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.0.0" data-cr-href="release" target="_blank" rel="noopener noreferrer" data-ga="customrr_full_changelog">Full changelog on GitHub →</a></li>
       </ul>
@@ -396,6 +528,16 @@
         <div class="feature"><h3>In-app updater</h3><p>Checks GitHub Releases on launch and one-tap downloads the matching APK for your phone's ABI.</p></div>
         <div class="feature"><h3>Material 3 + dynamic color</h3><p>Light, dark, and AMOLED themes. Adaptive layouts: drawer on phones, NavigationRail on tablets, permanent side panel on desktop.</p></div>
         <div class="feature"><h3>Privacy first</h3><p>Zero tracking, zero ads, no Play Services. GPL-3.0, source on GitHub.</p></div>
+      </div>
+    </section>
+
+    <section class="shots" id="screenshots">
+      <h2>Screenshots</h2>
+      <p class="shots-lead">A look at Custom RR running on a phone. Tap any shot to open it full screen, then swipe between screenshots and pinch or scroll to zoom.</p>
+      <div class="shots-strip" id="shotsStrip" aria-label="Custom RR phone screenshots">
+        <noscript>
+          <a href="https://github.com/monsiu/Custom-RR/tree/main/screenshots/phone" target="_blank" rel="noopener noreferrer">View Custom RR phone screenshots on GitHub</a>
+        </noscript>
       </div>
     </section>
 
@@ -464,6 +606,16 @@ flutter run</pre>
     </section>
   </main>
 
+  <div class="lightbox" id="shotsLightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
+    <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close screenshot viewer">&times;</button>
+    <button type="button" class="lb-btn lb-nav lb-prev" id="lbPrev" aria-label="Previous screenshot">&#8249;</button>
+    <div class="lightbox-stage" id="lbStage">
+      <img class="lightbox-img" id="lbImg" src="" alt="" draggable="false" />
+    </div>
+    <button type="button" class="lb-btn lb-nav lb-next" id="lbNext" aria-label="Next screenshot">&#8250;</button>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+
   <footer>
     <span>© <span id="year"></span> Martin Nzau (Monsiu) · GPL-3.0</span>
     <span><a href="/">monsiu.github.io</a> · <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a></span>
@@ -481,6 +633,225 @@ flutter run</pre>
         });
       });
     });
+
+    /* Screenshots gallery + full-screen swipe/zoom viewer */
+    (function () {
+      var REPO = 'monsiu/Custom-RR';
+      var DIR = 'screenshots/phone';
+      var RAW = 'https://raw.githubusercontent.com/' + REPO + '/main/' + DIR + '/';
+      var API = 'https://api.github.com/repos/' + REPO + '/contents/' + DIR + '?ref=main';
+      var CACHE_KEY = 'cr_shots_v1';
+      var TTL = 6 * 60 * 60 * 1000;
+      var FALLBACK = ['01.png', '02.png', '03.png', '04.png', '05.png', '06.png'];
+      var IMG_RE = /^[A-Za-z0-9._-]+\.(png|jpe?g|webp)$/i;
+
+      var strip = document.getElementById('shotsStrip');
+      if (!strip) return;
+      var urls = [];
+
+      function fromCache() {
+        try {
+          var o = JSON.parse(localStorage.getItem(CACHE_KEY));
+          if (!o || (Date.now() - o.t) > TTL || !Array.isArray(o.n)) return null;
+          return o.n;
+        } catch (e) { return null; }
+      }
+      function toCache(names) {
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), n: names })); } catch (e) {}
+      }
+      function namesToUrls(names) {
+        return names.filter(function (n) { return IMG_RE.test(n); })
+          .sort()
+          .map(function (n) { return RAW + n; });
+      }
+      function init(names) {
+        urls = namesToUrls(names);
+        if (!urls.length) urls = namesToUrls(FALLBACK);
+        render();
+      }
+
+      var cached = fromCache();
+      if (cached) {
+        init(cached);
+      } else {
+        fetch(API, { headers: { 'Accept': 'application/vnd.github+json' } })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (list) {
+            var names = Array.isArray(list)
+              ? list.filter(function (it) { return it && it.type === 'file' && IMG_RE.test(it.name || ''); })
+                  .map(function (it) { return it.name; })
+              : [];
+            if (names.length) { toCache(names); init(names); } else { init(FALLBACK); }
+          })
+          .catch(function () { init(FALLBACK); });
+      }
+
+      function render() {
+        strip.innerHTML = '';
+        urls.forEach(function (url, i) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'shot-thumb';
+          btn.setAttribute('aria-label', 'View screenshot ' + (i + 1) + ' full screen');
+          var im = document.createElement('img');
+          im.src = url;
+          im.alt = 'Custom RR screenshot ' + (i + 1);
+          im.loading = 'lazy';
+          im.decoding = 'async';
+          im.onerror = function () {
+            var idx = urls.indexOf(url);
+            if (idx > -1) urls.splice(idx, 1);
+            if (btn.parentNode) btn.parentNode.removeChild(btn);
+          };
+          btn.appendChild(im);
+          btn.addEventListener('click', function () { open(urls.indexOf(url)); });
+          strip.appendChild(btn);
+        });
+      }
+
+      var box = document.getElementById('shotsLightbox');
+      var stage = document.getElementById('lbStage');
+      var img = document.getElementById('lbImg');
+      var counter = document.getElementById('lbCounter');
+      var btnPrev = document.getElementById('lbPrev');
+      var btnNext = document.getElementById('lbNext');
+      var btnClose = document.getElementById('lbClose');
+
+      var index = 0, scale = 1, panX = 0, panY = 0, dragX = 0;
+      var MIN = 1, MAX = 5;
+      var pointers = new Map();
+      var startDist = 1, startScale = 1, startPanX = 0, startPanY = 0;
+      var swipeStartX = 0, swipeStartY = 0, swiping = false, moved = false, lastTap = 0, lastFocus = null;
+
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function apply() {
+        img.style.transform = 'translate(' + (panX + dragX) + 'px,' + panY + 'px) scale(' + scale + ')';
+        img.classList.toggle('grabbing', scale > 1);
+      }
+      function show(i) {
+        index = (i + urls.length) % urls.length;
+        scale = 1; panX = 0; panY = 0; dragX = 0;
+        img.src = urls[index];
+        img.alt = 'Custom RR screenshot ' + (index + 1);
+        counter.textContent = (index + 1) + ' / ' + urls.length;
+        apply();
+      }
+      function open(i) {
+        if (!urls.length || i < 0) return;
+        lastFocus = document.activeElement;
+        box.classList.add('open');
+        box.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        var multi = urls.length > 1;
+        btnPrev.style.display = multi ? '' : 'none';
+        btnNext.style.display = multi ? '' : 'none';
+        counter.style.display = multi ? '' : 'none';
+        show(i);
+        btnClose.focus();
+        if (typeof gtag === 'function') gtag('event', 'screenshot_view', { screenshot_index: i + 1 });
+      }
+      function close() {
+        box.classList.remove('open');
+        box.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        pointers.clear();
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+      function nav(d) { show(index + d); }
+      function resetIfNear() { if (scale <= 1.02) { scale = 1; panX = 0; panY = 0; apply(); } }
+      function dist(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
+      function pts() { return Array.from(pointers.values()); }
+
+      stage.addEventListener('pointerdown', function (e) {
+        stage.setPointerCapture(e.pointerId);
+        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        moved = false;
+        if (pointers.size === 1) {
+          swipeStartX = e.clientX; swipeStartY = e.clientY;
+          startPanX = panX; startPanY = panY;
+          swiping = (scale === 1);
+          var now = Date.now();
+          if (now - lastTap < 300) {
+            if (scale > 1) { scale = 1; panX = 0; panY = 0; } else { scale = 2.5; }
+            apply(); swiping = false;
+          }
+          lastTap = now;
+        } else if (pointers.size === 2) {
+          swiping = false;
+          var p = pts();
+          startDist = dist(p[0], p[1]) || 1;
+          startScale = scale;
+        }
+      });
+
+      stage.addEventListener('pointermove', function (e) {
+        if (!pointers.has(e.pointerId)) return;
+        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        moved = true;
+        var p = pts();
+        if (p.length === 2) {
+          scale = clamp(startScale * (dist(p[0], p[1]) / startDist), MIN, MAX);
+          apply();
+        } else if (p.length === 1) {
+          if (scale > 1 && !swiping) {
+            panX = startPanX + (e.clientX - swipeStartX);
+            panY = startPanY + (e.clientY - swipeStartY);
+            apply();
+          } else if (swiping) {
+            dragX = e.clientX - swipeStartX;
+            apply();
+          }
+        }
+      });
+
+      function endPointer(e) {
+        if (!pointers.has(e.pointerId)) return;
+        var upX = e.clientX;
+        pointers.delete(e.pointerId);
+        if (pointers.size === 0) {
+          if (swiping && scale === 1) {
+            var dx = upX - swipeStartX;
+            if (urls.length > 1 && Math.abs(dx) > 60) nav(dx < 0 ? 1 : -1);
+            else { dragX = 0; apply(); }
+          }
+          dragX = 0;
+          resetIfNear();
+          swiping = false;
+        } else if (pointers.size === 1) {
+          var r = pts()[0];
+          swipeStartX = r.x; swipeStartY = r.y;
+          startPanX = panX; startPanY = panY;
+          swiping = (scale === 1);
+        }
+      }
+      stage.addEventListener('pointerup', endPointer);
+      stage.addEventListener('pointercancel', endPointer);
+
+      stage.addEventListener('wheel', function (e) {
+        e.preventDefault();
+        scale = clamp(scale * (e.deltaY < 0 ? 1.15 : 1 / 1.15), MIN, MAX);
+        if (scale === 1) { panX = 0; panY = 0; }
+        apply();
+      }, { passive: false });
+
+      stage.addEventListener('click', function (e) {
+        if (e.target === img) return;
+        if (!moved && scale === 1) close();
+      });
+
+      btnPrev.addEventListener('click', function () { nav(-1); });
+      btnNext.addEventListener('click', function () { nav(1); });
+      btnClose.addEventListener('click', close);
+
+      document.addEventListener('keydown', function (e) {
+        if (!box.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') nav(-1);
+        else if (e.key === 'ArrowRight') nav(1);
+        else if (e.key === '+' || e.key === '=') { scale = clamp(scale * 1.2, MIN, MAX); apply(); }
+        else if (e.key === '-') { scale = clamp(scale / 1.2, MIN, MAX); if (scale === 1) { panX = 0; panY = 0; } apply(); }
+      });
+    })();
   </script>
 </body>
 </html>
