@@ -8,7 +8,7 @@
  *   - data-cr="version" / "date" / "stars" fallback text
  *   - anchors carrying data-cr-href="release" (href)
  *   - anchors carrying data-cr-asset="SUFFIX" (href)
- *   - JSON-LD: softwareVersion, datePublished, releaseNotes, downloadUrl, ratingCount
+ *   - JSON-LD: softwareVersion, datePublished, releaseNotes, downloadUrl, screenshot list
  *   - og:description prose (version + star count) on the home page
  *
  * Every replacement is version-agnostic, so re-running is idempotent: it only
@@ -141,7 +141,6 @@ function rewrite(html, rel) {
   const tagBase = escapeRe(`https://github.com/${REPO}/releases/tag/`);
   out = out.replace(new RegExp(`("releaseNotes":\\s*"${tagBase})[^"]*(")`, 'g'), `$1${tag}$2`);
   out = out.replace(new RegExp(`("downloadUrl":\\s*"${tagBase})[^"]*(")`, 'g'), `$1${tag}$2`);
-  out = out.replace(/("ratingCount":\s*")[^"]*(")/g, `$1${stars}$2`);
   // JSON-LD screenshot list (real phone screenshots, for richer search results).
   if (rel.screenshots && rel.screenshots.length) {
     const items = rel.screenshots.map((u) => `          ${JSON.stringify(u)}`).join(',\n');

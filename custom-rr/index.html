@@ -86,12 +86,8 @@
         "releaseNotes": "https://github.com/monsiu/Custom-RR/releases/tag/v1.0.0",
         "programmingLanguage": ["Dart", "Flutter"],
         "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-        "author": {
-          "@type": "Person",
-          "name": "Martin Nzau",
-          "alternateName": "Monsiu",
-          "url": "https://monsiu.github.io/"
-        },
+        "author": { "@id": "https://monsiu.github.io/#person" },
+        "publisher": { "@id": "https://monsiu.github.io/#person" },
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "isAccessibleForFree": true,
         "inLanguage": "en",
@@ -108,13 +104,22 @@
           "Available on GitHub, with Google Play and F-Droid coming soon",
           "Native Windows, macOS, and Linux desktop builds",
           "Zero tracking, no ads, no Play Services"
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "ratingCount": "47",
-          "bestRating": "5"
-        }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://monsiu.github.io/#person",
+        "name": "Martin Nzau",
+        "alternateName": "Monsiu",
+        "url": "https://monsiu.github.io/",
+        "sameAs": [
+          "https://github.com/monsiu",
+          "https://x.com/MonsiuTech",
+          "https://www.youtube.com/@monsiutech",
+          "https://t.me/monsiu",
+          "https://discord.gg/uWZR8vR855",
+          "https://linkedin.com/in/martinnzau"
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -253,6 +258,8 @@
       margin-bottom: 2rem;
     }
     .lede strong { color: var(--text); font-weight: 500; }
+    .intro { color: var(--muted); max-width: 680px; margin-bottom: 2rem; }
+    .intro strong { color: var(--text); font-weight: 500; }
 
     .meta-row {
       display: flex;
@@ -594,6 +601,14 @@
       Curates 18 actively maintained ROMs, 4 recoveries, and 700+ devices, sourced live from the
       LineageOS wiki and the PixelOS official_devices repo and refreshed nightly by GitHub Actions.
       Material 3, zero tracking, no Play Services, GPL-3.0.
+    </p>
+    <p class="intro">
+      Whether you are flashing your first custom ROM or juggling a drawer of test devices, Custom RR keeps the
+      whole Android modding workflow in one place: find a build for your exact phone, see how recently it
+      shipped, read the flashing notes, and jump straight to the maintainer's official download. It spans
+      <strong>LineageOS</strong>, <strong>GrapheneOS</strong> and crDroid through <strong>TWRP</strong> and
+      OrangeFox recoveries, <strong>Magisk</strong> and KernelSU root, and Treble GSIs, with no XDA
+      thread-digging required.
     </p>
 
     <div class="meta-row">
