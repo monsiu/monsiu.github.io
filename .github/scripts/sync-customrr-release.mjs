@@ -77,13 +77,14 @@ function mdInlineToHtml(text) {
   return s;
 }
 
-// Pull the bullet lines out of the release body's "### Changes" section, stopping
-// at the next "### " heading (so Android / Desktop / Donation / Install noise is
-// skipped). Returns [] when the section is missing so existing copy is kept.
+// Pull the bullet lines out of the release body's "### Changes" (or "### Highlights")
+// section, stopping at the next "### " heading (so Android / Desktop / Donation /
+// Install noise is skipped). Returns [] when the section is missing so existing
+// copy is kept.
 function extractChanges(body) {
   if (!body) return [];
   const norm = body.replace(/\r\n/g, '\n');
-  const m = norm.match(/###\s+Changes[^\n]*\n([\s\S]*?)(?=\n###\s|$)/);
+  const m = norm.match(/###\s+(?:Changes|Highlights)[^\n]*\n([\s\S]*?)(?=\n###\s|$)/i);
   if (!m) return [];
   const bullets = [];
   for (const line of m[1].split('\n')) {
