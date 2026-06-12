@@ -24,22 +24,31 @@
   <meta name="description" content="Custom RR is the single home for popular Android custom ROMs, custom recoveries, and root solutions. 18 actively maintained ROMs (LineageOS, crDroid, PixelOS, GrapheneOS, and more), 4 recoveries, 700+ devices, with nightly freshness signals, deep links, and native Android, Windows, macOS, and Linux builds. Open source, GPL-3.0." />
   <meta name="keywords" content="Custom RR, custom ROM hub Android, LineageOS device finder, custom recovery TWRP OrangeFox, Magisk KernelSU APatch, GSI Treble hub, Flutter Android app, F-Droid ROM app, GrapheneOS CalyxOS, open source ROM browser" />
   <meta name="author" content="Martin Nzau" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://monsiu.github.io/custom-rr/" />
   <link rel="icon" type="image/png" href="/profile.png" />
   <link rel="apple-touch-icon" href="/profile.png" />
   <meta name="theme-color" content="#0C0C0C" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Monsiu" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Custom RR - A Hub for Android Custom ROMs, Recoveries & Root" />
   <meta property="og:description" content="18 actively maintained ROMs, 4 recoveries, 700+ devices, nightly freshness signals. Android, Windows, macOS, and Linux builds. Open source, GPL-3.0." />
   <meta property="og:url" content="https://monsiu.github.io/custom-rr/" />
   <meta property="og:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
+  <meta property="og:image:width" content="720" />
+  <meta property="og:image:height" content="180" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="Custom RR: the single home for Android custom ROMs, recoveries, and root" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@MonsiuTech" />
   <meta name="twitter:creator" content="@MonsiuTech" />
   <meta name="twitter:title" content="Custom RR - A Hub for Android Custom ROMs, Recoveries & Root" />
   <meta name="twitter:description" content="18 ROMs, 4 recoveries, 700+ devices, nightly freshness signals. Android, Windows, macOS, Linux. Open source." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
+  <meta name="twitter:image:alt" content="Custom RR app banner: a hub for Android custom ROMs and recoveries" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,6 +93,8 @@
           "url": "https://monsiu.github.io/"
         },
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "isAccessibleForFree": true,
+        "inLanguage": "en",
         "featureList": [
           "Curated custom ROMs (LineageOS, crDroid, PixelOS, Project Elixir, Project Infinity X, Evolution X, DerpFest, GrapheneOS, CalyxOS, /e/, and more)",
           "Curated custom recoveries (TWRP, OrangeFox, PBRP, SHRP)",
@@ -110,6 +121,52 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://monsiu.github.io/" },
           { "@type": "ListItem", "position": 2, "name": "Custom RR", "item": "https://monsiu.github.io/custom-rr/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://monsiu.github.io/custom-rr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Custom RR?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Custom RR is a free, open-source Android app and desktop tool that acts as a single hub for custom ROMs, custom recoveries, root solutions, and Treble GSIs. It lists official download links, screenshots, freshness signals, and flashing notes for 700+ devices." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Custom RR free and open source?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Custom RR is released under the GPL-3.0 license with full source on GitHub. There are no ads, no tracking, and no Google Play Services." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need root or an unlocked bootloader to use Custom RR?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Custom RR is a browser and catalog, so the app itself needs neither root nor an unlocked bootloader. You only need those if you choose to flash a ROM, recovery, or root solution it links to." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which devices and ROMs does Custom RR support?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Custom RR covers 700+ devices and 18 actively maintained ROMs, including LineageOS, crDroid, PixelOS, Evolution X, DerpFest, GrapheneOS, and CalyxOS. Device data is sourced live from the LineageOS wiki and the PixelOS official_devices repo and refreshed nightly." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a custom ROM and a custom recovery?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A custom ROM such as LineageOS or crDroid replaces your phone's operating system. A custom recovery such as TWRP or OrangeFox is the environment you boot into to flash ROMs, take backups, and wipe data. Custom RR lists both." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which root solutions does Custom RR cover?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Custom RR has a dedicated root section covering Magisk, KernelSU, KernelSU Next, APatch, and SukiSU Ultra, each with live release dates and links to the official source." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Custom RR work on Windows, macOS, and Linux?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alongside Android, Custom RR ships native Windows, macOS (Apple Silicon and Intel), and Linux desktop builds from the same Flutter source, with the same catalog and features." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Custom RR collect data or show ads?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Custom RR has zero tracking, zero ads, and no Google Play Services. It only fetches the public ROM catalog and GitHub release data; everything else stays on your device." }
+          }
         ]
       }
     ]
@@ -359,6 +416,43 @@
     .callout ol li strong { color: var(--text); font-weight: 500; }
     .callout-sub { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
     .callout-note { font-size: 0.86rem; margin-bottom: 0; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.25rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 1.3rem;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { content: '\2212'; }
+    .faq-item summary:hover { color: var(--accent); }
+    .faq-item .faq-answer { padding: 0 1.25rem 1.1rem; }
+    .faq-item .faq-answer p { margin-bottom: 0; font-size: 0.95rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .faq-item summary::after { transition: none; }
+    }
 
     /* Screenshots */
     .shots-lead { margin-bottom: 1.25rem; }
@@ -633,6 +727,44 @@ cd Custom-RR
 flutter pub get
 flutter run</pre>
       <p>Requirements: Flutter 3.22+, Dart 3.4+, Java 17, Android SDK 36, minSdk 21. See the <a href="https://github.com/monsiu/Custom-RR#build-from-source" target="_blank" rel="noopener noreferrer" data-ga="customrr_build_docs">build docs</a> for desktop prereqs.</p>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>What is Custom RR?</summary>
+          <div class="faq-answer"><p>Custom RR is a free, open-source Android app and desktop tool that acts as a single hub for custom ROMs, custom recoveries, root solutions, and Treble GSIs. It lists official download links, screenshots, freshness signals, and flashing notes for 700+ devices.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Is Custom RR free and open source?</summary>
+          <div class="faq-answer"><p>Yes. Custom RR is released under the GPL-3.0 license with full source on GitHub. There are no ads, no tracking, and no Google Play Services.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need root or an unlocked bootloader to use Custom RR?</summary>
+          <div class="faq-answer"><p>No. Custom RR is a browser and catalog, so the app itself needs neither root nor an unlocked bootloader. You only need those if you choose to flash a ROM, recovery, or root solution it links to.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Which devices and ROMs does Custom RR support?</summary>
+          <div class="faq-answer"><p>Custom RR covers 700+ devices and 18 actively maintained ROMs, including LineageOS, crDroid, PixelOS, Evolution X, DerpFest, GrapheneOS, and CalyxOS. Device data is sourced live from the LineageOS wiki and the PixelOS official_devices repo and refreshed nightly.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the difference between a custom ROM and a custom recovery?</summary>
+          <div class="faq-answer"><p>A custom ROM such as LineageOS or crDroid replaces your phone's operating system. A custom recovery such as TWRP or OrangeFox is the environment you boot into to flash ROMs, take backups, and wipe data. Custom RR lists both.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Which root solutions does Custom RR cover?</summary>
+          <div class="faq-answer"><p>Custom RR has a dedicated root section covering Magisk, KernelSU, KernelSU Next, APatch, and SukiSU Ultra, each with live release dates and links to the official source.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Does Custom RR work on Windows, macOS, and Linux?</summary>
+          <div class="faq-answer"><p>Yes. Alongside Android, Custom RR ships native Windows, macOS (Apple Silicon and Intel), and Linux desktop builds from the same Flutter source, with the same catalog and features.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Does Custom RR collect data or show ads?</summary>
+          <div class="faq-answer"><p>No. Custom RR has zero tracking, zero ads, and no Google Play Services. It only fetches the public ROM catalog and GitHub release data; everything else stays on your device.</p></div>
+        </details>
+      </div>
     </section>
 
     <section>
