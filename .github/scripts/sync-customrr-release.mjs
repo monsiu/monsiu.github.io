@@ -142,7 +142,13 @@ function rewrite(html, rel) {
   out = out.replace(new RegExp(`("releaseNotes":\\s*"${tagBase})[^"]*(")`, 'g'), `$1${tag}$2`);
   out = out.replace(new RegExp(`("downloadUrl":\\s*"${tagBase})[^"]*(")`, 'g'), `$1${tag}$2`);
   out = out.replace(/("ratingCount":\s*")[^"]*(")/g, `$1${stars}$2`);
-
+  // JSON-LD screenshot list (real phone screenshots, for richer search results).
+  if (rel.screenshots && rel.screenshots.length) {
+    const items = rel.screenshots.map((u) => `          ${JSON.stringify(u)}`).join(',\n');
+    out = out.replace(/("screenshot":\s*)(?:"[^"]*"|\[[\s\S]*?\])(,)/, function (m, p1, p2) {
+      return p1 + '[\n' + items + '\n        ]' + p2;
+    });
+  }
   // og:description prose on the home page (version + star count).
   out = out.replace(/Custom RR v\d+\.\d+\.\d+ \(cross-platform/g, `Custom RR ${tag} (cross-platform`);
   out = out.replace(/ROM\/recovery hub, \d+\+ GitHub stars/g, `ROM/recovery hub, ${stars}+ GitHub stars`);
@@ -166,6 +172,22 @@ async function main() {
   const [release, repo] = await Promise.all([getJSON(`${API}/releases/latest`), getJSON(API)]);
   if (!release || !release.tag_name) throw new Error('No tag_name in latest release');
 
+  // Phone screenshots, sorted, for the JSON-LD screenshot list. Best-effort: if
+  // the folder is unreachable, leave the existing screenshot value untouched.
+  let screenshots = [];
+  try {
+    const contents = await getJSON(`${API}/contents/screenshots/phone?ref=main`);
+    if (Array.isArray(contents)) {
+      screenshots = contents
+        .filter((it) => it && it.type === 'file' && /^[A-Za-z0-9._-]+\.(png|jpe?g|webp)$/i.test(it.name))
+        .map((it) => it.name)
+        .sort()
+        .map((n) => `https://raw.githubusercontent.com/${REPO}/main/screenshots/phone/${n}`);
+    }
+  } catch (e) {
+    console.log('screenshots fetch failed; leaving JSON-LD screenshot as-is');
+  }
+
   const rel = {
     tag_name: release.tag_name,
     published_at: release.published_at,
@@ -173,9 +195,10 @@ async function main() {
     assets: (release.assets || []).map((a) => ({ name: a.name, url: a.browser_download_url })),
     changes: extractChanges(release.body),
     summary: extractSummary(release.body),
+    screenshots,
   };
 
-  console.log(`Latest: ${rel.tag_name} (${prettyDate(rel.published_at)}), ${rel.stars} stars, ${rel.changes.length} change bullet(s)`);
+  console.log(`Latest: ${rel.tag_name} (${prettyDate(rel.published_at)}), ${rel.stars} stars, ${rel.changes.length} change bullet(s), ${screenshots.length} screenshot(s)`);
 
   let changed = 0;
   for (const file of files) {
