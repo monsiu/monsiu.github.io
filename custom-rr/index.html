@@ -21,7 +21,7 @@
   <script defer src="/consent.js"></script>
   <script defer src="/release.js"></script>
   <title>Custom RR - A Hub for Android Custom ROMs, Recoveries & Root | Monsiu</title>
-  <meta name="description" content="Custom RR is the single home for popular Android custom ROMs, custom recoveries, and root solutions. 18 actively maintained ROMs (LineageOS, crDroid, PixelOS, GrapheneOS, and more), 4 recoveries, 700+ devices, with nightly freshness signals, deep links, and native Android, Windows, and Linux builds. Open source, GPL-3.0." />
+  <meta name="description" content="Custom RR is the single home for popular Android custom ROMs, custom recoveries, and root solutions. 18 actively maintained ROMs (LineageOS, crDroid, PixelOS, GrapheneOS, and more), 4 recoveries, 700+ devices, with nightly freshness signals, deep links, and native Android, Windows, macOS, and Linux builds. Open source, GPL-3.0." />
   <meta name="keywords" content="Custom RR, custom ROM hub Android, LineageOS device finder, custom recovery TWRP OrangeFox, Magisk KernelSU APatch, GSI Treble hub, Flutter Android app, F-Droid ROM app, GrapheneOS CalyxOS, open source ROM browser" />
   <meta name="author" content="Martin Nzau" />
   <link rel="canonical" href="https://monsiu.github.io/custom-rr/" />
@@ -31,14 +31,14 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Custom RR - A Hub for Android Custom ROMs, Recoveries & Root" />
-  <meta property="og:description" content="18 actively maintained ROMs, 4 recoveries, 700+ devices, nightly freshness signals. Android, Windows, and Linux builds. Open source, GPL-3.0." />
+  <meta property="og:description" content="18 actively maintained ROMs, 4 recoveries, 700+ devices, nightly freshness signals. Android, Windows, macOS, and Linux builds. Open source, GPL-3.0." />
   <meta property="og:url" content="https://monsiu.github.io/custom-rr/" />
   <meta property="og:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@MonsiuTech" />
   <meta name="twitter:creator" content="@MonsiuTech" />
   <meta name="twitter:title" content="Custom RR - A Hub for Android Custom ROMs, Recoveries & Root" />
-  <meta name="twitter:description" content="18 ROMs, 4 recoveries, 700+ devices, nightly freshness signals. Android, Windows, Linux. Open source." />
+  <meta name="twitter:description" content="18 ROMs, 4 recoveries, 700+ devices, nightly freshness signals. Android, Windows, macOS, Linux. Open source." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,7 +55,7 @@
         "name": "Custom RR",
         "applicationCategory": "MobileApplication",
         "applicationSubCategory": "Utilities",
-        "operatingSystem": "Android 5.0+, Windows 10/11, Linux",
+        "operatingSystem": "Android 5.0+, Windows 10/11, macOS 10.15+, Linux",
         "url": "https://monsiu.github.io/custom-rr/",
         "sameAs": [
           "https://github.com/monsiu/Custom-RR",
@@ -88,7 +88,7 @@
           "Deep links for every ROM, recovery, device, and brand",
           "In-app update check against GitHub Releases",
           "Available on GitHub, with Google Play and F-Droid coming soon",
-          "Native Windows and Linux desktop builds",
+          "Native Windows, macOS, and Linux desktop builds",
           "Zero tracking, no ads, no Play Services"
         ],
         "aggregateRating": {
@@ -337,6 +337,22 @@
     footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
+    /* Help / beta callout */
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 10px;
+      padding: 1.6rem 1.7rem;
+    }
+    .callout h2 { margin-bottom: 0.6rem; }
+    .callout h3 { margin-bottom: 0.4rem; }
+    .callout p { margin-bottom: 0.75rem; }
+    .callout ol { margin: 0 0 0.5rem 1.25rem; color: var(--muted); }
+    .callout ol li { margin-bottom: 0.55rem; }
+    .callout ol li strong { color: var(--text); font-weight: 500; }
+    .callout-sub { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
+    .callout-note { font-size: 0.86rem; margin-bottom: 0; }
+
     /* Screenshots */
     .shots-lead { margin-bottom: 1.25rem; }
     .shots-strip {
@@ -482,7 +498,7 @@
     <div class="meta-row">
       <span class="meta-chip solid"><span data-cr="version">v1.0.0</span> · <span data-cr="date">Jun 2026</span></span>
       <span class="meta-chip"><span data-cr="stars">47</span>+ GitHub stars</span>
-      <span class="meta-chip">Android · Windows · Linux</span>
+      <span class="meta-chip">Android · Windows · macOS · Linux</span>
       <span class="meta-chip">GPL-3.0</span>
     </div>
 
@@ -494,6 +510,21 @@
     </div>
 
     <img src="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" alt="Custom RR banner: the single home for Android custom ROMs and recoveries" class="banner" loading="lazy" decoding="async" />
+
+    <section class="callout" id="beta">
+      <h2>Help launch Custom RR on Google Play</h2>
+      <p>Custom RR is in <strong>closed testing</strong> on Google Play, and Google needs a group of testers before it can go live to everyone. You can help it launch in three quick steps, and you get the app early:</p>
+      <ol>
+        <li><strong>Sign in to your Google account</strong>, the same one you use on your phone.</li>
+        <li><strong>Join the testers group:</strong> open <a href="https://groups.google.com/g/custom-rr-play-testers" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_group">the Custom RR testers group</a> and click <strong>Join group</strong>. Viewing the group is not enough, you have to actually join.</li>
+        <li><strong>Opt in and install:</strong> open the <a href="https://play.google.com/apps/testing/io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_optin">testing opt-in page</a>, accept the invite, then get it on the <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_store">Play Store</a>.</li>
+      </ol>
+      <p class="callout-note">Use the <strong>same Google account</strong> for all three steps, or Play will say you are not a tester. Access can take a little while to propagate after you join. Prefer not to use Google Play? Grab the <a href="https://github.com/monsiu/Custom-RR/releases" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_apk">APK from GitHub Releases</a> or wait for F-Droid. Questions? <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer" data-ga="customrr_discord">Join the Discord</a>.</p>
+      <div class="callout-sub">
+        <h3>Also: macOS testers wanted</h3>
+        <p class="callout-note">The new macOS build has not yet been verified on real Apple hardware and ships unsigned. If you run it on an Apple Silicon or Intel Mac, please report whether it launches, the catalog loads, and screenshots and the update check work, plus your macOS version, on the <a href="https://github.com/monsiu/Custom-RR/issues" target="_blank" rel="noopener noreferrer" data-ga="customrr_macos_testers">issue tracker</a> or the Discord. Signing and notarization help is very welcome too.</p>
+      </div>
+    </section>
 
     <section>
       <h2>What's new in v1.0.0</h2>
@@ -556,6 +587,10 @@
           <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.0.0/custom_rr-v1.0.0-windows-arm64.zip" data-cr-asset="windows-arm64.zip" data-ga="customrr_win_arm64">windows-arm64.zip</a>
         </div>
         <div class="download-card">
+          <h3>macOS</h3>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.0.0/custom_rr-v1.0.0-macos-universal.zip" data-cr-asset="macos-universal.zip" data-ga="customrr_macos">macos-universal.zip (Apple Silicon &amp; Intel)</a>
+        </div>
+        <div class="download-card">
           <h3>Linux</h3>
           <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.0.0/custom_rr-v1.0.0-linux-x64.tar.gz" data-cr-asset="linux-x64.tar.gz" data-ga="customrr_linux_x64">linux-x64.tar.gz</a>
           <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.0.0/custom_rr-v1.0.0-linux-arm64.tar.gz" data-cr-asset="linux-arm64.tar.gz" data-ga="customrr_linux_arm64">linux-arm64.tar.gz</a>
@@ -574,6 +609,8 @@ cd custom_rr-<span data-cr="version">v1.0.0</span>-linux-x64
       <p>Optional: run <code>./install.sh</code> to register a desktop entry.</p>
       <h3>Windows</h3>
       <p>Extract the zip and double-click <code>Custom_RR.exe</code>. Fully portable, no admin rights needed.</p>
+      <h3>macOS</h3>
+      <p>Requires macOS 10.15 (Catalina) or newer. Extract the zip and move the Custom RR app to your Applications folder. The build is unsigned for now, so Gatekeeper blocks it on first launch: on macOS 14 and earlier, right-click the app and choose <strong>Open</strong>; on macOS 15 (Sequoia) and newer, double-click it, then open <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>. You only need to do this once.</p>
     </section>
 
     <section>
