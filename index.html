@@ -243,6 +243,7 @@
     * { transition: background-color 0.25s, border-color 0.25s, color 0.25s; }
 
     html { scroll-behavior: smooth; }
+    html, body { overflow-x: hidden; }
 
     body {
       background: var(--bg);
@@ -306,6 +307,32 @@
       flex-shrink: 0;
     }
     .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      padding: 0 8px;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.2s ease;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     .nav-right { display: flex; align-items: center; gap: 1.5rem; }
 
@@ -750,7 +777,7 @@
 
     #contact { padding-bottom: 8rem; }
 
-    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5rem; align-items: start; }
 
     .contact-heading {
       font-family: 'Syne', sans-serif;
@@ -765,7 +792,7 @@
 
     .contact-subtext { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
 
-    .contact-links { display: flex; flex-direction: column; border: 1px solid var(--border); }
+    .contact-links { display: flex; flex-direction: column; border: 1px solid var(--border); min-width: 0; }
 
     .contact-link {
       display: flex;
@@ -789,7 +816,7 @@
       width: 70px;
     }
 
-    .contact-link-value { font-size: 0.88rem; color: var(--text); flex: 1; padding: 0 1rem; }
+    .contact-link-value { font-size: 0.88rem; color: var(--text); flex: 1; padding: 0 1rem; min-width: 0; overflow-wrap: anywhere; }
 
     .contact-link-arrow { color: var(--muted); font-size: 0.9rem; transition: color 0.2s, transform 0.2s; }
     .contact-link:hover .contact-link-arrow { color: var(--accent); transform: translate(2px, -2px); }
@@ -919,18 +946,64 @@
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    @media (min-width: 701px) and (max-width: 900px) {
+      .container { padding: 0 1.75rem; }
+      .hero-inner { gap: 2.5rem; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
     @media (max-width: 700px) {
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 1.5rem; }
       .container { padding: 0 1.25rem; }
       section { padding: 4rem 0; }
       .hero-inner { grid-template-columns: 1fr; }
+      .hero-name { font-size: clamp(2.2rem, 11vw, 3.4rem); }
       .hero-photo { order: -1; }
       .photo-ring { width: 160px; height: 160px; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .skills-grid { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-inner { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+      .contact-heading { font-size: clamp(1.5rem, 7vw, 2.75rem); }
+      .contact-link { padding: 0.9rem 1rem; }
+      .contact-link-value { padding: 0 0.75rem; }
       .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-toggle { display: flex; }
+      .nav-right { gap: 0.85rem; }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 0.5rem 1.25rem 1rem;
+        background: var(--bg-nav);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        max-height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+      }
+      .nav-links.open { transform: translateY(0); opacity: 1; visibility: visible; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block;
+        padding: 0.9rem 0.25rem;
+        font-size: 0.8rem;
+        opacity: 1;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links li:last-child a { border-bottom: none; }
     }
   </style>
 </head>
@@ -939,7 +1012,7 @@
   <nav id="navbar">
     <a href="#hero" class="nav-logo">My Portfolio</a>
     <div class="nav-right">
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Work</a></li>
         <li><a href="/custom-rr/" data-ga="nav_custom_rr">Custom RR</a></li>
@@ -949,6 +1022,9 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -1476,6 +1552,33 @@
         });
       });
     });
+
+    /* Mobile nav hamburger menu */
+    (function () {
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+      if (!navToggle || !navLinks) return;
+      function setMenu(open) {
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        navLinks.classList.toggle('open', open);
+      }
+      navToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setMenu(navToggle.getAttribute('aria-expanded') !== 'true');
+      });
+      navLinks.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setMenu(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setMenu(false);
+      });
+      document.addEventListener('click', function (e) {
+        if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+          setMenu(false);
+        }
+      });
+    })();
 
     /* In-page certificate PDF viewer */
     (function () {
