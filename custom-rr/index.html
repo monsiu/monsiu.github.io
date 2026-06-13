@@ -237,16 +237,46 @@
 
     .container { max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem 5rem; }
 
-    .back {
-      display: inline-block;
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .topbar-home {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .topbar-home:hover { color: var(--accent); }
+    .topbar-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .topbar-nav a {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
-      margin-bottom: 2.5rem;
-      letter-spacing: 0.05em;
     }
-    .back:hover { color: var(--accent); }
+    .topbar-nav a:hover { color: var(--accent); }
+    .topbar-nav a.hire {
+      color: var(--accent);
+      border: 1px solid rgba(79,142,247,0.35);
+      border-radius: 6px;
+      padding: 0.4rem 0.8rem;
+    }
+    .topbar-nav a.hire:hover { background: var(--accent-dim); }
 
     .eyebrow {
       font-family: 'IBM Plex Mono', monospace;
@@ -607,7 +637,14 @@
 </head>
 <body>
   <main class="container">
-    <a href="/" class="back" data-ga="customrr_back">← Back to monsiu.github.io</a>
+    <nav class="topbar" aria-label="Site">
+      <a href="/" class="topbar-home" data-ga="customrr_home">Monsiu</a>
+      <div class="topbar-nav">
+        <a href="/" data-ga="customrr_portfolio">Portfolio</a>
+        <a href="/#projects" data-ga="customrr_work">Work</a>
+        <a href="/services/" class="hire" data-ga="customrr_hire">Hire me</a>
+      </div>
+    </nav>
 
     <p class="eyebrow">// Open Source Android App</p>
     <h1>Custom RR</h1>
@@ -843,7 +880,7 @@ flutter run</pre>
 
   <footer>
     <span>© <span id="year"></span> Martin Nzau (Monsiu) · GPL-3.0</span>
-    <span><a href="/">monsiu.github.io</a> · <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a></span>
+    <span><a href="/">Portfolio</a> · <a href="/services/">Hire me</a> · <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a></span>
   </footer>
 
   <script>
