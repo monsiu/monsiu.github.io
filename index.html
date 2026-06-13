@@ -79,6 +79,49 @@
           "Gemini AI", "AI/ML API integration", "Featherless", "Speechmatics", "Resend",
           "AI Agents", "Agentic Workflows", "Contract Risk Analysis",
           "Hackathons", "Web Development", "Mobile Development", "Software Engineering"
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Certified Ethical Hacker (CEH)",
+            "credentialCategory": "Professional Certification",
+            "recognizedBy": { "@type": "Organization", "name": "EC-Council", "url": "https://www.eccouncil.org/" },
+            "url": "https://monsiu.github.io/certs/ceh-ec-council.pdf",
+            "dateCreated": "2024-02-23",
+            "validThrough": "2027-02-28"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "AI Agent Olympics Hackathon",
+            "credentialCategory": "Certificate of Completion",
+            "recognizedBy": { "@type": "Organization", "name": "lablab.ai (NativelyAI)", "url": "https://lablab.ai/" },
+            "url": "https://monsiu.github.io/certs/ai-agent-olympics-hackathon.pdf",
+            "dateCreated": "2026-05-19"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Agentic Economy on Arc",
+            "credentialCategory": "Certificate of Completion",
+            "recognizedBy": { "@type": "Organization", "name": "lablab.ai (NativelyAI)", "url": "https://lablab.ai/" },
+            "url": "https://monsiu.github.io/certs/agentic-economy-on-arc.pdf",
+            "dateCreated": "2026-04-26"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Data Protection Course",
+            "credentialCategory": "Certificate of Participation",
+            "recognizedBy": { "@type": "Organization", "name": "Strathmore University CIPIT", "url": "https://cipit.strathmore.edu/" },
+            "url": "https://monsiu.github.io/certs/data-protection-cipit.pdf",
+            "dateCreated": "2024-10-22"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Introduction to Cybersecurity",
+            "credentialCategory": "Certificate of Course Completion",
+            "recognizedBy": { "@type": "Organization", "name": "Cisco Networking Academy", "url": "https://www.netacad.com/" },
+            "url": "https://monsiu.github.io/certs/introduction-to-cybersecurity-cisco.pdf",
+            "dateCreated": "2020-08-10"
+          }
         ]
       },
       {
@@ -767,6 +810,108 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: left;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .cert-card:hover, .cert-card:focus-visible {
+      background: var(--bg-hover);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .cert-issuer {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .cert-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--text);
+    }
+    .cert-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-top: auto;
+    }
+    .cert-view {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-top: 0.35rem;
+    }
+
+    /* PDF viewer modal */
+    .pdf-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      padding: clamp(0.75rem, 3vw, 2.5rem);
+    }
+    .pdf-modal.open { display: flex; flex-direction: column; }
+    .pdf-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 0.5rem;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    .pdf-bar .pdf-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-right: auto;
+    }
+    .pdf-action {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 0.45rem 0.85rem;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .pdf-action:hover { background: rgba(255,255,255,0.2); border-color: var(--accent); color: #fff; }
+    .pdf-frame-wrap {
+      flex: 1;
+      min-height: 0;
+      background: #1a1a1a;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .pdf-frame-wrap iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
+
     .reveal {
       opacity: 0;
       transform: translateY(16px);
@@ -798,6 +943,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Work</a></li>
         <li><a href="/custom-rr/" data-ga="nav_custom_rr">Custom RR</a></li>
+        <li><a href="#certifications">Certs</a></li>
         <li><a href="#experience">Exp</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -1093,6 +1239,47 @@
     </div>
   </section>
 
+  <section id="certifications">
+    <div class="container">
+      <h2 class="section-label reveal">Certifications</h2>
+      <p class="project-desc reveal" style="margin-bottom: 1.5rem; max-width: 100%;">
+        A selection of my credentials. Tap any card to view the certificate as a PDF, in the browser.
+      </p>
+      <div class="cert-grid reveal">
+        <button type="button" class="cert-card" data-pdf="/certs/ceh-ec-council.pdf" data-ga="cert_ceh">
+          <span class="cert-issuer">EC-Council</span>
+          <span class="cert-title">Certified Ethical Hacker (CEH)</span>
+          <span class="cert-meta">Issued Feb 2024 · valid through Feb 2027</span>
+          <span class="cert-view">View certificate →</span>
+        </button>
+        <button type="button" class="cert-card" data-pdf="/certs/ai-agent-olympics-hackathon.pdf" data-ga="cert_ai_olympics">
+          <span class="cert-issuer">lablab.ai · NativelyAI</span>
+          <span class="cert-title">AI Agent Olympics Hackathon</span>
+          <span class="cert-meta">May 2026 · Gemini 3 Pro, AI/ML API, Speechmatics</span>
+          <span class="cert-view">View certificate →</span>
+        </button>
+        <button type="button" class="cert-card" data-pdf="/certs/agentic-economy-on-arc.pdf" data-ga="cert_arc">
+          <span class="cert-issuer">lablab.ai · NativelyAI</span>
+          <span class="cert-title">Agentic Economy on Arc</span>
+          <span class="cert-meta">Apr 2026 · Gemini 3 Flash, Circle, Arc</span>
+          <span class="cert-view">View certificate →</span>
+        </button>
+        <button type="button" class="cert-card" data-pdf="/certs/data-protection-cipit.pdf" data-ga="cert_data_protection">
+          <span class="cert-issuer">Strathmore CIPIT</span>
+          <span class="cert-title">Data Protection Course</span>
+          <span class="cert-meta">Oct 2024</span>
+          <span class="cert-view">View certificate →</span>
+        </button>
+        <button type="button" class="cert-card" data-pdf="/certs/introduction-to-cybersecurity-cisco.pdf" data-ga="cert_intro_cyber">
+          <span class="cert-issuer">Cisco Networking Academy</span>
+          <span class="cert-title">Introduction to Cybersecurity</span>
+          <span class="cert-meta">Aug 2020</span>
+          <span class="cert-view">View certificate →</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <section id="experience">
     <div class="container">
       <h2 class="section-label reveal">Experience</h2>
@@ -1242,6 +1429,18 @@
 <p>© <span id="year"></span> <span class="accent">Martin Nzau (Monsiu) Portfolio</span></p>    <p>Built clean. Deployed sharp.</p>
   </footer>
 
+  <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true" aria-label="Certificate viewer" aria-hidden="true">
+    <div class="pdf-bar">
+      <span class="pdf-name" id="pdfName">Certificate</span>
+      <a class="pdf-action" id="pdfOpen" href="#" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+      <a class="pdf-action" id="pdfDownload" href="#" download>Download</a>
+      <button type="button" class="pdf-action" id="pdfClose" aria-label="Close certificate viewer">Close ✕</button>
+    </div>
+    <div class="pdf-frame-wrap">
+      <iframe id="pdfFrame" title="Certificate PDF" src="about:blank"></iframe>
+    </div>
+  </div>
+
   <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     const navbar = document.getElementById('navbar');
@@ -1277,6 +1476,48 @@
         });
       });
     });
+
+    /* In-page certificate PDF viewer */
+    (function () {
+      var modal = document.getElementById('pdfModal');
+      if (!modal) return;
+      var frame = document.getElementById('pdfFrame');
+      var nameEl = document.getElementById('pdfName');
+      var openEl = document.getElementById('pdfOpen');
+      var dlEl = document.getElementById('pdfDownload');
+      var closeBtn = document.getElementById('pdfClose');
+      var lastFocus = null;
+
+      function openPdf(url, title) {
+        lastFocus = document.activeElement;
+        nameEl.textContent = title;
+        openEl.href = url;
+        dlEl.href = url;
+        frame.src = url;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function closePdf() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        frame.src = 'about:blank';
+        document.body.style.overflow = '';
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }
+      document.querySelectorAll('.cert-card[data-pdf]').forEach(function (card) {
+        card.addEventListener('click', function () {
+          var t = card.querySelector('.cert-title');
+          openPdf(card.getAttribute('data-pdf'), t ? t.textContent : 'Certificate');
+        });
+      });
+      closeBtn.addEventListener('click', closePdf);
+      modal.addEventListener('click', function (e) { if (e.target === modal) closePdf(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closePdf();
+      });
+    })();
   </script>
 
 </body>
