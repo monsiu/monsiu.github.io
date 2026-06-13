@@ -541,12 +541,12 @@
     <a href="/" class="nav-logo">Martin Nzau</a>
     <div class="nav-right">
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#about">About</a></li>
-        <li><a href="/#projects">Work</a></li>
-        <li><a href="/custom-rr/">Custom RR</a></li>
-        <li><a href="/#experience">Exp</a></li>
-        <li><a href="/services/" class="active">Services</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/#about" data-ga="svc_nav_about">About</a></li>
+        <li><a href="/#projects" data-ga="svc_nav_work">Work</a></li>
+        <li><a href="/custom-rr/" data-ga="svc_nav_customrr">Custom RR</a></li>
+        <li><a href="/#experience" data-ga="svc_nav_exp">Exp</a></li>
+        <li><a href="/services/" class="active" data-ga="svc_nav_services">Services</a></li>
+        <li><a href="/#contact" data-ga="svc_nav_contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -775,8 +775,8 @@
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Send Request</button>
-          <a href="/" class="btn btn-ghost">Back to Home</a>
+          <button type="submit" class="btn btn-primary" data-ga="svc_send_request">Send Request</button>
+          <a href="/" class="btn btn-ghost" data-ga="svc_back_home">Back to Home</a>
         </div>
 
         <p class="form-note">
@@ -785,11 +785,11 @@
 
         <div class="alt-contact">
           <span>Prefer direct contact?</span>
-          <a href="mailto:contactmonsiu@gmail.com">contactmonsiu@gmail.com</a>
-          <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a>
-          <a href="https://linkedin.com/in/martinnzau" target="_blank" rel="noopener noreferrer">linkedin.com/in/martinnzau</a>
-          <a href="https://x.com/MonsiuTech" target="_blank" rel="noopener noreferrer">x.com/MonsiuTech</a>
-          <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">Upwork (reviews)</a>
+          <a href="mailto:contactmonsiu@gmail.com" data-ga="svc_email">contactmonsiu@gmail.com</a>
+          <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer" data-ga="svc_github">github.com/monsiu</a>
+          <a href="https://linkedin.com/in/martinnzau" target="_blank" rel="noopener noreferrer" data-ga="svc_linkedin">linkedin.com/in/martinnzau</a>
+          <a href="https://x.com/MonsiuTech" target="_blank" rel="noopener noreferrer" data-ga="svc_twitter">x.com/MonsiuTech</a>
+          <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer" data-ga="svc_upwork">Upwork (reviews)</a>
         </div>
       </form>
     </div>
@@ -849,6 +849,27 @@
 
     // Form posts directly to FormSubmit. No JS submit handler needed.
     // The browser handles required-field validation natively.
+
+    /* GA CTA + conversion tracking */
+    document.querySelectorAll('[data-ga]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag !== 'function') return;
+        gtag('event', 'cta_click', {
+          cta_id: el.getAttribute('data-ga'),
+          cta_text: (el.textContent || '').trim().slice(0, 60),
+          cta_href: el.getAttribute('href') || ''
+        });
+      });
+    });
+
+    var requestForm = document.getElementById('requestForm');
+    if (requestForm) {
+      requestForm.addEventListener('submit', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { form_id: 'services_request', form_destination: 'formsubmit' });
+        }
+      });
+    }
   </script>
 
 </body>
