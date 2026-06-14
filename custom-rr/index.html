@@ -338,6 +338,8 @@
       border-radius: 8px;
       font-size: 0.92rem;
       font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
       text-decoration: none;
       transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s;
     }
@@ -855,6 +857,7 @@ flutter run</pre>
       <p>Custom RR is free, open source, and ad-free. If it saved you time before a flash, you can help keep it maintained:</p>
       <div class="cta-row">
         <a href="https://buymeacoffee.com/monsiutech" target="_blank" rel="noopener noreferrer" class="btn btn-coffee" data-ga="customrr_coffee_section">Buy Me a Coffee</a>
+        <button type="button" id="shareBtn" class="btn btn-ghost" data-ga="customrr_share">Share</button>
       </div>
       <p>Prefer crypto? The app ships a donation sheet with Bitcoin, Litecoin, Ethereum, BNB, Solana, and Monero addresses, plus a no-KYC swap-to-Monero option.</p>
     </section>
@@ -898,6 +901,35 @@ flutter run</pre>
         });
       });
     });
+
+    /* Share button: native share sheet with clipboard fallback */
+    (function () {
+      var shareBtn = document.getElementById('shareBtn');
+      if (!shareBtn) return;
+      var shareData = {
+        title: 'Custom RR',
+        text: 'The single home for popular Android custom ROMs, custom recoveries, root solutions, and Treble GSIs.',
+        url: 'https://monsiu.github.io/custom-rr/'
+      };
+      var defaultLabel = shareBtn.textContent;
+      var resetTimer;
+      function flash(msg) {
+        clearTimeout(resetTimer);
+        shareBtn.textContent = msg;
+        resetTimer = setTimeout(function () { shareBtn.textContent = defaultLabel; }, 2000);
+      }
+      shareBtn.addEventListener('click', function () {
+        if (navigator.share) {
+          navigator.share(shareData).catch(function () {});
+        } else if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareData.url)
+            .then(function () { flash('Link copied!'); })
+            .catch(function () { window.prompt('Copy this link:', shareData.url); });
+        } else {
+          window.prompt('Copy this link:', shareData.url);
+        }
+      });
+    })();
 
     /* Screenshots gallery + full-screen swipe/zoom viewer */
     (function () {
