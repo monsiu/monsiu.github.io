@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Forward to the Google Play closed-test opt-in. A short delay lets the
+       branded card render (and analytics record the visit) before redirecting;
+       the button below is the fallback if the redirect is blocked. -->
+  <meta http-equiv="refresh" content="3; url=https://play.google.com/apps/testing/io.github.monsiu.custom_rr" />
+
+  <!-- Google tag (gtag.js), consent mode mirrors the rest of the site. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZYEZ8XEN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      wait_for_update: 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-VJZYEZ8XEN');
+  </script>
+  <script defer src="/consent.js"></script>
+
+  <title>Join the Custom RR beta on Google Play | Monsiu</title>
+  <meta name="description" content="Become a tester for Custom RR on Google Play. Same app and releases, you just get them through the Play Store, and every tester helps Custom RR reach the public Play Store." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://monsiu.github.io/custom-rr/beta/" />
+  <link rel="icon" type="image/png" href="/profile.png" />
+  <link rel="apple-touch-icon" href="/profile.png" />
+  <meta name="theme-color" content="#0C0C0C" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Monsiu" />
+  <meta property="og:title" content="Join the Custom RR beta on Google Play" />
+  <meta property="og:description" content="Become a tester, same app and releases, and help bring Custom RR to the public Play Store. Takes about two taps." />
+  <meta property="og:url" content="https://monsiu.github.io/custom-rr/beta/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@MonsiuTech" />
+  <meta name="twitter:title" content="Join the Custom RR beta on Google Play" />
+  <meta name="twitter:description" content="Become a tester, same app, and help Custom RR reach the public Play Store." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0C0C0C;
+      --bg-card: #141414;
+      --bg-hover: #1A1A1A;
+      --text: #F2F2F2;
+      --muted: #A8A8A8;
+      --accent: #4F8EF7;
+      --accent-dim: rgba(79,142,247,0.12);
+      --border: #222222;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #F5F5F5;
+        --bg-card: #FFFFFF;
+        --bg-hover: #EEEEEE;
+        --text: #111111;
+        --muted: #555555;
+        --accent: #2563EB;
+        --accent-dim: rgba(37,99,235,0.10);
+        --border: #DEDEDE;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      line-height: 1.55;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      max-width: 480px;
+      width: 100%;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+    p { color: var(--muted); margin: 0 0 16px; font-size: 15px; }
+    .btn {
+      display: block;
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 15px 20px;
+      border-radius: 12px;
+      margin: 22px 0 12px;
+      transition: filter .15s ease;
+    }
+    .btn:hover { filter: brightness(1.08); }
+    .keep {
+      background: var(--bg-hover);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 14px;
+      color: var(--text);
+      margin: 18px 0 4px;
+    }
+    .keep strong { display: block; margin-bottom: 4px; }
+    .keep span { color: var(--muted); }
+    .links {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      justify-content: center;
+      font-size: 13.5px;
+    }
+    .links a { color: var(--muted); text-decoration: none; }
+    .links a:hover { color: var(--accent); }
+    .fine { margin-top: 18px; font-size: 12.5px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">&#9881;&#65039; Custom RR &middot; Play beta</span>
+    <h1>Test Custom RR on Google&nbsp;Play</h1>
+    <p>
+      It is the same app and the same releases as every other channel, you just
+      get them through the Play Store. Every tester helps Custom RR reach the
+      public Play Store.
+    </p>
+
+    <a class="btn" href="https://play.google.com/apps/testing/io.github.monsiu.custom_rr" rel="noopener">
+      Become a tester
+    </a>
+    <p style="font-size:13.5px;">
+      First time and Google does not recognise you yet? Open the
+      <a href="https://groups.google.com/g/custom-rr-play-testers" rel="noopener" style="color:var(--accent);">testers group</a>
+      and tap Join, then come back.
+    </p>
+
+    <div class="keep">
+      <strong>Please keep it installed for about two weeks</strong>
+      <span>Google only lets the app go public once enough testers stay opted
+      in for 14 days in a row. Just keeping Custom RR installed is the single
+      most helpful thing you can do.</span>
+    </div>
+
+    <nav class="links">
+      <a href="https://monsiu.github.io/custom-rr/">What is Custom RR?</a>
+      <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" rel="noopener">Get it on Google Play</a>
+      <a href="https://github.com/monsiu/Custom-RR" rel="noopener">GitHub</a>
+    </nav>
+
+    <p class="fine" id="redirect-note">Taking you to Google Play testing&hellip;</p>
+  </main>
+
+  <script>
+    // Primary redirect: fire after a short delay so the card renders and the
+    // visit is recorded, then forward. The meta refresh above is the no-JS
+    // fallback, and the button is the manual fallback if both are blocked.
+    (function () {
+      var target = 'https://play.google.com/apps/testing/io.github.monsiu.custom_rr';
+      setTimeout(function () { window.location.replace(target); }, 1600);
+    })();
+  </script>
+</body>
+</html>
