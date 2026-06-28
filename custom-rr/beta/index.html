@@ -22,7 +22,7 @@
   <script defer src="/consent.js"></script>
 
   <title>Join the Custom RR beta on Google Play | Monsiu</title>
-  <meta name="description" content="Become a tester for Custom RR on Google Play in two steps: join the testers group, then opt in. Same app and releases, and every tester helps it reach the public Play Store." />
+  <meta name="description" content="Become a tester for Custom RR on Google Play in three steps: join the testers group, opt in, then install from the Play Store. Same app and releases, and every tester helps it reach the public Play Store." />
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://monsiu.github.io/custom-rr/beta/" />
   <link rel="icon" type="image/png" href="/profile.png" />
@@ -32,13 +32,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Monsiu" />
   <meta property="og:title" content="Join the Custom RR beta on Google Play" />
-  <meta property="og:description" content="Two steps: join the testers group, then opt in. Same app and releases, and you help bring Custom RR to the public Play Store." />
+  <meta property="og:description" content="Three steps: join the testers group, opt in, then install. Same app and releases, and you help bring Custom RR to the public Play Store." />
   <meta property="og:url" content="https://monsiu.github.io/custom-rr/beta/" />
   <meta property="og:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@MonsiuTech" />
   <meta name="twitter:title" content="Join the Custom RR beta on Google Play" />
-  <meta name="twitter:description" content="Two steps: join the testers group, then opt in. Same app, and you help Custom RR reach the public Play Store." />
+  <meta name="twitter:description" content="Three steps: join the testers group, opt in, then install. Same app, and you help Custom RR reach the public Play Store." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,6 +56,9 @@
       --accent-dim: rgba(79,142,247,0.12);
       --border: #222222;
       --green: #7ED957;
+      --warn: #E7A33E;
+      --warn-dim: rgba(231,163,62,0.12);
+      --warn-border: rgba(231,163,62,0.34);
       --max: 960px;
     }
     @media (prefers-color-scheme: light) {
@@ -67,6 +70,9 @@
         --accent: #2563EB;
         --accent-dim: rgba(37,99,235,0.10);
         --border: #DEDEDE;
+        --warn: #B5740B;
+        --warn-dim: rgba(181,116,11,0.10);
+        --warn-border: rgba(181,116,11,0.30);
       }
     }
     * { box-sizing: border-box; }
@@ -173,6 +179,46 @@
       scroll-snap-align: start;
     }
 
+    .progress {
+      background: var(--accent-dim);
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 12px;
+      padding: 1.6rem 1.7rem 1.7rem;
+      margin: 0 0 3rem;
+    }
+    .progress-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.7rem;
+    }
+    .progress-count {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0 0 0.85rem;
+    }
+    .progress-count b { color: var(--accent); }
+    .progress-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(79,142,247,0.16);
+      overflow: hidden;
+      margin: 0 0 1.1rem;
+    }
+    .progress-bar > span {
+      display: block;
+      height: 100%;
+      width: 92%;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+    .progress > p { margin: 0; color: var(--muted); }
+    .progress > p strong { color: var(--text); font-weight: 500; }
+
     section { margin-bottom: 3rem; }
     h2 {
       font-family: 'Syne', sans-serif;
@@ -247,6 +293,31 @@
     .callout p { margin: 0; color: var(--muted); }
     .callout p strong { color: var(--text); font-weight: 500; }
 
+    .warn-box {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      background: var(--warn-dim);
+      border: 1px solid var(--warn-border);
+      border-radius: 10px;
+      padding: 1.1rem 1.3rem;
+      margin: 1.6rem 0 0;
+    }
+    .warn-box .warn-label {
+      flex: 0 0 auto;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warn);
+      border: 1px solid var(--warn-border);
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      margin-top: 0.15rem;
+    }
+    .warn-box p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .warn-box p strong { color: var(--text); font-weight: 600; }
+
     footer {
       max-width: var(--max);
       margin: 0 auto;
@@ -282,7 +353,7 @@
       The <strong>same app</strong> as every other channel, you just get it
       through the Play Store, and as a tester you get <strong>new builds about 5
       days before everyone else</strong>. Every tester also helps Custom RR reach
-      the public Play Store. It just takes two steps.
+      the public Play Store. It just takes three steps.
     </p>
 
     <div class="meta-row">
@@ -290,6 +361,19 @@
       <span class="meta-chip">New builds ~5 days first</span>
       <span class="meta-chip">Same app</span>
       <span class="meta-chip">~2 mins to join</span>
+    </div>
+
+    <div class="progress" role="status" aria-label="Beta testing progress">
+      <p class="progress-eyebrow">// Almost there</p>
+      <!-- Update the tester count here as it changes. -->
+      <p class="progress-count"><b>11</b> of 12 testers</p>
+      <div class="progress-bar" aria-hidden="true"><span></span></div>
+      <p>
+        Just <strong>one more tester</strong> and Custom RR goes live on the
+        public Google Play Store. Joining below and installing through the
+        <strong>Play Store</strong> is what gets it over the line, and sharing
+        this page with one person who has an Android phone is the biggest help.
+      </p>
     </div>
 
     <div class="shots-strip" aria-label="Custom RR screenshots">
@@ -302,7 +386,7 @@
     </div>
 
     <section aria-label="How to join">
-      <h2>Join in two steps</h2>
+      <h2>Join in three steps</h2>
 
       <div class="step">
         <div class="step-num">1</div>
@@ -329,12 +413,35 @@
         </div>
       </div>
 
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Install from the Play Store</h3>
+          <p>
+            Once you are in, install from the
+            <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="beta_store">Play Store</a>.
+            Access can take a little while to propagate after you join.
+          </p>
+          <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="beta_store_btn">Open in the Play Store</a>
+        </div>
+      </div>
+
       <p class="note" style="margin-top:1.4rem;">
-        Use the <strong>same Google account</strong> for both steps, the one on
-        your phone, or Play will not recognise you. Once you are in, install from
-        the <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="beta_store">Play Store</a>.
-        Access can take a little while to propagate after you join.
+        Use the <strong>same Google account</strong> for all three steps, the one
+        on your phone, or Play will not recognise you.
       </p>
+
+      <div class="warn-box" role="note">
+        <span class="warn-label">Important</span>
+        <p>
+          <strong>You must install the Google Play build, not the GitHub one.</strong>
+          Only Play Store installs count toward the 12 testers, and you cannot run
+          the GitHub build and the Play beta at the same time. They are the same app
+          signed with different keys, so Android will not let one replace the other.
+          If you are on the GitHub build, uninstall it first, then
+          <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="beta_store_warn">grab the Play version here</a>.
+        </p>
+      </div>
     </section>
 
     <section>
