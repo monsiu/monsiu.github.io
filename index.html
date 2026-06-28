@@ -760,16 +760,17 @@
 
     #contact { padding-bottom: 8rem; }
 
-    .contact-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5rem; align-items: start; }
+    .contact-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 3rem; align-items: start; }
 
     .contact-heading {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-size: clamp(2rem, 4vw, 2.25rem);
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: -0.02em;
       line-height: 1.0;
       margin-bottom: 1.25rem;
+      overflow-wrap: break-word;
     }
     .contact-heading span { color: var(--accent); }
 
