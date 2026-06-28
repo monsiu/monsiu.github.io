@@ -339,11 +339,11 @@
 <body>
   <main class="container">
     <nav class="topbar" aria-label="Site">
-      <a href="/" class="topbar-home">Monsiu Tech</a>
+      <a href="/" class="topbar-home" data-ga="beta_nav_home">Monsiu Tech</a>
       <div class="topbar-nav">
-        <a href="/custom-rr/">Custom RR</a>
-        <a href="/custom-rr/beta/" class="active">Play beta</a>
-        <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/custom-rr/" data-ga="beta_nav_customrr">Custom RR</a>
+        <a href="/custom-rr/beta/" class="active" data-ga="beta_nav_beta">Play beta</a>
+        <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" data-ga="beta_nav_github">GitHub</a>
       </div>
     </nav>
 
@@ -462,9 +462,21 @@
 
   <footer>
     <span>© <span id="year"></span> Martin Nzau (Monsiu) · GPL-3.0</span>
-    <span><a href="/custom-rr/">Custom RR</a> · <a href="/custom-rr/privacy/">Privacy</a> · <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer">Discord</a> · <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    <span><a href="/custom-rr/" data-ga="beta_footer_customrr">Custom RR</a> · <a href="/custom-rr/privacy/" data-ga="beta_footer_privacy">Privacy</a> · <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer" data-ga="beta_footer_discord">Discord</a> · <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" data-ga="beta_footer_github">GitHub</a></span>
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('[data-ga]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag !== 'function') return;
+        gtag('event', 'cta_click', {
+          cta_id: el.getAttribute('data-ga'),
+          cta_text: (el.textContent || '').trim().slice(0, 60),
+          cta_href: el.getAttribute('href') || ''
+        });
+      });
+    });
+  </script>
 </body>
 </html>
