@@ -131,6 +131,25 @@
       },
       {
         "@type": "SoftwareApplication",
+        "name": "ClauseShift",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Legal",
+        "operatingSystem": "Web, Android, iOS, Windows, macOS, Linux",
+        "url": "https://clauseshift.com",
+        "sameAs": [
+          "https://www.amazon.com/gp/product/B0H7FM1WGJ"
+        ],
+        "author": { "@id": "https://monsiu.github.io/#person" },
+        "description": "An AI contract reviewer that cites the exact clause behind every risk it flags, so you can verify the wording yourself instead of trusting a black box. Two AI models cross-check every review, with a risk score, plain-English summary, and automatic key-date extraction. One product across web, Android, iOS, and desktop, with a free tier plus Pro subscription and pay-as-you-go credits.",
+        "programmingLanguage": ["TypeScript", "Dart", "Flutter"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
         "name": "Custom RR",
         "applicationCategory": "MobileApplication",
         "applicationSubCategory": "Utilities",
@@ -999,6 +1018,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Work</a></li>
+        <li><a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="nav_clauseshift">ClauseShift</a></li>
         <li><a href="/custom-rr/" data-ga="nav_custom_rr">Custom RR</a></li>
         <li><a href="#certifications">Certs</a></li>
         <li><a href="#experience">Exp</a></li>
@@ -1154,6 +1174,37 @@
         <div class="project-card">
           <div>
             <p class="project-number">01 //</p>
+            <h3 class="project-name">ClauseShift
+              <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_clauseshift_live" title="ClauseShift, live now on the web and app stores">Live</a>
+            </h3>
+            <a href="https://clauseshift.com" data-ga="project_clauseshift_banner" target="_blank" rel="noopener noreferrer" aria-label="ClauseShift landing page">
+              <img src="clauseshift-banner.png" alt="ClauseShift: AI contract review that cites every clause" class="project-banner" loading="lazy" decoding="async" />
+            </a>
+            <p class="project-desc">
+              An AI contract reviewer that shows its receipts: every risk it flags quotes the <strong>exact clause</strong> it came from, so you verify the wording yourself instead of trusting a black box. Two AI models cross-check every review, a clear risk score and plain-English summary are generated, and key dates and deadlines are pulled out for you. Built as <strong>one product across web, Android, iOS, and desktop</strong> with self-serve billing (free tier, Pro subscription, and pay-as-you-go credits). Live on the <strong>web and the Amazon Appstore</strong>, with Google Play in testing and more platforms rolling out.
+            </p>
+            <p class="project-metric"><strong>Live on web + Amazon Appstore</strong> &nbsp;·&nbsp; Google Play in testing &nbsp;·&nbsp; Free tier + Pro &nbsp;·&nbsp; Web · Android · iOS · Desktop</p>
+            <div class="project-tags">
+              <span class="project-tag">Flutter</span>
+              <span class="project-tag">Dart</span>
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Supabase</span>
+              <span class="project-tag">PostgreSQL</span>
+              <span class="project-tag">OpenAI</span>
+              <span class="project-tag">Paystack</span>
+              <span class="project-tag">Railway</span>
+              <span class="project-tag">Android</span>
+              <span class="project-tag">iOS</span>
+              <span class="project-tag">Web</span>
+            </div>
+          </div>
+<a href="https://clauseshift.com" class="project-arrow" target="_blank" rel="noopener noreferrer" title="ClauseShift landing page">↗</a>        </div>
+
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">02 //</p>
             <h3 class="project-name">Custom RR
               <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.1" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_custom_rr_release" title="Custom RR latest release, see full changelog on GitHub">New · <span data-cr="version">v1.3.1</span></a>
             </h3>
@@ -1184,7 +1235,7 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">02 //</p>
+            <p class="project-number">03 //</p>
             <h3 class="project-name">NanoPay</h3>
             <p class="project-desc">
               Built a per-request AI API where every query costs $0.001 USDC, settled onchain on Arc blockchain. Deployed a Solidity smart contract that accepts USDC micropayments, built a Node.js API server that verifies payments before returning Gemini AI responses, and demonstrated 57+ live onchain transactions. The project proves sub-cent API monetization is only economically viable on Arc, where gas costs are 100,000x cheaper than Ethereum. <br><br>This was part of a hackathon submission for the Arc Blockchain Hackathon which you can view the details 
@@ -1210,7 +1261,7 @@
         </div>
 <div class="project-card">
   <div>
-    <p class="project-number">03 //</p>
+    <p class="project-number">04 //</p>
     <h3 class="project-name">Aegis, SRE Guardian</h3>
     <p class="project-desc">
       An autonomous incident-response system that monitors cloud infrastructure in real time, diagnoses issues with a three-agent AI pipeline (Monitor, Diagnosis, Remediation), and executes safe SSH-based fixes on remote servers. Streams live metrics over WebSockets, searches past incidents with a ChromaDB vector store, and auto-generates PDF post-mortems. Handles CPU surges, memory pressure, disk I/O, DDoS, and DB bottlenecks with a whitelisted command set, no arbitrary shell input.
