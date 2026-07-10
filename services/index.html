@@ -43,6 +43,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -613,16 +614,9 @@
   <section id="request">
     <div class="container">
       <h2 class="section-label">Request a Service</h2>
-      <form id="requestForm" class="form-card"
-            action="https://formsubmit.co/contactmonsiu@gmail.com"
-            method="POST">
-        <!-- FormSubmit config -->
-        <input type="hidden" name="_subject" value="New Service Request from monsiu.github.io" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="true" />
-        <input type="hidden" name="_next" value="https://monsiu.github.io/services/thanks.html" />
-        <!-- Honeypot for bots -->
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <form id="requestForm" class="form-card">
+        <!-- Honeypot for bots: real visitors never see or fill this -->
+        <input type="text" name="company" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <div class="form-row">
           <div class="form-field">
@@ -637,8 +631,8 @@
 
         <div class="form-row">
           <div class="form-field">
-            <label for="company">Company (optional)</label>
-            <input type="text" id="company" name="company" placeholder="Your company" />
+            <label for="organization">Company (optional)</label>
+            <input type="text" id="organization" name="organization" placeholder="Your company" />
           </div>
           <div class="form-field">
             <label for="country">Country</label>
@@ -770,13 +764,19 @@
           <textarea id="details" name="details" required placeholder="What are you trying to build? Who is it for? Any references or specific features?"></textarea>
         </div>
 
+        <div class="form-field">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADxcS9STMfduJK9G" data-theme="auto"></div>
+        </div>
+
         <div class="form-actions">
           <button type="submit" class="btn btn-primary" data-ga="svc_send_request">Send Request</button>
           <a href="/" class="btn btn-ghost" data-ga="svc_back_home">Back to Home</a>
         </div>
 
+        <p id="formError" class="form-note" style="display:none; color:#e5484d;" role="alert"></p>
+
         <p class="form-note">
-          Your request is sent securely via FormSubmit and delivered straight to my inbox. No account needed.
+          Your request is delivered straight to my inbox. No account needed.
         </p>
 
         <div class="alt-contact">
@@ -843,8 +843,76 @@
       });
     })();
 
-    // Form posts directly to FormSubmit. No JS submit handler needed.
-    // The browser handles required-field validation natively.
+    // The form posts as JSON to the contact API with a Turnstile check.
+    var requestForm = document.getElementById('requestForm');
+    if (requestForm) {
+      var formError = document.getElementById('formError');
+      requestForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        formError.style.display = 'none';
+
+        var f = requestForm.elements;
+        var services = Array.prototype.slice.call(
+          requestForm.querySelectorAll('input[name="service"]:checked')
+        ).map(function (c) { return c.value; }).join(', ');
+        var tokenInput = requestForm.querySelector('[name="cf-turnstile-response"]');
+        var token = tokenInput ? tokenInput.value : '';
+        if (!token) {
+          formError.textContent = 'Please complete the verification checkbox above.';
+          formError.style.display = 'block';
+          return;
+        }
+
+        var lines = [
+          'Service request from monsiu.github.io',
+          '',
+          'Services: ' + (services || 'Not specified'),
+          'Budget: ' + f.budget.value,
+          'Timeline: ' + f.timeline.value,
+          'Country: ' + f.country.value
+        ];
+        if (f.organization.value.trim()) lines.push('Company: ' + f.organization.value.trim());
+        lines.push('', 'Details:', f.details.value.trim());
+
+        var btn = requestForm.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        var btnText = btn.textContent;
+        btn.textContent = 'Sending...';
+
+        fetch('https://app.clauseshift.com/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: f.name.value.trim(),
+            email: f.email.value.trim(),
+            message: lines.join('\n'),
+            company: f.company.value,
+            subject: 'Service request',
+            title: 'Service request: ' + (services || 'General'),
+            turnstileToken: token
+          })
+        }).then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            if (res.ok && data.ok !== false) {
+              if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', { form_id: 'services_request', form_destination: 'contact_api' });
+              }
+              window.location.href = '/services/thanks.html';
+            } else {
+              throw new Error(data.error || 'Something went wrong. Please try again.');
+            }
+          });
+        }).catch(function (err) {
+          formError.textContent = (err && err.message) ? err.message : 'Could not send right now. Please email me directly instead.';
+          formError.style.display = 'block';
+          btn.disabled = false;
+          btn.textContent = btnText;
+          if (window.turnstile && typeof window.turnstile.reset === 'function') {
+            window.turnstile.reset();
+          }
+        });
+      });
+    }
 
     /* GA CTA + conversion tracking */
     document.querySelectorAll('[data-ga]').forEach(function (el) {
@@ -857,15 +925,6 @@
         });
       });
     });
-
-    var requestForm = document.getElementById('requestForm');
-    if (requestForm) {
-      requestForm.addEventListener('submit', function () {
-        if (typeof gtag === 'function') {
-          gtag('event', 'generate_lead', { form_id: 'services_request', form_destination: 'formsubmit' });
-        }
-      });
-    }
   </script>
 
 </body>
