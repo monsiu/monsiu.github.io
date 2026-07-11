@@ -48,6 +48,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -824,6 +825,73 @@
     .contact-link-arrow { color: var(--muted); font-size: 0.9rem; transition: color 0.2s, transform 0.2s; }
     .contact-link:hover .contact-link-arrow { color: var(--accent); transform: translate(2px, -2px); }
 
+    /* Contact form (same pipeline as ClauseShift) */
+    .contact-form { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.75rem; }
+    .cf-field { display: flex; flex-direction: column; gap: 0.45rem; min-width: 0; }
+    .cf-field label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cf-field label .req { color: var(--accent); }
+    .cf-field label .opt { text-transform: none; letter-spacing: 0.02em; color: var(--muted); opacity: 0.7; }
+    .cf-input-wrap { position: relative; }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.92rem;
+      padding: 0.7rem 0.85rem;
+      width: 100%;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { outline: none; border-color: var(--accent); }
+    .contact-form textarea { resize: vertical; min-height: 130px; font-family: inherit; }
+    .contact-form input.valid, .contact-form textarea.valid { border-color: #22b07d; padding-right: 2.2rem; }
+    .contact-form input.invalid, .contact-form textarea.invalid { border-color: #e5484d; }
+    .cf-check {
+      position: absolute; right: 0.75rem; top: 0.85rem;
+      color: #22b07d; font-size: 0.85rem; line-height: 1;
+      opacity: 0; transition: opacity 0.2s; pointer-events: none;
+    }
+    .cf-input-wrap input.valid + .cf-check { opacity: 1; }
+    .cf-label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
+    .cf-counter { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .cf-counter.over { color: #e5484d; }
+    .cf-error { font-size: 0.74rem; color: #e5484d; font-weight: 500; }
+    .cf-alert {
+      border: 1px solid #e5484d;
+      background: rgba(229,72,77,0.08);
+      color: #e5484d;
+      font-size: 0.82rem;
+      padding: 0.7rem 0.9rem;
+    }
+    .cf-consent { font-family: 'IBM Plex Mono', monospace; font-size: 0.64rem; line-height: 1.7; color: var(--muted); letter-spacing: 0.02em; }
+    .contact-form button[type="submit"]:disabled { opacity: 0.55; cursor: not-allowed; }
+    .cf-success {
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      padding: 2rem 1.75rem;
+      margin-top: 1.75rem;
+      text-align: center;
+    }
+    .cf-success-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 3rem; height: 3rem;
+      border-radius: 999px;
+      background: var(--accent-dim); color: var(--accent);
+      font-size: 1.3rem; margin-bottom: 0.9rem;
+    }
+    .cf-success h3 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .cf-success p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
+
     footer {
       padding: 2rem 2.5rem;
       border-top: 1px solid var(--border);
@@ -1476,7 +1544,65 @@
             Open to new roles, freelance projects, and interesting problems.
             Reach out and let's talk.
           </p>
-          <a href="mailto:contactmonsiu@gmail.com" class="btn btn-primary">Send a Message</a>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <!-- Honeypot: hidden from people, tempting to bots -->
+            <div style="position:absolute;left:-9999px;height:0;width:0;overflow:hidden" aria-hidden="true">
+              <label for="cf-company">Company</label>
+              <input id="cf-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="cf-field">
+              <label for="cf-name">Name <span class="opt">(optional)</span></label>
+              <input id="cf-name" name="name" type="text" maxlength="100" autocomplete="name" placeholder="Jane Doe" />
+            </div>
+
+            <div class="cf-field">
+              <label for="cf-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <div class="cf-input-wrap">
+                <input id="cf-email" name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@example.com" />
+                <span class="cf-check" aria-hidden="true">✓</span>
+              </div>
+              <p class="cf-error" id="cf-email-error" role="alert" hidden>Enter a valid email address.</p>
+            </div>
+
+            <div class="cf-field">
+              <label for="cf-subject">What is this about?</label>
+              <select id="cf-subject" name="subject">
+                <option value="Job / role opportunity">Job / role opportunity</option>
+                <option value="Freelance project">Freelance project</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="General question">General question</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="cf-field">
+              <div class="cf-label-row">
+                <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
+                <span class="cf-counter" id="cf-counter">0/5000</span>
+              </div>
+              <textarea id="cf-message" name="message" required maxlength="5000" placeholder="What are you working on, or what role do you have in mind?"></textarea>
+              <p class="cf-error" id="cf-message-error" role="alert" hidden>Please enter a little more detail (at least 5 characters).</p>
+            </div>
+
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADxcS9STMfduJK9G" data-theme="auto"></div>
+
+            <p class="cf-alert" id="cf-alert" role="alert" hidden></p>
+
+            <button type="submit" class="btn btn-primary" id="cf-submit" data-ga="contact_send">Send Message</button>
+
+            <p class="cf-consent">
+              By sending this you agree I may use your email to reply. I never resell your data.
+            </p>
+          </form>
+
+          <div class="cf-success" id="cf-success" hidden>
+            <span class="cf-success-badge" aria-hidden="true">✓</span>
+            <h3>Message sent</h3>
+            <p>Thanks for reaching out. I will get back to you at the email you provided, usually within 1 to 2 business days.</p>
+            <button type="button" class="btn btn-ghost" id="cf-again">Send another message</button>
+          </div>
         </div>
         <div class="contact-links reveal">
           <a href="mailto:contactmonsiu@gmail.com" class="contact-link">
@@ -1566,6 +1692,113 @@
         });
       });
     });
+
+    /* Contact form: same pipeline as ClauseShift (Resend + Turnstile + honeypot) */
+    (function () {
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+      var f = form.elements;
+      var emailEl = document.getElementById('cf-email');
+      var msgEl = document.getElementById('cf-message');
+      var emailErr = document.getElementById('cf-email-error');
+      var msgErr = document.getElementById('cf-message-error');
+      var counter = document.getElementById('cf-counter');
+      var alertBox = document.getElementById('cf-alert');
+      var submitBtn = document.getElementById('cf-submit');
+      var successBox = document.getElementById('cf-success');
+      var emailTouched = false, msgTouched = false;
+
+      function emailOk() { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim()); }
+      function msgOk() { return msgEl.value.trim().length >= 5; }
+
+      function renderEmail() {
+        var ok = emailOk();
+        emailEl.classList.toggle('valid', ok);
+        emailEl.classList.toggle('invalid', emailTouched && !ok);
+        emailErr.hidden = !(emailTouched && !ok);
+      }
+      function renderMsg() {
+        var ok = msgOk();
+        var len = msgEl.value.length;
+        counter.textContent = len + '/5000';
+        counter.classList.toggle('over', len >= 5000);
+        msgEl.classList.toggle('valid', msgTouched && ok);
+        msgEl.classList.toggle('invalid', msgTouched && !ok);
+        msgErr.hidden = !(msgTouched && !ok);
+      }
+      function refreshSubmit() { submitBtn.disabled = !(emailOk() && msgOk()); }
+
+      emailEl.addEventListener('input', function () { renderEmail(); refreshSubmit(); });
+      emailEl.addEventListener('blur', function () { emailTouched = true; renderEmail(); });
+      msgEl.addEventListener('input', function () { renderMsg(); refreshSubmit(); });
+      msgEl.addEventListener('blur', function () { msgTouched = true; renderMsg(); });
+      renderMsg(); refreshSubmit();
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alertBox.hidden = true;
+        emailTouched = true; msgTouched = true; renderEmail(); renderMsg();
+        if (!emailOk() || !msgOk()) { refreshSubmit(); return; }
+
+        var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
+        var token = tokenInput ? tokenInput.value : '';
+        if (!token) {
+          alertBox.textContent = 'Please complete the verification check above.';
+          alertBox.hidden = false;
+          return;
+        }
+
+        var subject = f.subject.value;
+        submitBtn.disabled = true;
+        var btnText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+
+        fetch('https://app.clauseshift.com/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: f.name.value.trim(),
+            email: f.email.value.trim(),
+            subject: subject,
+            title: 'Portfolio contact: ' + subject,
+            message: f.message.value.trim(),
+            company: f.company.value,
+            turnstileToken: token
+          })
+        }).then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            if (res.ok && data.ok) {
+              form.hidden = true;
+              successBox.hidden = false;
+              if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', { form_id: 'portfolio_contact', form_destination: 'contact_api' });
+              }
+            } else {
+              throw new Error(data.error || 'Something went wrong. Please try again.');
+            }
+          });
+        }).catch(function (err) {
+          alertBox.textContent = (err && err.message) ? err.message : 'Could not send right now. Please email me directly instead.';
+          alertBox.hidden = false;
+          submitBtn.disabled = false;
+          submitBtn.textContent = btnText;
+          if (window.turnstile && typeof window.turnstile.reset === 'function') window.turnstile.reset();
+        });
+      });
+
+      document.getElementById('cf-again').addEventListener('click', function () {
+        form.reset();
+        emailTouched = false; msgTouched = false;
+        emailEl.classList.remove('valid', 'invalid');
+        msgEl.classList.remove('valid', 'invalid');
+        renderMsg();
+        successBox.hidden = true;
+        form.hidden = false;
+        submitBtn.textContent = 'Send Message';
+        refreshSubmit();
+        if (window.turnstile && typeof window.turnstile.reset === 'function') window.turnstile.reset();
+      });
+    })();
 
     /* Mobile nav hamburger menu */
     (function () {
