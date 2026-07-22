@@ -68,8 +68,7 @@
         "url": "https://monsiu.github.io/custom-rr/",
         "sameAs": [
           "https://github.com/monsiu/Custom-RR",
-          "https://github.com/monsiu/Custom-RR/releases/latest",
-          "https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr"
+          "https://github.com/monsiu/Custom-RR/releases/latest"
         ],
         "downloadUrl": "https://github.com/monsiu/Custom-RR/releases/tag/v1.3.1",
         "installUrl": "https://github.com/monsiu/Custom-RR/releases/latest",
@@ -103,7 +102,7 @@
           "Material 3 with dynamic color, light/dark/AMOLED themes",
           "Deep links for every ROM, recovery, device, and brand",
           "In-app update check against GitHub Releases",
-          "Available on Google Play, GitHub Releases, and the Amazon Appstore, with F-Droid pending review",
+          "Available on Google Play, GitHub, and the Amazon Appstore, with the F-Droid build pending review",
           "Native Windows, macOS, and Linux desktop builds",
           "No tracking, no analytics, no ads, no Play Services"
         ]
@@ -472,7 +471,7 @@
     footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
-    /* Help / support callout */
+    /* Help / beta callout */
     .callout {
       background: var(--accent-dim);
       border: 1px solid rgba(79,142,247,0.25);
@@ -692,7 +691,8 @@
     </div>
 
     <div class="cta-row">
-      <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.1" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-ga="customrr_download">Download <span data-cr="version">v1.3.1</span></a>
+      <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-ga="customrr_play">Get it on Google Play</a>
+      <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.1" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-ga="customrr_download">APK on GitHub</a>
       <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-ga="customrr_github">View on GitHub</a>
       <a href="https://buymeacoffee.com/monsiutech" target="_blank" rel="noopener noreferrer" class="btn btn-coffee" data-ga="customrr_coffee">Buy Me a Coffee</a>
       <a href="/custom-rr/privacy/" class="btn btn-ghost" data-ga="customrr_privacy">Privacy Policy</a>
@@ -722,17 +722,18 @@
         <li><strong>GSI / Treble mode in the flash script generator.</strong> A new toggle builds a</li>
         <li><strong>The full official TWRP device list.</strong> The TWRP page now lists the complete</li>
         <li><strong>Filter by your selected device.</strong> The ROMs and Recoveries lists can be</li>
-        <li><strong>Google Play onboarding from the app.</strong> A new home-screen invite and a</li>
+        <li><strong>Join the Play beta from the app.</strong> A new home-screen invite and a</li>
         <!-- cr:changelog:end -->
         <li><a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.1" data-cr-href="release" target="_blank" rel="noopener noreferrer" data-ga="customrr_full_changelog">Full changelog on GitHub →</a></li>
       </ul>
     </section>
 
-    <section class="callout" id="playstore">
-      <h2>Custom RR is now live on Google Play</h2>
-      <p>You can install Custom RR directly from the Play Store and receive updates through Google Play.</p>
-      <p style="margin-bottom:1.1rem;"><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_store">Open on Google Play &rarr;</a></p>
-      <p class="callout-note">Prefer not to use Google Play? Grab the <a href="https://github.com/monsiu/Custom-RR/releases" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_apk">APK from GitHub Releases</a>, install from the <a href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_amazon_store">Amazon Appstore</a>, or wait for the F-Droid build, which is pending review. Questions? <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer" data-ga="customrr_discord">Join the Discord</a>.</p>
+    <!-- Google Play availability. -->
+    <section class="callout" id="beta">
+      <h2>Now on Google Play</h2>
+      <p>Custom RR is live on <strong>Google Play</strong>. Installs and updates come straight from the Play Store, so you always get the latest version.</p>
+      <p style="margin-bottom:1.1rem;"><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_cta">Get it on Google Play &rarr;</a></p>
+      <p class="callout-note">Prefer not to use Google Play? Grab the <a href="https://github.com/monsiu/Custom-RR/releases" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_apk">APK from GitHub Releases</a> or the <a href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_amazon">Amazon Appstore</a>; the F-Droid build is pending review. Questions? <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer" data-ga="customrr_discord">Join the Discord</a>.</p>
       <div class="callout-sub">
         <h3>Also: macOS testers wanted</h3>
         <p class="callout-note">The new macOS build has not yet been verified on real Apple hardware and ships unsigned. If you run it on an Apple Silicon or Intel Mac, please report whether it launches, the catalog loads, and screenshots and the update check work, plus your macOS version, on the <a href="https://github.com/monsiu/Custom-RR/issues" target="_blank" rel="noopener noreferrer" data-ga="customrr_macos_testers">issue tracker</a> or the Discord. Signing and notarization help is very welcome too.</p>
@@ -773,8 +774,8 @@
       <div class="download-grid">
         <div class="download-card">
           <h3>Google Play</h3>
-          <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_store_dl">Open on Google Play</a>
-          <a href="https://github.com/monsiu/Custom-RR/releases/latest" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_alt">Prefer APKs? Use GitHub Releases &rarr;</a>
+          <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_store_dl">Get it on Google Play &rarr;</a>
+          <a href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_amazon_dl">Amazon Appstore</a>
         </div>
         <div class="download-card">
           <h3>Android</h3>
@@ -919,7 +920,7 @@ flutter run</pre>
 
   <footer>
     <span>© <span id="year"></span> Martin Nzau (Monsiu) · GPL-3.0</span>
-    <span><a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Google Play</a> · <a href="/">Portfolio</a> · <a href="/services/">Hire me</a> · <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a></span>
+    <span><a href="/custom-rr/beta/">Play beta</a> · <a href="/">Portfolio</a> · <a href="/services/">Hire me</a> · <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a></span>
   </footer>
 
   <script>

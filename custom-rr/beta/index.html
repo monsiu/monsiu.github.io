@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- This sign-up page is retired: Custom RR is live on Google Play. Redirect to the listing. -->
+  <meta http-equiv="refresh" content="0; url=https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" />
+  <script>window.location.replace('https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr');</script>
+
   <!-- Google tag (gtag.js), consent mode mirrors the rest of the site. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZYEZ8XEN"></script>
   <script>
@@ -21,8 +25,8 @@
   </script>
   <script defer src="/consent.js"></script>
 
-  <title>Custom RR on Google Play | Monsiu</title>
-  <meta name="description" content="Custom RR is now live on Google Play. Install from the Play Store, or use GitHub Releases and Amazon Appstore alternatives." />
+  <title>Join the Custom RR beta on Google Play | Monsiu</title>
+  <meta name="description" content="Become a tester for Custom RR on Google Play in three steps: join the testers group, opt in, then install from the Play Store. Same app and releases, and every tester helps it reach the public Play Store." />
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://monsiu.github.io/custom-rr/beta/" />
   <link rel="icon" type="image/png" href="/profile.png" />
@@ -31,14 +35,14 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Monsiu" />
-  <meta property="og:title" content="Custom RR is live on Google Play" />
-  <meta property="og:description" content="Install Custom RR from Google Play, or use GitHub Releases and Amazon Appstore alternatives." />
+  <meta property="og:title" content="Join the Custom RR beta on Google Play" />
+  <meta property="og:description" content="Three steps: join the testers group, opt in, then install. Same app and releases, and you help bring Custom RR to the public Play Store." />
   <meta property="og:url" content="https://monsiu.github.io/custom-rr/beta/" />
   <meta property="og:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@MonsiuTech" />
-  <meta name="twitter:title" content="Custom RR is live on Google Play" />
-  <meta name="twitter:description" content="Install Custom RR from Google Play, or use GitHub Releases and Amazon Appstore alternatives." />
+  <meta name="twitter:title" content="Join the Custom RR beta on Google Play" />
+  <meta name="twitter:description" content="Three steps: join the testers group, opt in, then install. Same app, and you help Custom RR reach the public Play Store." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -339,35 +343,40 @@
 <body>
   <main class="container">
     <nav class="topbar" aria-label="Site">
-      <a href="/" class="topbar-home" data-ga="play_nav_home">Monsiu Tech</a>
+      <a href="/" class="topbar-home" data-ga="beta_nav_home">Monsiu Tech</a>
       <div class="topbar-nav">
-        <a href="/custom-rr/" data-ga="play_nav_customrr">Custom RR</a>
-        <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" class="active" data-ga="play_nav_store">Google Play</a>
-        <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" data-ga="play_nav_github">GitHub</a>
+        <a href="/custom-rr/" data-ga="beta_nav_customrr">Custom RR</a>
+        <a href="/custom-rr/beta/" class="active" data-ga="beta_nav_beta">Play beta</a>
+        <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" data-ga="beta_nav_github">GitHub</a>
       </div>
     </nav>
 
-    <p class="eyebrow">// Google Play release</p>
-    <h1>Custom RR is live on Google Play</h1>
+    <p class="eyebrow">// Google Play beta test</p>
+    <h1>Test Custom RR on Google Play</h1>
     <p class="lede">
-      You can now install Custom RR directly from the Play Store and get updates
-      through Google Play. If you prefer APKs, GitHub Releases and Amazon
-      Appstore are also available.
+      The <strong>same app</strong> as every other channel, you just get it
+      through the Play Store, and as a tester you get <strong>new builds about 5
+      days before everyone else</strong>. Every tester also helps Custom RR reach
+      the public Play Store. It just takes three steps.
     </p>
 
     <div class="meta-row">
-      <span class="meta-chip solid">Now live</span>
-      <span class="meta-chip">Google Play updates</span>
+      <span class="meta-chip solid">Now accepting testers</span>
+      <span class="meta-chip">New builds ~5 days first</span>
       <span class="meta-chip">Same app</span>
-      <span class="meta-chip">Free + open source</span>
+      <span class="meta-chip">~2 mins to join</span>
     </div>
 
-    <div class="progress" role="status" aria-label="Google Play availability">
-      <p class="progress-eyebrow">// Public release</p>
-      <p class="progress-count"><b>Live</b> on Google Play</p>
+    <div class="progress" role="status" aria-label="Beta testing progress">
+      <p class="progress-eyebrow">// Almost there</p>
+      <!-- Update the tester count here as it changes. -->
+      <p class="progress-count"><b>11</b> of 12 testers</p>
+      <div class="progress-bar" aria-hidden="true"><span></span></div>
       <p>
-        Custom RR is publicly available on Google Play.
-        Install from the Play Store to get automatic updates on Android.
+        Just <strong>one more tester</strong> and Custom RR goes live on the
+        public Google Play Store. Joining below and installing through the
+        <strong>Play Store</strong> is what gets it over the line, and sharing
+        this page with one person who has an Android phone is the biggest help.
       </p>
     </div>
 
@@ -380,65 +389,76 @@
       <img src="https://raw.githubusercontent.com/monsiu/Custom-RR/main/screenshots/phone/06.png" alt="Devices" loading="lazy" width="150" />
     </div>
 
-    <section aria-label="How to install">
-      <h2>Get Custom RR</h2>
+    <section aria-label="How to join">
+      <h2>Join in three steps</h2>
 
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-body">
-          <h3>Install from Google Play</h3>
+          <h3>Join the testers group</h3>
           <p>
-            Install Custom RR from the official Google Play listing.
+            Open the group and tap <strong>Join group</strong>. This step is
+            required, just viewing it does not count, and the test page in step 2
+            will not let you in until you have actually joined.
           </p>
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="play_store">Open in the Play Store</a>
+          <a class="btn btn-primary" href="https://groups.google.com/g/custom-rr-play-testers" target="_blank" rel="noopener noreferrer" data-ga="beta_group">Join the testers group</a>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-body">
-          <h3>Prefer APKs? Use GitHub Releases</h3>
+          <h3>Opt in to the test</h3>
           <p>
-            Download the latest APK build directly from GitHub Releases.
+            Once you have joined the group, open the testing page and accept the
+            invite to become a tester for Custom RR.
           </p>
-          <a class="btn btn-ghost" href="https://github.com/monsiu/Custom-RR/releases/latest" target="_blank" rel="noopener noreferrer" data-ga="play_github_apk">Open GitHub Releases</a>
+          <a class="btn btn-ghost" href="https://play.google.com/apps/testing/io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="beta_optin">Open the testing page</a>
         </div>
       </div>
 
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-body">
-          <h3>Amazon Appstore option</h3>
+          <h3>Install from the Play Store</h3>
           <p>
-            Prefer Amazon distribution? Install from the Amazon Appstore listing.
+            Once you are in, install from the
+            <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="beta_store">Play Store</a>.
+            Access can take a little while to propagate after you join.
           </p>
-          <a class="btn btn-ghost" href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="play_amazon_store">Open Amazon Appstore</a>
+          <a class="btn btn-ghost" href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="beta_store_btn">Open in the Play Store</a>
         </div>
       </div>
 
       <p class="note" style="margin-top:1.4rem;">
-        The F-Droid listing is still pending review:
-        <a href="https://gitlab.com/fdroid/fdroiddata/-/merge_requests/39380" target="_blank" rel="noopener noreferrer">view F-Droid status</a>.
+        Use the <strong>same Google account</strong> for all three steps, the one
+        on your phone, or Play will not recognise you.
       </p>
 
       <div class="warn-box" role="note">
-        <span class="warn-label">Note</span>
+        <span class="warn-label">Important</span>
         <p>
-          If you are coming from the old testing URL, this page is now the
-          live install page. Use the Play Store link above for the current
-          public release.
+          <strong>You must install the Google Play build, not the GitHub one.</strong>
+          Only Play Store installs count toward the 12 testers, and you cannot run
+          the GitHub build and the Play beta at the same time. They are the same app
+          signed with different keys, so Android will not let one replace the other.
+          If you are on the GitHub build, uninstall it first, then
+          <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="beta_store_warn">grab the Play version here</a>.
         </p>
       </div>
     </section>
 
     <section>
       <div class="callout">
-        <h2>Need updates and support?</h2>
+        <h2>Please keep it installed for about two weeks</h2>
         <p>
-          For changelogs and issue tracking, use
-          <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer">GitHub</a>.
-          For community help, join the
-          <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer">Discord</a>.
+          Google only lets the app go public once enough testers stay opted in
+          for <strong>14 days in a row</strong>. Just keeping Custom RR installed
+          is the single most helpful thing you can do. Prefer not to use Google
+          Play? Grab the <a href="https://github.com/monsiu/Custom-RR/releases" target="_blank" rel="noopener noreferrer">APK from GitHub Releases</a>
+          or the <a href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Amazon Appstore</a>,
+          you just get new features a few days later. Important fixes always go
+          to every channel at once.
         </p>
       </div>
     </section>
@@ -446,7 +466,7 @@
 
   <footer>
     <span>© <span id="year"></span> Martin Nzau (Monsiu) · GPL-3.0</span>
-    <span><a href="/custom-rr/" data-ga="play_footer_customrr">Custom RR</a> · <a href="/custom-rr/privacy/" data-ga="play_footer_privacy">Privacy</a> · <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer" data-ga="play_footer_discord">Discord</a> · <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" data-ga="play_footer_github">GitHub</a></span>
+    <span><a href="/custom-rr/" data-ga="beta_footer_customrr">Custom RR</a> · <a href="/custom-rr/privacy/" data-ga="beta_footer_privacy">Privacy</a> · <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer" data-ga="beta_footer_discord">Discord</a> · <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" data-ga="beta_footer_github">GitHub</a></span>
   </footer>
 
   <script>
