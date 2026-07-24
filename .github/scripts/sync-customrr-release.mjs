@@ -77,20 +77,31 @@ function mdInlineToHtml(text) {
   return s;
 }
 
-// Pull the bullet lines out of the release body's "### Changes" (or "### Highlights")
-// section, stopping at the next "### " heading (so Android / Desktop / Donation /
-// Install noise is skipped). Returns [] when the section is missing so existing
-// copy is kept.
+// Pull the bullet lines out of the release body's changelog. Prefers a single
+// "### Changes" / "### Highlights" section; otherwise falls back to the
+// Keep a Changelog sections ("### Added" / "### Changed" / "### Fixed" / ...),
+// collected in document order. Each match stops at the next "### " heading, so
+// Android / Desktop / Donation / Install noise is skipped. Returns [] when
+// nothing matches, so existing copy is kept.
 function extractChanges(body) {
   if (!body) return [];
   const norm = body.replace(/\r\n/g, '\n');
-  const m = norm.match(/###\s+(?:Changes|Highlights)[^\n]*\n([\s\S]*?)(?=\n###\s|$)/i);
-  if (!m) return [];
+  const bulletsFrom = (section) => {
+    const out = [];
+    for (const line of section.split('\n')) {
+      const bm = line.match(/^\s*[-*\u2022]\s+(.+?)\s*$/);
+      if (bm) out.push(bm[1]);
+    }
+    return out;
+  };
+  // Preferred: a single "### Changes" / "### Highlights" section.
+  const single = norm.match(/###\s+(?:Changes|Highlights)[^\n]*\n([\s\S]*?)(?=\n###\s|$)/i);
+  if (single) return bulletsFrom(single[1]);
+  // Fallback: Keep a Changelog sections, collected in document order.
   const bullets = [];
-  for (const line of m[1].split('\n')) {
-    const bm = line.match(/^\s*[-*\u2022]\s+(.+?)\s*$/);
-    if (bm) bullets.push(bm[1]);
-  }
+  const re = /###\s+(?:Added|Changed|Fixed|Removed|Deprecated|Security)[^\n]*\n([\s\S]*?)(?=\n###\s|$)/gi;
+  let m;
+  while ((m = re.exec(norm)) !== null) bullets.push(...bulletsFrom(m[1]));
   return bullets;
 }
 
@@ -160,7 +171,7 @@ function rewrite(html, rel) {
   }
   if (rel.changes && rel.changes.length) {
     const lis = rel.changes.map((b) => `        <li>${mdInlineToHtml(b)}</li>`).join('\n');
-    const block = `<!-- cr:changelog:start (auto-generated from the latest release's "### Changes" section; edits here are overwritten) -->\n${lis}\n        <!-- cr:changelog:end -->`;
+    const block = `<!-- cr:changelog:start (auto-generated from the latest release's changelog; edits here are overwritten) -->\n${lis}\n        <!-- cr:changelog:end -->`;
     out = out.replace(/<!-- cr:changelog:start[\s\S]*?cr:changelog:end -->/, () => block);
   }
 
