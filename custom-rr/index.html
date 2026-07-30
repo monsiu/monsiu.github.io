@@ -456,6 +456,32 @@
       margin-bottom: 1rem;
     }
 
+    /* Crypto donations table */
+    .crypto-details { margin-bottom: 1rem; }
+    .crypto-details .faq-answer p { margin-bottom: 0.75rem; }
+    .crypto-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    .crypto-table th,
+    .crypto-table td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.55rem 0.75rem 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .crypto-table th {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .crypto-table tr:last-child td { border-bottom: none; }
+    .crypto-table td strong { color: var(--text); font-weight: 500; }
+    .crypto-table code { word-break: break-all; }
+
     footer {
       max-width: var(--max);
       margin: 0 auto;
@@ -891,7 +917,27 @@ flutter run</pre>
         <a href="https://github.com/sponsors/monsiu" target="_blank" rel="noopener noreferrer" class="btn btn-sponsor" data-ga="customrr_sponsor_section">&#9829; Sponsor on GitHub</a>
         <button type="button" id="shareBtn" class="btn btn-primary" data-ga="customrr_share">Share</button>
       </div>
-      <p>Prefer crypto? The app ships a donation sheet with Bitcoin, Litecoin, Ethereum, BNB, Solana, and Monero addresses, plus a no-KYC swap-to-Monero option.</p>
+      <details class="faq-item crypto-details">
+        <summary>Crypto donations (same addresses shipped in the app)</summary>
+        <div class="faq-answer">
+          <p>Listed here too so donors can cross-check the in-app values against an out-of-band source before sending funds.</p>
+          <table class="crypto-table">
+            <thead>
+              <tr><th>Coin</th><th>Address</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>BTC</strong> (Bitcoin, P2WPKH)</td><td><code>bc1qaxx6dxkz0s5cw4h9nysw4yvmsaf3qlk7j0gwa2</code></td></tr>
+              <tr><td><strong>BTC Lightning</strong></td><td><code>monsiutech@cake.cash</code></td></tr>
+              <tr><td><strong>LTC</strong> (Litecoin, P2WPKH)</td><td><code>ltc1qdrjqjzk0sfn7grysxruxuuev6jpn9yqm8wrrg0</code></td></tr>
+              <tr><td><strong>ETH</strong> / EVM (mainnet)</td><td><code>0x4e815A295F8096997867FBA2d7bDC6316ad970be</code></td></tr>
+              <tr><td><strong>BNB</strong> Smart Chain (also accepts ETH, USDT, USDC on BSC)</td><td><code>0x4aCD5AD66DD8E64e3117d9cb0CB0434294027CDd</code></td></tr>
+              <tr><td><strong>SOL</strong> (Solana)</td><td><code>6qC53PkKjoFtyhohHnYFApf3YccZwULFLTfrUMiruM97</code></td></tr>
+              <tr><td><strong>XMR</strong> (Monero)</td><td><code>8ADyd3DvN5D6wAauq2Q2BSZp7aG3LhYZAFswk5dNQohVUBDT8G84MjPimsj5vzfB8TBrwtC3y3BATNm76bX21kWfUys3ehE</code></td></tr>
+            </tbody>
+          </table>
+          <p>Have a different coin? Use the in-app <strong>Swap to XMR</strong> button (powered by <a href="https://trocador.app/anonpay/" target="_blank" rel="noopener noreferrer" data-ga="customrr_trocador">Trocador AnonPay</a>, no account, no KYC).</p>
+        </div>
+      </details>
     </section>
 
     <section>
