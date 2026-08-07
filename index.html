@@ -21,7 +21,7 @@
   <script defer src="/consent.js"></script>
   <script defer src="/release.js"></script>
   <title>Martin Nzau (Monsiu) - Full-Stack & Mobile Developer</title>
-  <meta name="description" content="Full-stack developer who ships complete products: ClauseShift (AI contract review, live on the web, Google Play, Amazon Appstore, and Microsoft Store) and Custom RR (open-source Android). Verified Upwork freelancer and hackathon builder." />
+  <meta name="description" content="Full-stack developer who ships complete products: ClauseShift (AI contract review, live on the web, Google Play, Amazon Appstore, and Microsoft Store), PesaShift (on-device M-PESA statement analyzer for Android), and Custom RR (open-source Android). Verified Upwork freelancer and hackathon builder." />
   <meta name="keywords" content="Martin Nzau, Monsiu, full-stack developer, Flutter Android developer, Solidity developer, React developer, Next.js developer, smart contract developer, AI integration, hackathon developer, Upwork freelancer" />
   <meta name="author" content="Martin Nzau" />
   <link rel="canonical" href="https://monsiu.github.io/" />
@@ -31,7 +31,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Monsiu Tech" />
   <meta property="og:title" content="Martin Nzau (Monsiu) - Full-Stack & Mobile Developer" />
-  <meta property="og:description" content="Full-stack developer who ships complete products. Creator of ClauseShift (AI contract review, live on web and app stores) and Custom RR (open-source Android)." />
+  <meta property="og:description" content="Full-stack developer who ships complete products. Creator of ClauseShift (AI contract review, live on web and app stores), PesaShift (on-device M-PESA statement analyzer), and Custom RR (open-source Android)." />
   <meta property="og:url" content="https://monsiu.github.io/" />
   <meta property="og:image" content="https://monsiu.github.io/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -42,7 +42,7 @@
   <meta name="twitter:site" content="@MonsiuTech" />
   <meta name="twitter:creator" content="@MonsiuTech" />
   <meta name="twitter:title" content="Martin Nzau (Monsiu) - Full-Stack & Mobile Developer" />
-  <meta name="twitter:description" content="Full-stack developer who ships complete products. Creator of ClauseShift and Custom RR. Verified Upwork freelancer and hackathon builder." />
+  <meta name="twitter:description" content="Full-stack developer who ships complete products. Creator of ClauseShift, PesaShift, and Custom RR. Verified Upwork freelancer and hackathon builder." />
   <meta name="twitter:image" content="https://monsiu.github.io/og-image.png" />
   <meta name="twitter:image:alt" content="Martin Nzau (Monsiu), full-stack, mobile and smart contract developer" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,7 +61,7 @@
         "url": "https://monsiu.github.io/",
         "image": "https://monsiu.github.io/profile.png",
         "jobTitle": "Full-Stack, Mobile & Smart Contract Developer",
-        "description": "Full-stack developer who ships complete products. Creator of ClauseShift, an AI contract reviewer live on the web, Amazon Appstore, and Microsoft Store, and Custom RR, an open-source Android hub for custom ROMs. Hackathon contributor and verified Upwork freelancer.",
+        "description": "Full-stack developer who ships complete products. Creator of ClauseShift, an AI contract reviewer live on the web, Amazon Appstore, and Microsoft Store, PesaShift, an on-device M-PESA statement analyser for Android, and Custom RR, an open-source Android hub for custom ROMs. Hackathon contributor and verified Upwork freelancer.",
         "email": "mailto:contactmonsiu@gmail.com",
         "sameAs": [
           "https://github.com/monsiu",
@@ -151,6 +151,29 @@
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "PesaShift",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Android",
+        "url": "https://monsiu.github.io/pesashift-android/",
+        "sameAs": [
+          "https://github.com/monsiu/pesashift-android",
+          "https://zapstore.dev/apps/com.pesashift.app"
+        ],
+        "downloadUrl": "https://github.com/monsiu/pesashift-android/releases/latest",
+        "installUrl": "https://github.com/monsiu/pesashift-android/releases/latest",
+        "author": { "@id": "https://monsiu.github.io/#person" },
+        "description": "An on-device M-PESA and Airtel Money statement analyser for Android. Reads the PDF statement on the phone and shows every fee, every Fuliza charge, and where the money went, recovering hidden charges by walking the balance column. No SMS permission, no accounts, and the statement is never uploaded. Free to explore recent months, with a one-time Pro unlock.",
+        "softwareVersion": "0.1.0",
+        "datePublished": "2026-08-06",
+        "programmingLanguage": ["Dart", "Flutter"],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KES"
         }
       },
       {
@@ -1091,6 +1114,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Work</a></li>
         <li><a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="nav_clauseshift">ClauseShift</a></li>
+        <li><a href="/pesashift-android/" data-ga="nav_pesashift">PesaShift</a></li>
         <li><a href="/custom-rr/" data-ga="nav_custom_rr">Custom RR</a></li>
         <li><a href="#certifications">Certs</a></li>
         <li><a href="#experience">Exp</a></li>
@@ -1282,6 +1306,35 @@
         <div class="project-card">
           <div>
             <p class="project-number">02 //</p>
+            <h3 class="project-name">PesaShift
+              <a href="https://github.com/monsiu/pesashift-android/releases/latest" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_pesashift_release" title="PesaShift v0.1.0, first release">New · v0.1.0</a>
+            </h3>
+            <a href="/pesashift-android/" data-ga="project_pesashift_banner" aria-label="PesaShift landing page">
+              <img src="https://raw.githubusercontent.com/monsiu/pesashift-android/main/docs/images/feature-graphic.png" alt="PesaShift: see every shilling M-PESA takes" class="project-banner" loading="lazy" decoding="async" />
+            </a>
+            <p class="project-desc">
+              An on-device statement analyser for Kenya's mobile money. PesaShift reads your <strong>M-PESA or Airtel Money PDF statement on your phone</strong> and shows every fee, every Fuliza charge, and where the money actually went. It walks the statement's balance column to <strong>recover charges that are never itemised</strong>, arithmetic, not estimates. No SMS permission, no accounts, and the statement never leaves the device. Free to explore recent months; Pro is a <strong>one-time unlock, never a subscription</strong>, sold through Google Play Billing on Play and M-PESA (Paystack) everywhere else. Live today via <strong>direct APK and Zapstore</strong>, with Google Play, the Huawei AppGallery, and the Amazon Appstore in review.
+            </p>
+            <p class="project-metric"><strong>v0.1.0 shipped Aug 2026</strong> &nbsp;·&nbsp; On-device, no SMS permission &nbsp;·&nbsp; Pay once, no subscription &nbsp;·&nbsp; <a href="/pesashift-android/" data-ga="project_pesashift_site">PesaShift site</a></p>
+            <div class="project-tags">
+              <span class="project-tag">Flutter</span>
+              <span class="project-tag">Dart</span>
+              <span class="project-tag">Android</span>
+              <span class="project-tag">On-device PDF parsing</span>
+              <span class="project-tag">M-PESA</span>
+              <span class="project-tag">Airtel Money</span>
+              <span class="project-tag">Play Billing</span>
+              <span class="project-tag">Paystack</span>
+              <span class="project-tag">GitHub Actions</span>
+            </div>
+          </div>
+          <a href="/pesashift-android/" class="project-arrow" title="PesaShift landing page">↗</a>
+        </div>
+
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">03 //</p>
             <h3 class="project-name">Custom RR
               <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_custom_rr_release" title="Custom RR latest release, see full changelog on GitHub">New · <span data-cr="version">v1.3.6</span></a>
             </h3>
@@ -1312,7 +1365,7 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">03 //</p>
+            <p class="project-number">04 //</p>
             <h3 class="project-name">NanoPay</h3>
             <p class="project-desc">
               Built a per-request AI API where every query costs $0.001 USDC, settled onchain on Arc blockchain. Deployed a Solidity smart contract that accepts USDC micropayments, built a Node.js API server that verifies payments before returning Gemini AI responses, and demonstrated 57+ live onchain transactions. The project proves sub-cent API monetization is only economically viable on Arc, where gas costs are 100,000x cheaper than Ethereum. <br><br>This was part of a hackathon submission for the Arc Blockchain Hackathon which you can view the details 
@@ -1338,7 +1391,7 @@
         </div>
 <div class="project-card">
   <div>
-    <p class="project-number">04 //</p>
+    <p class="project-number">05 //</p>
     <h3 class="project-name">Aegis, SRE Guardian</h3>
     <p class="project-desc">
       An autonomous incident-response system that monitors cloud infrastructure in real time, diagnoses issues with a three-agent AI pipeline (Monitor, Diagnosis, Remediation), and executes safe SSH-based fixes on remote servers. Streams live metrics over WebSockets, searches past incidents with a ChromaDB vector store, and auto-generates PDF post-mortems. Handles CPU surges, memory pressure, disk I/O, DDoS, and DB bottlenecks with a whitelisted command set, no arbitrary shell input.
