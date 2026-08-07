@@ -22,7 +22,7 @@
   <script defer src="/release.js"></script>
   <title>Martin Nzau (Monsiu) - Full-Stack & Mobile Developer</title>
   <meta name="description" content="Full-stack developer who ships complete products: ClauseShift (AI contract review, live on the web, Google Play, Amazon Appstore, and Microsoft Store), PesaShift (on-device M-PESA statement analyzer for Android), and Custom RR (open-source Android). Verified Upwork freelancer and hackathon builder." />
-  <meta name="keywords" content="Martin Nzau, Monsiu, full-stack developer, Flutter Android developer, Solidity developer, React developer, Next.js developer, smart contract developer, AI integration, hackathon developer, Upwork freelancer" />
+  <meta name="keywords" content="Martin Nzau, Monsiu, full-stack developer, Flutter Android developer, React developer, Next.js developer, AI integration, hackathon developer, Upwork freelancer" />
   <meta name="author" content="Martin Nzau" />
   <link rel="canonical" href="https://monsiu.github.io/" />
   <link rel="icon" type="image/png" href="/profile.png" />
@@ -37,14 +37,14 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:alt" content="Martin Nzau (Monsiu), full-stack, mobile and smart contract developer" />
+  <meta property="og:image:alt" content="Martin Nzau (Monsiu), full-stack and mobile developer" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@MonsiuTech" />
   <meta name="twitter:creator" content="@MonsiuTech" />
   <meta name="twitter:title" content="Martin Nzau (Monsiu) - Full-Stack & Mobile Developer" />
   <meta name="twitter:description" content="Full-stack developer who ships complete products. Creator of ClauseShift, PesaShift, and Custom RR. Verified Upwork freelancer and hackathon builder." />
   <meta name="twitter:image" content="https://monsiu.github.io/og-image.png" />
-  <meta name="twitter:image:alt" content="Martin Nzau (Monsiu), full-stack, mobile and smart contract developer" />
+  <meta name="twitter:image:alt" content="Martin Nzau (Monsiu), full-stack and mobile developer" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -60,7 +60,7 @@
         "alternateName": "Monsiu",
         "url": "https://monsiu.github.io/",
         "image": "https://monsiu.github.io/profile.png",
-        "jobTitle": "Full-Stack, Mobile & Smart Contract Developer",
+        "jobTitle": "Full-Stack & Mobile Developer",
         "description": "Full-stack developer who ships complete products. Creator of ClauseShift, an AI contract reviewer live on the web, Amazon Appstore, and Microsoft Store, PesaShift, an on-device M-PESA statement analyser for Android, and Custom RR, an open-source Android hub for custom ROMs. Hackathon contributor and verified Upwork freelancer.",
         "email": "mailto:contactmonsiu@gmail.com",
         "sameAs": [
@@ -891,6 +891,29 @@
     .contact-link-arrow { color: var(--muted); font-size: 0.9rem; transition: color 0.2s, transform 0.2s; }
     .contact-link:hover .contact-link-arrow { color: var(--accent); transform: translate(2px, -2px); }
 
+    /* Hire strip after projects */
+    .hire-strip {
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .hire-strip-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .hire-strip h3 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; margin: 0.4rem 0 0.45rem; color: var(--text); }
+    .hire-strip p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; max-width: 460px; }
+    .hire-strip-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
     /* Contact form (same pipeline as ClauseShift) */
     .contact-form { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.75rem; }
     .cf-field { display: flex; flex-direction: column; gap: 0.45rem; min-width: 0; }
@@ -1192,12 +1215,12 @@
       <div class="hero-inner">
         <div class="hero-text">
           <p class="hero-eyebrow">// Software Developer &nbsp;·&nbsp; aka Monsiu</p>
-          <h1 class="hero-name">Martin<br/>Nzau<span class="hero-role">Full-Stack, Mobile &amp; Smart Contract Developer</span></h1>
+          <h1 class="hero-name">Martin<br/>Nzau<span class="hero-role">Full-Stack &amp; Mobile Developer</span></h1>
           <p class="hero-title">Full Stack &nbsp;·&nbsp; System Design</p>
           <p class="hero-bio">
             I design, build, and ship complete products: backends, web apps, and mobile.
-            My work is live on the web, the Amazon Appstore, and the Microsoft Store,
-            and I sweat the details from clean architecture to store review.
+            My work is live on the web and in six app stores, from Google Play and Amazon
+            to the Microsoft Store, and I sweat the details from clean architecture to store review.
           </p>
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary" data-ga="hero_view_work">View Work</a>
@@ -1474,6 +1497,17 @@
 
       </div>
 
+      <div class="hire-strip reveal">
+        <div>
+          <p class="hire-strip-label">// want something like these?</p>
+          <h3>I build apps like these for clients.</h3>
+          <p>Websites from $500, web apps from $1,500, mobile apps from $3,000. Fixed quotes, store submission included, reply within 24-48 hours.</p>
+        </div>
+        <div class="hire-strip-cta">
+          <a href="/services/" class="btn btn-primary" data-ga="projects_hire_strip">Get your project built</a>
+        </div>
+      </div>
+
       <h2 class="section-label reveal" style="margin-top: 4rem;">Programs &amp; Hackathons</h2>
       <ul class="skill-list reveal" style="margin-top: 1rem;">
         <li class="skill-tag">AMD Developer Hackathon 2025</li>
@@ -1650,7 +1684,7 @@
           <h2 class="contact-heading">Let's<br/>build<br/><span>something.</span></h2>
           <p class="contact-subtext">
             Open to new roles, freelance projects, and interesting problems.
-            Reach out and let's talk.
+            Project inquiries get a plan and a fixed quote within 24-48 hours.
           </p>
 
           <form id="contactForm" class="contact-form" novalidate>
