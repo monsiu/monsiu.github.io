@@ -37,7 +37,7 @@
   <meta property="og:title" content="Custom RR - A Hub for Android Custom ROMs, Recoveries & Root" />
   <meta property="og:description" content="18 actively maintained ROMs, 5 recoveries, 500+ devices, nightly freshness signals. Android, Windows, macOS, and Linux builds. Open source, GPL-3.0." />
   <meta property="og:url" content="https://monsiu.github.io/custom-rr/" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
+  <meta property="og:image" content="https://monsiu.github.io/custom-rr/banner-2x.png" />
   <meta property="og:image:width" content="720" />
   <meta property="og:image:height" content="180" />
   <meta property="og:image:type" content="image/png" />
@@ -47,7 +47,7 @@
   <meta name="twitter:creator" content="@MonsiuTech" />
   <meta name="twitter:title" content="Custom RR - A Hub for Android Custom ROMs, Recoveries & Root" />
   <meta name="twitter:description" content="18 ROMs, 5 recoveries, 500+ devices, nightly freshness signals. Android, Windows, macOS, Linux. Open source." />
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" />
+  <meta name="twitter:image" content="https://monsiu.github.io/custom-rr/banner-2x.png" />
   <meta name="twitter:image:alt" content="Custom RR app banner: a hub for Android custom ROMs and recoveries" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,7 +72,7 @@
         ],
         "downloadUrl": "https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6",
         "installUrl": "https://github.com/monsiu/Custom-RR/releases/latest",
-        "image": "https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png",
+        "image": "https://monsiu.github.io/custom-rr/banner-2x.png",
         "screenshot": [
           "https://raw.githubusercontent.com/monsiu/Custom-RR/main/screenshots/phone/01.png",
           "https://raw.githubusercontent.com/monsiu/Custom-RR/main/screenshots/phone/02.png",
@@ -312,6 +312,45 @@
       padding: 0.4rem 0.8rem;
     }
     .topbar-nav a.hire:hover { border-color: var(--lime); }
+
+    /* Apps dropdown */
+    .nav-dd { position: relative; display: inline-block; }
+    .nav-dd-btn {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--band-sub);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+    .nav-dd-btn:hover, .nav-dd-btn:focus-visible, .nav-dd.open .nav-dd-btn { color: var(--lime); }
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 0.8rem);
+      right: 0;
+      min-width: 10rem;
+      padding: 0.4rem 0;
+      background: var(--band-deep);
+      border: 1px solid var(--band-line);
+      border-radius: 10px;
+      display: none;
+      z-index: 50;
+    }
+    .nav-dd.open .nav-dd-menu { display: block; }
+    .nav-dd-menu a {
+      display: block;
+      padding: 0.55rem 1.1rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--band-sub);
+      text-decoration: none;
+    }
+    .nav-dd-menu a:hover { color: var(--lime); }
 
     .eyebrow {
       font-family: var(--mono);
@@ -664,6 +703,14 @@
         <a href="/" data-ga="customrr_portfolio">Portfolio</a>
         <a href="/#projects" data-ga="customrr_work">Work</a>
         <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_nav_play">Google Play</a>
+        <span class="nav-dd" id="navApps">
+          <button type="button" class="nav-dd-btn" aria-haspopup="true" aria-expanded="false" aria-controls="navAppsMenu">Apps <span aria-hidden="true">▾</span></button>
+          <span class="nav-dd-menu" id="navAppsMenu">
+            <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="customrr_nav_clauseshift">ClauseShift</a>
+            <a href="/pesashift-android/" data-ga="customrr_nav_pesashift">PesaShift</a>
+            <a href="/custom-rr/" data-ga="customrr_nav_self">Custom RR</a>
+          </span>
+        </span>
         <a href="/services/" class="hire" data-ga="customrr_hire">Hire me</a>
       </div>
     </nav>
@@ -701,7 +748,7 @@
       <a href="/custom-rr/privacy/" class="btn btn-ghost" data-ga="customrr_privacy">Privacy Policy</a>
     </div>
 
-    <img src="https://raw.githubusercontent.com/monsiu/Custom-RR/main/images/readme/banner.png" alt="Custom RR banner: the single home for Android custom ROMs and recoveries" class="banner" width="720" height="180" loading="lazy" decoding="async" />
+    <img src="/custom-rr/banner-2x.png" alt="Custom RR banner: the single home for Android custom ROMs and recoveries" class="banner" width="1440" height="360" loading="lazy" decoding="async" />
   </div>
 </header>
 
@@ -1224,6 +1271,28 @@ flutter run</pre>
         else if (e.key === 'ArrowRight') nav(1);
         else if (e.key === '+' || e.key === '=') { scale = clamp(scale * 1.2, MIN, MAX); apply(); }
         else if (e.key === '-') { scale = clamp(scale / 1.2, MIN, MAX); if (scale === 1) { panX = 0; panY = 0; } apply(); }
+      });
+    })();
+  </script>
+  <script>
+    /* Apps dropdown */
+    (function () {
+      var dd = document.getElementById('navApps');
+      if (!dd) return;
+      var btn = dd.querySelector('.nav-dd-btn');
+      function setDd(open) {
+        dd.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setDd(!dd.classList.contains('open'));
+      });
+      document.addEventListener('click', function (e) {
+        if (dd.classList.contains('open') && !dd.contains(e.target)) setDd(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && dd.classList.contains('open')) { setDd(false); btn.focus(); }
       });
     })();
   </script>
