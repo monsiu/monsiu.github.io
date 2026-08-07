@@ -405,8 +405,8 @@
     .btn-primary { background: var(--lime); color: var(--lime-ink); }
     .btn-primary:hover { background: #93E36F; color: var(--lime-ink); }
     /* contextual band/callout link colors must never recolor solid buttons, at rest or on hover */
-    .band .btn-primary, .callout .btn-primary,
-    .band .btn-primary:hover, .callout .btn-primary:hover { color: var(--lime-ink); }
+    .band .btn-primary, .callout .btn-primary, .hire-nudge .btn-primary,
+    .band .btn-primary:hover, .callout .btn-primary:hover, .hire-nudge .btn-primary:hover { color: var(--lime-ink); }
     .band .btn-coffee, .callout .btn-coffee,
     .band .btn-coffee:hover, .callout .btn-coffee:hover { color: #0D0C22; }
     .btn-ghost { background: transparent; color: var(--text); border-color: var(--line); }
@@ -547,6 +547,54 @@
     .callout .btn-ghost:hover { border-color: var(--lime); }
     .callout-sub { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
     .callout-note { font-size: 0.86rem; margin-bottom: 0; }
+
+    /* hire-me nudge */
+    .hire-nudge {
+      background: var(--band);
+      color: var(--band-text);
+      border-radius: 18px;
+      padding: 2.6rem 2.4rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(15, 36, 19, 0.28);
+    }
+    .hire-nudge::after {
+      content: '</>';
+      position: absolute;
+      right: -0.5rem;
+      bottom: -2.2rem;
+      font-family: var(--mono);
+      font-size: 9rem;
+      font-weight: 700;
+      color: rgba(126, 217, 87, 0.08);
+      pointer-events: none;
+      line-height: 1;
+    }
+    .hn-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: 0.8rem;
+    }
+    .hire-nudge h2 { color: var(--band-text); max-width: 34rem; }
+    .hn-body { color: var(--band-sub); max-width: 42rem; }
+    .hn-body strong { color: var(--band-text); }
+    .hire-nudge a { color: var(--band-text); }
+    .hire-nudge a:hover { color: var(--lime); }
+    .hn-proof { display: flex; gap: 2.6rem; flex-wrap: wrap; margin: 1.8rem 0 2rem; }
+    .hn-stat { display: flex; flex-direction: column; }
+    .hn-num { font-family: var(--display); font-size: 2.2rem; font-weight: 600; color: var(--lime); line-height: 1.1; }
+    .hn-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--band-sub); margin-top: 0.3rem; }
+    .hn-cta { margin-bottom: 1rem; }
+    .hire-nudge .btn-ghost { color: var(--band-text); border-color: var(--band-line); }
+    .hire-nudge .btn-ghost:hover { border-color: var(--lime); color: var(--lime); }
+    .hn-note { font-size: 0.85rem; color: var(--band-sub); margin-bottom: 0; }
+    @media (max-width: 560px) {
+      .hire-nudge { padding: 1.8rem 1.4rem; }
+      .hn-proof { gap: 1.4rem; }
+    }
 
     /* FAQ */
     .faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
@@ -882,6 +930,28 @@ flutter run</pre>
 </div>
 </div>
 <div class="container">
+
+    <section class="hire-nudge" id="hire" aria-label="Commission your own app">
+      <p class="hn-eyebrow">Like what you see?</p>
+      <h2>The person who built this builds apps for clients.</h2>
+      <p class="hn-body">
+        Custom RR is designed, coded, and shipped by one developer: the catalog engine, the nightly
+        freshness pipeline, native builds for four platforms, and releases on Google Play, the Amazon
+        Appstore, and F-Droid. If you want an <strong>Android app, a cross-platform app, or a website</strong>
+        built with this level of care, from first sketch to the app stores, that is exactly what I do
+        for clients.
+      </p>
+      <div class="hn-proof">
+        <div class="hn-stat"><span class="hn-num">3</span><span class="hn-label">products shipped &amp; live</span></div>
+        <div class="hn-stat"><span class="hn-num">6</span><span class="hn-label">app stores published to</span></div>
+        <div class="hn-stat"><span class="hn-num">1</span><span class="hn-label">developer, end to end</span></div>
+      </div>
+      <div class="cta-row hn-cta">
+        <a href="/services/" class="btn btn-primary" data-ga="customrr_hire_nudge">Get your project built</a>
+        <a href="/#projects" class="btn btn-ghost" data-ga="customrr_hire_nudge_work">See everything I have shipped</a>
+      </div>
+      <p class="hn-note">Tell me what you have in mind and you get back a plan, a timeline, and a quote. No obligation.</p>
+    </section>
 
     <section id="faq">
       <h2>Frequently asked questions</h2>
