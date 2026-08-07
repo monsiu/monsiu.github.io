@@ -365,6 +365,11 @@
     .btn:hover { transform: translateY(-1px); }
     .btn-primary { background: var(--lime); color: var(--lime-ink); }
     .btn-primary:hover { background: #93E36F; color: var(--lime-ink); }
+    /* contextual band/callout link colors must never recolor solid buttons, at rest or on hover */
+    .band .btn-primary, .callout .btn-primary,
+    .band .btn-primary:hover, .callout .btn-primary:hover { color: var(--lime-ink); }
+    .band .btn-coffee, .callout .btn-coffee,
+    .band .btn-coffee:hover, .callout .btn-coffee:hover { color: #0D0C22; }
     .btn-ghost { background: transparent; color: var(--text); border-color: var(--line); }
     .btn-ghost:hover { border-color: var(--lime); }
     .band .btn-ghost { color: var(--band-text); border-color: var(--band-line); }
