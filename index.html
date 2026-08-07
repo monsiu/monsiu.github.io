@@ -394,14 +394,19 @@
       text-transform: uppercase;
       color: var(--text);
       opacity: 0.72;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       background: none;
-      border: none;
-      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.32rem 0.75rem;
       cursor: pointer;
-      transition: color 0.2s, opacity 0.2s;
+      transition: color 0.2s, opacity 0.2s, border-color 0.2s;
     }
-    .nav-dd-btn:hover, .nav-dd-btn:focus-visible, .nav-dd.open .nav-dd-btn { color: var(--accent); opacity: 1; }
-    .nav-dd-caret { font-size: 0.65em; }
+    .nav-dd-btn:hover, .nav-dd-btn:focus-visible, .nav-dd.open .nav-dd-btn { color: var(--accent); border-color: var(--accent); opacity: 1; }
+    .nav-dd-caret { font-size: 0.7em; transition: transform 0.2s; }
+    .nav-dd.open .nav-dd-caret { transform: rotate(180deg); }
     .nav-dd-menu {
       position: absolute;
       top: calc(100% + 0.9rem);
@@ -1254,7 +1259,9 @@
             <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer">ClauseShift</a>,
             an AI contract reviewer that cites the exact clause behind every risk it flags. I built it
             end to end: the Next.js backend, the Flutter apps, billing, the store releases, and the
-            marketing site. Before that came Custom RR, an open-source Android hub for custom ROMs
+            marketing site. The newest is <a href="/pesashift-android/">PesaShift</a>, an M-PESA
+            statement analyzer that runs entirely on-device, and before both came
+            <a href="/custom-rr/">Custom RR</a>, an open-source Android hub for custom ROMs
             that I still maintain and ship across five platforms.
           </p>
           <p>

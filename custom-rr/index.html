@@ -321,12 +321,19 @@
       letter-spacing: 0.09em;
       text-transform: uppercase;
       color: var(--band-sub);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       background: none;
-      border: none;
-      padding: 0;
+      border: 1px solid var(--band-line);
+      border-radius: 999px;
+      padding: 0.32rem 0.75rem;
       cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
     }
-    .nav-dd-btn:hover, .nav-dd-btn:focus-visible, .nav-dd.open .nav-dd-btn { color: var(--lime); }
+    .nav-dd-btn:hover, .nav-dd-btn:focus-visible, .nav-dd.open .nav-dd-btn { color: var(--lime); border-color: var(--lime); }
+    .nav-dd-btn span { transition: transform 0.2s; }
+    .nav-dd.open .nav-dd-btn span { transform: rotate(180deg); }
     .nav-dd-menu {
       position: absolute;
       top: calc(100% + 0.8rem);
