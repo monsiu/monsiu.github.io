@@ -384,6 +384,44 @@
       opacity: 1;
     }
 
+    /* Apps dropdown */
+    .nav-dd { position: relative; }
+    .nav-dd-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.72;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: color 0.2s, opacity 0.2s;
+    }
+    .nav-dd-btn:hover, .nav-dd-btn:focus-visible, .nav-dd.open .nav-dd-btn { color: var(--accent); opacity: 1; }
+    .nav-dd-caret { font-size: 0.65em; }
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 0.9rem);
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 10.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0.4rem 0;
+      background: var(--bg-nav);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: none;
+    }
+    .nav-dd.open .nav-dd-menu {
+      display: block;
+    }
+    .nav-dd-menu a { display: block; padding: 0.55rem 1.1rem; }
+
     .container { max-width: var(--max); margin: 0 auto; padding: 0 2.5rem; }
 
     section { padding: 6rem 0; }
@@ -1102,6 +1140,21 @@
         border-bottom: 1px solid var(--border);
       }
       .nav-links li:last-child a { border-bottom: none; }
+      /* dropdown flattens into the mobile menu */
+      .nav-dd-btn { display: none; }
+      .nav-dd-menu {
+        position: static;
+        transform: none;
+        display: block;
+        background: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        min-width: 0;
+      }
+      .nav-dd-menu a { padding: 0.9rem 0.25rem; }
     }
   </style>
 </head>
@@ -1113,9 +1166,14 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Work</a></li>
-        <li><a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="nav_clauseshift">ClauseShift</a></li>
-        <li><a href="/pesashift-android/" data-ga="nav_pesashift">PesaShift</a></li>
-        <li><a href="/custom-rr/" data-ga="nav_custom_rr">Custom RR</a></li>
+        <li class="nav-dd" id="navApps">
+          <button type="button" class="nav-dd-btn" aria-haspopup="true" aria-expanded="false" aria-controls="navAppsMenu">Apps <span class="nav-dd-caret" aria-hidden="true">▾</span></button>
+          <ul class="nav-dd-menu" id="navAppsMenu">
+            <li><a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="nav_clauseshift">ClauseShift</a></li>
+            <li><a href="/pesashift-android/" data-ga="nav_pesashift">PesaShift</a></li>
+            <li><a href="/custom-rr/" data-ga="nav_custom_rr">Custom RR</a></li>
+          </ul>
+        </li>
         <li><a href="#certifications">Certs</a></li>
         <li><a href="#experience">Exp</a></li>
         <li><a href="/services/">Services</a></li>
@@ -1873,6 +1931,30 @@
         if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
           setMenu(false);
         }
+      });
+    })();
+
+    /* Apps dropdown */
+    (function () {
+      var dd = document.getElementById('navApps');
+      if (!dd) return;
+      var btn = dd.querySelector('.nav-dd-btn');
+      function setDd(open) {
+        dd.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        setDd(!dd.classList.contains('open'));
+      });
+      document.addEventListener('click', function (e) {
+        if (dd.classList.contains('open') && !dd.contains(e.target)) setDd(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && dd.classList.contains('open')) { setDd(false); btn.focus(); }
+      });
+      dd.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setDd(false); });
       });
     })();
 
