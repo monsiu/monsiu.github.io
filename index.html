@@ -90,10 +90,13 @@
           },
           {
             "@type": "EducationalOccupationalCredential",
-            "name": "Google Play Store Listing Certificate",
+            "name": "Google Play Academy - Store Listing Certificate",
             "credentialCategory": "Professional Certification",
             "recognizedBy": { "@type": "Organization", "name": "Google Play Academy", "url": "https://playacademy.withgoogle.com/" },
-            "dateCreated": "2026-08-27"
+            "url": "https://www.credential.net/15f67881-05fe-4c1e-928b-108bc0881891",
+            "identifier": "192588061",
+            "dateCreated": "2026-08-27",
+            "validThrough": "2029-08-27"
           },
           {
             "@type": "EducationalOccupationalCredential",
@@ -1565,6 +1568,12 @@
         A selection of my credentials. Tap any card to view the certificate as a PDF, in the browser.
       </p>
       <div class="cert-grid reveal">
+        <button type="button" class="cert-card" data-pdf="/certs/google-play-store-listing.pdf" data-verify="https://www.credential.net/15f67881-05fe-4c1e-928b-108bc0881891" data-ga="cert_google_play">
+          <span class="cert-issuer">Google Play Academy</span>
+          <span class="cert-title">Store Listing Certificate</span>
+          <span class="cert-meta">Issued Aug 2026 · valid through Aug 2029 · ID 192588061</span>
+          <span class="cert-view">View certificate →</span>
+        </button>
         <button type="button" class="cert-card" data-pdf="/certs/ceh-ec-council.pdf" data-ga="cert_ceh">
           <span class="cert-issuer">EC-Council</span>
           <span class="cert-title">Certified Ethical Hacker (CEH)</span>
@@ -1828,6 +1837,7 @@
     <div class="pdf-bar">
       <span class="pdf-name" id="pdfName">Certificate</span>
       <a class="pdf-action" id="pdfOpen" href="#" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+      <a class="pdf-action" id="pdfVerify" href="#" target="_blank" rel="noopener noreferrer" hidden>Verify with issuer ↗</a>
       <a class="pdf-action" id="pdfDownload" href="#" download>Download</a>
       <button type="button" class="pdf-action" id="pdfClose" aria-label="Close certificate viewer">Close ✕</button>
     </div>
@@ -2038,14 +2048,19 @@
       var nameEl = document.getElementById('pdfName');
       var openEl = document.getElementById('pdfOpen');
       var dlEl = document.getElementById('pdfDownload');
+      var verifyEl = document.getElementById('pdfVerify');
       var closeBtn = document.getElementById('pdfClose');
       var lastFocus = null;
 
-      function openPdf(url, title) {
+      function openPdf(url, title, verifyUrl) {
         lastFocus = document.activeElement;
         nameEl.textContent = title;
         openEl.href = url;
         dlEl.href = url;
+        if (verifyEl) {
+          if (verifyUrl) { verifyEl.href = verifyUrl; verifyEl.hidden = false; }
+          else { verifyEl.removeAttribute('href'); verifyEl.hidden = true; }
+        }
         frame.src = url;
         modal.classList.add('open');
         modal.setAttribute('aria-hidden', 'false');
@@ -2062,7 +2077,7 @@
       document.querySelectorAll('.cert-card[data-pdf]').forEach(function (card) {
         card.addEventListener('click', function () {
           var t = card.querySelector('.cert-title');
-          openPdf(card.getAttribute('data-pdf'), t ? t.textContent : 'Certificate');
+          openPdf(card.getAttribute('data-pdf'), t ? t.textContent : 'Certificate', card.getAttribute('data-verify'));
         });
       });
       closeBtn.addEventListener('click', closePdf);
