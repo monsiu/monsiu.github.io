@@ -1,3 +1,6 @@
 # Source certificate folder: keep private, not published to the live site.
 # The featured certificates are copied into /certs/ with web-friendly names.
 cer/
+
+# Editor/tool backups written next to edited files.
+*.bak

@@ -88,9 +88,18 @@ function extractChanges(body) {
   const norm = body.replace(/\r\n/g, '\n');
   const bulletsFrom = (section) => {
     const out = [];
+    let open = false;
     for (const line of section.split('\n')) {
       const bm = line.match(/^\s*[-*\u2022]\s+(.+?)\s*$/);
-      if (bm) out.push(bm[1]);
+      if (bm) {
+        out.push(bm[1]);
+        open = true;
+        continue;
+      }
+      // Release bodies hard-wrap long bullets onto indented continuation lines;
+      // fold them back in or the bullet is truncated mid-sentence.
+      if (open && /^\s+\S/.test(line)) out[out.length - 1] += ' ' + line.trim();
+      else open = false;
     }
     return out;
   };
