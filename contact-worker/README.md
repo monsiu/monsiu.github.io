@@ -10,10 +10,9 @@ Standalone Cloudflare Worker endpoint for the portfolio and services request for
 
    ```powershell
    npx wrangler secret put TURNSTILE_SECRET
-   npx wrangler secret put EMAIL_FROM
    ```
 
-   `EMAIL_FROM` must be an address at the onboarded sender domain, such as `contact@yourdomain.com`.
+   `EMAIL_FROM` is set in `wrangler.jsonc` to an address at the onboarded sender domain, currently `contact@clauseshift.com` in this account.
 4. Deploy from this directory:
 
    ```powershell
