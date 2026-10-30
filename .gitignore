@@ -4,3 +4,6 @@ cer/
 
 # Editor/tool backups written next to edited files.
 *.bak
+
+# Cloudflare Wrangler local account and build cache.
+contact-worker/.wrangler/

@@ -21,6 +21,7 @@
   </script>
   <script defer src="/consent.js"></script>
   <script defer src="/release.js"></script>
+  <script defer src="/contact-config.js"></script>
   <title>Martin Nzau (Monsiu) - AI Engineer & Full-Stack Developer</title>
   <meta name="description" content="AI engineer and full-stack developer who ships complete products: ClauseShift (AI contract review, live on the web, Google Play, Amazon Appstore, and Microsoft Store), PesaShift (on-device M-PESA statement analyzer for Android), and Custom RR (open-source Android). Verified Upwork freelancer and hackathon builder." />
   <meta name="keywords" content="Martin Nzau, Monsiu, full-stack developer, Flutter Android developer, React developer, Next.js developer, AI integration, hackathon developer, Upwork freelancer" />
@@ -2282,7 +2283,7 @@
       tsObserver.observe(contactSection);
     })();
 
-    /* Contact form: same pipeline as ClauseShift (Resend + Turnstile + honeypot) */
+    /* Contact form: standalone Cloudflare Worker + Turnstile + honeypot */
     (function () {
       var form = document.getElementById('contactForm');
       if (!form) return;
@@ -2342,16 +2343,18 @@
         var btnText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
 
-        fetch('https://app.clauseshift.com/api/contact', {
+        fetch(window.CONTACT_API_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: f.name.value.trim(),
             email: f.email.value.trim(),
+            kind: 'portfolio',
             subject: subject,
             title: 'Portfolio contact: ' + subject,
             message: f.message.value.trim(),
             company: f.company.value,
+            companyTrap: f.company.value,
             turnstileToken: token
           })
         }).then(function (res) {
@@ -2360,7 +2363,7 @@
               form.hidden = true;
               successBox.hidden = false;
               if (typeof gtag === 'function') {
-                gtag('event', 'generate_lead', { form_id: 'portfolio_contact', form_destination: 'contact_api' });
+                gtag('event', 'generate_lead', { form_id: 'portfolio_contact', form_destination: 'contact_form' });
               }
             } else {
               throw new Error(data.error || 'Something went wrong. Please try again.');

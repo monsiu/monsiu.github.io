@@ -20,6 +20,7 @@
     gtag('config', 'G-VJZYEZ8XEN');
   </script>
   <script defer src="/consent.js"></script>
+  <script defer src="/contact-config.js"></script>
   <title>Hire a Web, Mobile & AI Engineer | Projects from $500 | Monsiu</title>
   <meta name="description" content="Hire Martin Nzau (Monsiu) for web and mobile apps, AI integrations, and workflow automation. Websites from $500, AI integrations from $1,500, and fixed project quotes." />
   <meta name="keywords" content="hire AI engineer, AI automation, AI agent development, LLM integration, hire full-stack developer, Flutter Android developer, web app developer, Upwork freelancer" />
@@ -1422,7 +1423,7 @@
       });
     })();
 
-    // The form posts as JSON to the contact API with a Turnstile check.
+    // The form posts structured project details to the Cloudflare Worker.
     var requestForm = document.getElementById('requestForm');
     if (requestForm) {
       var formError = document.getElementById('formError');
@@ -1458,12 +1459,20 @@
         var btnText = btn.textContent;
         btn.textContent = 'Sending...';
 
-        fetch('https://app.clauseshift.com/api/contact', {
+        fetch(window.CONTACT_API_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             name: f.name.value.trim(),
             email: f.email.value.trim(),
+            kind: 'service',
+            services: services,
+            budget: f.budget.value,
+            timeline: f.timeline.value,
+            country: f.country.value,
+            organization: f.organization.value.trim(),
+            details: f.details.value.trim(),
+            companyTrap: f.company.value,
             message: lines.join('\n'),
             company: f.company.value,
             subject: 'Service request',
@@ -1474,7 +1483,7 @@
           return res.json().catch(function () { return {}; }).then(function (data) {
             if (res.ok && data.ok !== false) {
               if (typeof gtag === 'function') {
-                gtag('event', 'generate_lead', { form_id: 'services_request', form_destination: 'contact_api' });
+                gtag('event', 'generate_lead', { form_id: 'services_request', form_destination: 'contact_form' });
               }
               window.location.href = '/services/thanks.html';
             } else {

@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "monsiu-contact",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "vars": {
+    "EMAIL_FROM": "contact@monsiu.com",
+    "EMAIL_TO": "martinnzau679@gmail.com"
+  },
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "martinnzau679@gmail.com",
+      "allowed_sender_addresses": ["contact@monsiu.com"]
+    }
+  ]
+}
