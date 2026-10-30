@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZYEZ8XEN"></script>
   <script>
@@ -25,7 +26,7 @@
   <link rel="icon" type="image/png" href="/profile.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -76,7 +77,7 @@
     }
 
     h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 800;
       line-height: 1;
@@ -134,9 +135,5 @@
     </div>
   </div>
 
-  <script>
-    const saved = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', saved);
-  </script>
 </body>
 </html>
