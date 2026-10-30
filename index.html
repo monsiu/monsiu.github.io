@@ -1180,8 +1180,9 @@
     .hire-strip p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; max-width: 460px; }
     .hire-strip-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; }
 
-    /* Contact form (same pipeline as ClauseShift) */
+    /* Contact form */
     .contact-form { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.75rem; }
+    #contactForm[hidden], #cf-success[hidden] { display: none !important; }
     .cf-field { display: flex; flex-direction: column; gap: 0.45rem; min-width: 0; }
     .cf-field label {
       font-family: 'IBM Plex Mono', monospace;
@@ -2144,7 +2145,7 @@
             </p>
           </form>
 
-          <div class="cf-success" id="cf-success" hidden>
+          <div class="cf-success" id="cf-success" role="status" aria-live="polite" tabindex="-1" hidden>
             <span class="cf-success-badge" aria-hidden="true">✓</span>
             <h3>Message sent</h3>
             <p>Thanks for reaching out. I will get back to you at the email you provided, usually within 1 to 2 business days.</p>
@@ -2362,6 +2363,7 @@
             if (res.ok && data.ok) {
               form.hidden = true;
               successBox.hidden = false;
+              successBox.focus({ preventScroll: true });
               if (typeof gtag === 'function') {
                 gtag('event', 'generate_lead', { form_id: 'portfolio_contact', form_destination: 'contact_form' });
               }
