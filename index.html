@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZYEZ8XEN"></script>
   <script>
@@ -20,8 +21,8 @@
   </script>
   <script defer src="/consent.js"></script>
   <script defer src="/release.js"></script>
-  <title>Martin Nzau (Monsiu) - Full-Stack & Mobile Developer</title>
-  <meta name="description" content="Full-stack developer who ships complete products: ClauseShift (AI contract review, live on the web, Google Play, Amazon Appstore, and Microsoft Store), PesaShift (on-device M-PESA statement analyzer for Android), and Custom RR (open-source Android). Verified Upwork freelancer and hackathon builder." />
+  <title>Martin Nzau (Monsiu) - AI Engineer & Full-Stack Developer</title>
+  <meta name="description" content="AI engineer and full-stack developer who ships complete products: ClauseShift (AI contract review, live on the web, Google Play, Amazon Appstore, and Microsoft Store), PesaShift (on-device M-PESA statement analyzer for Android), and Custom RR (open-source Android). Verified Upwork freelancer and hackathon builder." />
   <meta name="keywords" content="Martin Nzau, Monsiu, full-stack developer, Flutter Android developer, React developer, Next.js developer, AI integration, hackathon developer, Upwork freelancer" />
   <meta name="author" content="Martin Nzau" />
   <link rel="canonical" href="https://monsiu.github.io/" />
@@ -30,8 +31,8 @@
   <meta name="theme-color" content="#0C0C0C" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Monsiu Tech" />
-  <meta property="og:title" content="Martin Nzau (Monsiu) - Full-Stack & Mobile Developer" />
-  <meta property="og:description" content="Full-stack developer who ships complete products. Creator of ClauseShift (AI contract review, live on web and app stores), PesaShift (on-device M-PESA statement analyzer), and Custom RR (open-source Android)." />
+  <meta property="og:title" content="Martin Nzau (Monsiu) - AI Engineer & Full-Stack Developer" />
+  <meta property="og:description" content="AI engineer and full-stack developer who ships complete products. Creator of ClauseShift (AI contract review, live on web and app stores), PesaShift (on-device M-PESA statement analyzer), and Custom RR (open-source Android)." />
   <meta property="og:url" content="https://monsiu.github.io/" />
   <meta property="og:image" content="https://monsiu.github.io/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -41,14 +42,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@MonsiuTech" />
   <meta name="twitter:creator" content="@MonsiuTech" />
-  <meta name="twitter:title" content="Martin Nzau (Monsiu) - Full-Stack & Mobile Developer" />
-  <meta name="twitter:description" content="Full-stack developer who ships complete products. Creator of ClauseShift, PesaShift, and Custom RR. Verified Upwork freelancer and hackathon builder." />
+  <meta name="twitter:title" content="Martin Nzau (Monsiu) - AI Engineer & Full-Stack Developer" />
+  <meta name="twitter:description" content="AI engineer and full-stack developer who ships complete products. Creator of ClauseShift, PesaShift, and Custom RR. Verified Upwork freelancer and hackathon builder." />
   <meta name="twitter:image" content="https://monsiu.github.io/og-image.png" />
   <meta name="twitter:image:alt" content="Martin Nzau (Monsiu), full-stack and mobile developer" />
+  <link rel="preload" as="image" href="/profile.png" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -60,8 +61,8 @@
         "alternateName": "Monsiu",
         "url": "https://monsiu.github.io/",
         "image": "https://monsiu.github.io/profile.png",
-        "jobTitle": "Full-Stack & Mobile Developer",
-        "description": "Full-stack developer who ships complete products. Creator of ClauseShift, an AI contract reviewer live on the web, Amazon Appstore, and Microsoft Store, PesaShift, an on-device M-PESA statement analyser for Android, and Custom RR, an open-source Android hub for custom ROMs. Hackathon contributor and verified Upwork freelancer.",
+        "jobTitle": "AI Engineer & Full-Stack Developer",
+        "description": "AI engineer and full-stack developer who ships complete products. Creator of ClauseShift, an AI contract reviewer live on the web, Amazon Appstore, and Microsoft Store, PesaShift, an on-device M-PESA statement analyser for Android, and Custom RR, an open-source Android hub for custom ROMs. Hackathon contributor and verified Upwork freelancer.",
         "email": "mailto:contactmonsiu@gmail.com",
         "sameAs": [
           "https://github.com/monsiu",
@@ -213,7 +214,7 @@
         "installUrl": "https://github.com/monsiu/pesashift-android/releases/latest",
         "author": { "@id": "https://monsiu.github.io/#person" },
         "description": "An on-device M-PESA and Airtel Money statement analyser for Android. Reads the PDF statement on the phone and shows every fee, every Fuliza charge, and where the money went, recovering hidden charges by walking the balance column. No SMS permission, no accounts, and the statement is never uploaded. Free to explore recent months, with a one-time Pro unlock.",
-        "softwareVersion": "1.3.6",
+        "softwareVersion": "0.1.1",
         "datePublished": "2026-07-30",
         "programmingLanguage": ["Dart", "Flutter"],
         "offers": {
@@ -306,8 +307,16 @@
       --accent-dim: rgba(79,142,247,0.12);
       --border: #222222;
       --max: 860px;
+      --space-xs: 0.75rem;
+      --space-sm: 1.25rem;
+      --space-md: 2rem;
+      --space-lg: 3rem;
+      --space-xl: 4.5rem;
+      --section-pad: 4rem;
       transition: background 0.3s, color 0.3s;
     }
+
+    body { counter-reset: section-num; }
 
     [data-theme="light"] {
       --bg: #F5F5F5;
@@ -364,7 +373,7 @@
     nav.scrolled { border-bottom-color: var(--border); }
 
     .nav-logo {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.1rem;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -494,21 +503,45 @@
 
     .container { max-width: var(--max); margin: 0 auto; padding: 0 2.5rem; }
 
-    section { padding: 6rem 0; }
+    section { padding: var(--section-pad) 0; }
+    section:not(#hero) { border-top: 1px solid var(--border); }
 
     .section-label {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
+      font-size: 0.74rem;
+      font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 3rem;
+      margin-bottom: var(--space-lg);
       display: flex;
       align-items: center;
       gap: 1rem;
+      counter-increment: section-num;
     }
-    .section-label::before { content: '//'; opacity: 0.5; }
+    .section-label::before { content: counter(section-num, decimal-leading-zero) ' //'; opacity: 0.6; }
     .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .section-intro { margin-bottom: var(--space-sm); max-width: 100%; }
+
+    .label-note {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: none;
+      color: var(--muted);
+    }
+    .label-note a { color: var(--muted); text-decoration-color: var(--border); }
+    .label-note a:hover { color: var(--accent); }
+
+    .mono-note {
+      margin-top: var(--space-sm);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
 
     #hero {
       min-height: 100vh;
@@ -520,7 +553,7 @@
     .hero-inner {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 5rem;
+      gap: var(--space-xl);
       align-items: center;
       width: 100%;
     }
@@ -537,21 +570,17 @@
     }
 
     .hero-name {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3.75rem, 9vw, 7.75rem);
       font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
+      line-height: 0.88;
+      letter-spacing: -0.035em;
       text-transform: uppercase;
       color: var(--text);
       margin-bottom: 1.75rem;
       opacity: 0;
       animation: fadeUp 0.6s ease forwards 0.25s;
     }
-.detail-value-list {
-  margin: 0;
-  padding-left: 70px;
-}
     .hero-title {
       font-size: 0.9rem;
       font-weight: 400;
@@ -619,6 +648,11 @@
       padding: 3px;
       background: conic-gradient(var(--accent) 0deg, transparent 160deg, transparent 360deg);
       position: relative;
+      animation: ringSpin 7s linear infinite;
+    }
+
+    @keyframes ringSpin {
+      to { transform: rotate(360deg); }
     }
 
     .photo-frame {
@@ -643,7 +677,7 @@
     }
 
     .photo-placeholder .initials {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Fraunces', serif;
       font-size: 2.8rem;
       font-weight: 800;
       color: var(--accent);
@@ -660,35 +694,135 @@
       padding: 0 1rem;
     }
 
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-xl); }
 
     .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.25rem; }
 
-    .detail-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
+    .about-text p.about-lead {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--text);
+      margin-bottom: 1.75rem;
     }
 
-    .detail-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .detail-value { font-size: 0.9rem; color: var(--text); font-weight: 400; }
-
-    .skills-grid {
+    .about-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
     }
+
+    .about-stat {
+      background: var(--bg-card);
+      padding: 1.25rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .about-stat-value {
+      font-family: 'Fraunces', serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .about-stat-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .about-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .about-meta-item {
+      background: var(--bg-card);
+      padding: 1.1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .about-meta-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .about-meta-value { font-size: 0.92rem; color: var(--text); line-height: 1.5; }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .testimonial-quote {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .testimonial-meta { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .testimonial-stars { color: var(--accent); font-size: 0.85rem; letter-spacing: 0.1em; }
+
+    .testimonial-job {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .testimonial-author {
+      font-family: 'IBM Plex Mono', monospace;
+      font-style: normal;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .skills-grid .skill-group:first-child { grid-column: 1 / -1; }
 
     .skill-group { background: var(--bg-card); padding: 2rem; }
 
@@ -723,14 +857,14 @@
 
     .project-card {
       background: var(--bg-card);
-      padding: 2.5rem;
+      padding: var(--space-md);
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: minmax(0, 1fr) auto;
       gap: 2rem;
-      align-items: center;
-      transition: background 0.2s;
+      align-items: start;
+      transition: background 0.2s, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .project-card:hover { background: var(--bg-hover); }
+    .project-card:hover { background: var(--bg-hover); transform: translateY(-3px); }
 
     .project-banner {
       display: block;
@@ -741,11 +875,54 @@
       border-radius: 6px;
       border: 1px solid var(--border);
       background: var(--bg);
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .project-card:hover .project-banner { transform: scale(1.015); }
+
+    .project-banner-custom {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 720px;
+      aspect-ratio: 2.4 / 1;
+      margin: 0 0 1.5rem;
+      padding: 2rem 2.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .banner-icon-circle {
+      flex-shrink: 0;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+    }
+    .banner-copy { display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
+    .banner-title {
+      font-family: 'Fraunces', serif;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      line-height: 1.05;
+      color: #fff;
+    }
+    .banner-tag {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.82);
+    }
+    .banner-nanopay { background: linear-gradient(135deg, #1e1b4b, #4c1d95); }
+    .banner-aegis { background: linear-gradient(135deg, #0f172a, #1e3a5f); }
 
     .project-number {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
+      font-size: 0.85rem;
+      font-weight: 500;
       color: var(--accent);
       letter-spacing: 0.1em;
       margin-bottom: 0.75rem;
@@ -753,23 +930,27 @@
 
     .project-metric {
       font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       color: var(--muted);
-      letter-spacing: 0.04em;
-      margin: 0.75rem 0 0.25rem;
+      letter-spacing: 0.02em;
+      margin: 1rem 0 0.25rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      max-width: 600px;
+      line-height: 1.9;
     }
-    .project-metric strong { color: var(--text); font-weight: 500; }
+    .project-metric strong { color: var(--accent); font-weight: 500; }
 
     .project-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
+      font-family: 'Fraunces', serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       color: var(--text);
       margin-bottom: 0.75rem;
     }
 
-    .project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.75; max-width: 520px; }
+    .project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.75; max-width: 600px; }
 
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
 
@@ -857,6 +1038,7 @@
     .project-arrow {
       width: 36px;
       height: 36px;
+      margin-top: 0.3rem;
       border: 1px solid rgba(79,142,247,0.35);
       background: var(--accent-dim);
       display: flex;
@@ -879,8 +1061,8 @@
     .exp-item {
       display: grid;
       grid-template-columns: 150px 1fr;
-      gap: 3rem;
-      padding: 2.5rem 0;
+      gap: var(--space-lg);
+      padding: var(--space-md) 0;
       border-bottom: 1px solid var(--border);
     }
     .exp-item:first-child { border-top: 1px solid var(--border); }
@@ -891,15 +1073,29 @@
       color: var(--muted);
       letter-spacing: 0.05em;
       padding-top: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .exp-item.is-current .exp-date { color: var(--accent); font-weight: 500; }
+    .exp-item.is-current .exp-date::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse-dot 1.8s infinite;
     }
 
     .exp-role {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
       color: var(--text);
       margin-bottom: 0.3rem;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
     }
 
     .exp-company {
@@ -918,7 +1114,7 @@
     .contact-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 3rem; align-items: start; }
 
     .contact-heading {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Fraunces', serif;
       font-size: clamp(2rem, 4vw, 2.25rem);
       font-weight: 800;
       text-transform: uppercase;
@@ -979,7 +1175,7 @@
       text-transform: uppercase;
       color: var(--accent);
     }
-    .hire-strip h3 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; margin: 0.4rem 0 0.45rem; color: var(--text); }
+    .hire-strip h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 700; margin: 0.4rem 0 0.45rem; color: var(--text); }
     .hire-strip p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; max-width: 460px; }
     .hire-strip-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; }
 
@@ -1047,7 +1243,7 @@
       background: var(--accent-dim); color: var(--accent);
       font-size: 1.3rem; margin-bottom: 0.9rem;
     }
-    .cf-success h3 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .cf-success h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
     .cf-success p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
 
     footer {
@@ -1100,7 +1296,7 @@
       color: var(--accent);
     }
     .cert-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.05rem;
       font-weight: 600;
       line-height: 1.3;
@@ -1140,7 +1336,7 @@
       flex-wrap: wrap;
     }
     .pdf-bar .pdf-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Fraunces', serif;
       font-weight: 600;
       font-size: 0.95rem;
       margin-right: auto;
@@ -1170,10 +1366,19 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(18px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .photo-ring { animation: none; }
+      .hero-photo { animation: none; opacity: 1; }
+      .project-banner { transition: none; }
+      .project-card { transition: none; }
+      * { scroll-behavior: auto !important; }
+    }
 
     @media (min-width: 701px) and (max-width: 900px) {
       .container { padding: 0 1.75rem; }
@@ -1185,17 +1390,24 @@
       nav { padding: 1rem 1.25rem; }
       .nav-links { gap: 1.5rem; }
       .container { padding: 0 1.25rem; }
-      section { padding: 4rem 0; }
+      section { padding: var(--space-lg) 0; }
       .hero-inner { grid-template-columns: 1fr; }
       .hero-name { font-size: clamp(2.2rem, 11vw, 3.4rem); }
       .hero-photo { order: -1; }
       .photo-ring { width: 160px; height: 160px; }
+      .project-banner-custom { aspect-ratio: auto; padding: 1.5rem; gap: 1rem; }
+      .banner-icon-circle { width: 3rem; height: 3rem; font-size: 1.4rem; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-stats { grid-template-columns: 1fr; }
+      .about-meta { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
       .contact-heading { font-size: clamp(1.5rem, 7vw, 2.75rem); }
       .contact-link { padding: 0.9rem 1rem; }
       .contact-link-value { padding: 0 0.75rem; }
+      .section-label { flex-wrap: wrap; row-gap: 0.35rem; }
+      .section-label .label-note { flex-basis: 100%; }
       .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
     }
 
@@ -1254,7 +1466,7 @@
 <body>
 
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">My Portfolio</a>
+    <a href="#hero" class="nav-logo">Monsiu</a>
     <div class="nav-right">
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
@@ -1286,28 +1498,30 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-eyebrow">// Software Developer &nbsp;·&nbsp; aka Monsiu</p>
-          <h1 class="hero-name">Martin<br/>Nzau<span class="hero-role">Full-Stack &amp; Mobile Developer</span></h1>
-          <p class="hero-title">Full Stack &nbsp;·&nbsp; System Design</p>
+          <p class="hero-eyebrow">// AI Engineer &nbsp;·&nbsp; aka Monsiu</p>
+          <h1 class="hero-name">Martin<br/>Nzau<span class="hero-role">AI Engineer &amp; Full-Stack Developer</span></h1>
+          <p class="hero-title">AI Systems &nbsp;·&nbsp; Full Stack &nbsp;·&nbsp; Mobile</p>
           <p class="hero-bio">
-            I design, build, and ship complete products: backends, web apps, and mobile.
-            My work is live on the web and in six app stores, from Google Play and Amazon
-            to the Microsoft Store, and I sweat the details from clean architecture to store review.
+            I design, build, and ship complete products: AI pipelines, backends, web apps, mobile.
+            Live on the web and in six app stores, from Google Play and Amazon to the Microsoft
+            Store. I sweat every detail, from clean architecture to store review.
           </p>
           <div class="hero-cta">
             <a href="#projects" class="btn btn-primary" data-ga="hero_view_work">View Work</a>
             <a href="/services/" class="btn btn-ghost" data-ga="hero_hire_me">Hire Me</a>
           </div>
-          <p style="margin-top: 1.5rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted);">
+          <p class="mono-note">
             Trusted on Upwork -
             <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">read client reviews ↗</a>
+            &nbsp;·&nbsp;
+            <a href="/cv/" data-ga="hero_view_cv">View CV ↗</a>
           </p>
         </div>
 
         <div class="hero-photo">
           <div class="photo-ring">
             <div class="photo-frame">
-              <img src="profile.png" alt="Martin Nzau (Monsiu), full-stack and mobile developer" loading="lazy" width="800" height="800" />
+              <img src="profile.png" alt="Martin Nzau (Monsiu), full-stack and mobile developer" fetchpriority="high" width="800" height="800" />
 
             </div>
           </div>
@@ -1321,111 +1535,119 @@
       <h2 class="section-label reveal">About</h2>
       <div class="about-grid">
         <div class="about-text reveal">
+          <p class="about-lead">I turn AI ideas into products people actually pay for.</p>
           <p>
-            I'm a software developer who ships complete products, not just code. My flagship is
-            <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer">ClauseShift</a>,
-            an AI contract reviewer that cites the exact clause behind every risk it flags. I built it
-            end to end: the Next.js backend, the Flutter apps, billing, the store releases, and the
-            marketing site. The newest is <a href="/pesashift-android/">PesaShift</a>, an M-PESA
-            statement analyzer that runs entirely on-device, and before both came
-            <a href="/custom-rr/">Custom RR</a>, an open-source Android hub for custom ROMs
-            that I still maintain and ship across five platforms.
+            My flagship is <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer">ClauseShift</a>,
+            an AI contract reviewer that cites the exact clause behind every risk it flags. I built the
+            whole stack: the Next.js backend and AI pipeline, the Flutter apps, billing, and the store
+            releases. <a href="/pesashift-android/">PesaShift</a> reads M-PESA statements entirely
+            on-device, and <a href="/custom-rr/">Custom RR</a>, the oldest of the three, is an
+            open-source Android hub I still maintain and ship across five platforms.
           </p>
           <p>
-            Away from the keyboard I'm a gamer. It clears my head, and I put that focus to good use
-            running circles around my mates on <s>FIFA</s> EA Sports FC. I also love hackathons for the
-            same reason I love shipping: a deadline, a hard problem, and something real at the end.
-            Several projects on this page started exactly that way, and each one taught me a
-            technology I now use in production.
+            Away from the keyboard I'm a gamer. It clears my head, and hackathons scratch the same
+            itch I get from shipping: a hard deadline and something real at the end. Several of the
+            projects on this page started exactly that way.
           </p>
         </div>
         <div class="reveal">
-          <div class="detail-item">
-            <span class="detail-label">Education</span>
-            <span class="detail-value">BSc &amp; Diploma, Business Information Technology</span>
+          <div class="about-stats">
+            <div class="about-stat">
+              <span class="about-stat-value" data-count="3" data-suffix="+">3+</span>
+              <span class="about-stat-label">Years shipping production software</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value" data-count="3">3</span>
+              <span class="about-stat-label">Products live in production</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value" data-count="6">6</span>
+              <span class="about-stat-label">App stores &amp; platforms</span>
+            </div>
           </div>
-          <div class="detail-item">
-            <span class="detail-label">Experience</span>
-            <span class="detail-value">3+ Years</span>
-          </div>
-          <div class="detail-item">
-            <span class="detail-label">Availability</span>
-            <span class="detail-value">Open to opportunities</span>
+          <div class="about-meta">
+            <div class="about-meta-item">
+              <span class="about-meta-label">Education</span>
+              <span class="about-meta-value">BSc &amp; Diploma, Business Information Technology</span>
+            </div>
+            <div class="about-meta-item">
+              <span class="about-meta-label">Availability</span>
+              <span class="about-meta-value">Open to opportunities</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-<section id="skills">
-  <div class="container">
-    <h2 class="section-label reveal">Skills</h2>
-    <div class="skills-grid reveal">
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-label reveal">Skills</h2>
+      <div class="skills-grid reveal">
 
-      <div class="skill-group">
-        <p class="skill-group-title">Frontend</p>
-        <ul class="skill-list">
-          <li class="skill-tag">React</li>
-          <li class="skill-tag">Next.js</li>
-          <li class="skill-tag">TypeScript</li>
-          <li class="skill-tag">Tailwind CSS</li>
-        </ul>
+        <div class="skill-group">
+          <p class="skill-group-title">AI Engineering &amp; Web3</p>
+          <ul class="skill-list">
+            <li class="skill-tag">LLM Integration</li>
+            <li class="skill-tag">AI Agents</li>
+            <li class="skill-tag">Agentic Workflows</li>
+            <li class="skill-tag">OpenAI</li>
+            <li class="skill-tag">Gemini</li>
+            <li class="skill-tag">Solidity</li>
+            <li class="skill-tag">Foundry</li>
+            <li class="skill-tag">Ethers.js</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-title">Frontend</p>
+          <ul class="skill-list">
+            <li class="skill-tag">React</li>
+            <li class="skill-tag">Next.js</li>
+            <li class="skill-tag">TypeScript</li>
+            <li class="skill-tag">Tailwind CSS</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-title">Backend &amp; APIs</p>
+          <ul class="skill-list">
+            <li class="skill-tag">Node.js</li>
+            <li class="skill-tag">Express</li>
+            <li class="skill-tag">Python</li>
+            <li class="skill-tag">REST APIs</li>
+            <li class="skill-tag">JWT Auth</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-title">Mobile</p>
+          <ul class="skill-list">
+            <li class="skill-tag">Flutter</li>
+            <li class="skill-tag">Dart</li>
+            <li class="skill-tag">React Native</li>
+            <li class="skill-tag">Android / iOS</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-title">Data &amp; Cloud</p>
+          <ul class="skill-list">
+            <li class="skill-tag">PostgreSQL</li>
+            <li class="skill-tag">MongoDB</li>
+            <li class="skill-tag">Firebase</li>
+            <li class="skill-tag">Vercel</li>
+            <li class="skill-tag">Docker</li>
+          </ul>
+        </div>
+
       </div>
-
-      <div class="skill-group">
-        <p class="skill-group-title">Backend &amp; APIs</p>
-        <ul class="skill-list">
-          <li class="skill-tag">Node.js</li>
-          <li class="skill-tag">Express</li>
-          <li class="skill-tag">Python</li>
-          <li class="skill-tag">REST APIs</li>
-          <li class="skill-tag">JWT Auth</li>
-        </ul>
-      </div>
-
-      <div class="skill-group">
-        <p class="skill-group-title">Mobile</p>
-        <ul class="skill-list">
-          <li class="skill-tag">Flutter</li>
-          <li class="skill-tag">Dart</li>
-          <li class="skill-tag">React Native</li>
-          <li class="skill-tag">Android / iOS</li>
-        </ul>
-      </div>
-
-      <div class="skill-group">
-        <p class="skill-group-title">Data &amp; Cloud</p>
-        <ul class="skill-list">
-          <li class="skill-tag">PostgreSQL</li>
-          <li class="skill-tag">MongoDB</li>
-          <li class="skill-tag">Firebase</li>
-          <li class="skill-tag">Vercel</li>
-          <li class="skill-tag">Docker</li>
-        </ul>
-      </div>
-
-      <div class="skill-group">
-        <p class="skill-group-title">AI &amp; Web3</p>
-        <ul class="skill-list">
-          <li class="skill-tag">LLM Integration</li>
-          <li class="skill-tag">Gemini</li>
-          <li class="skill-tag">Solidity</li>
-          <li class="skill-tag">Foundry</li>
-          <li class="skill-tag">Ethers.js</li>
-        </ul>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="projects">
     <div class="container">
-      <h2 class="section-label reveal">Selected Work</h2>
-      <p class="project-desc reveal" style="margin-bottom: 1.5rem; max-width: 100%;">
-        You can find all my projects on GitHub:
-        <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a>.
-      </p>
+      <h2 class="section-label reveal">Selected Work<span class="label-note">All projects on <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a></span></h2>
       <div class="projects-list reveal">
 
         <div class="project-card">
@@ -1435,10 +1657,10 @@
               <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_clauseshift_live" title="ClauseShift, live now on the web and app stores">Live</a>
             </h3>
             <a href="https://clauseshift.com" data-ga="project_clauseshift_banner" target="_blank" rel="noopener noreferrer" aria-label="ClauseShift landing page">
-              <img src="clauseshift-banner.png" alt="ClauseShift: AI contract review that cites every clause" class="project-banner" loading="lazy" decoding="async" />
+              <img src="clauseshift-banner.png" alt="ClauseShift: AI contract review that cites every clause" class="project-banner" loading="lazy" decoding="async" width="1200" height="400" />
             </a>
             <p class="project-desc">
-              An AI contract reviewer that shows its receipts: every risk it flags quotes the <strong>exact clause</strong> it came from, so you verify the wording yourself instead of trusting a black box. Two AI models cross-check every review, a clear risk score and plain-English summary are generated, and key dates and deadlines are pulled out for you. Built as <strong>one product across web, Android, iOS, and desktop</strong> with self-serve billing (free tier, Pro subscription, and pay-as-you-go credits). Live on <strong>Google Play, the web, the Amazon Appstore, the Huawei AppGallery, and the Microsoft Store</strong>, with more platforms rolling out. The marketing site speaks seven languages.
+              An AI contract reviewer that shows its receipts: every risk it flags quotes the <strong>exact clause</strong> it came from, so you verify the wording yourself instead of trusting a black box. Two AI models cross-check every review and hand you a clear risk score, a plain-English summary, and every key date and deadline pulled out automatically. Built as <strong>one product across web, Android, iOS, and desktop</strong>, with self-serve billing: free tier, Pro subscription, pay-as-you-go credits. Live on <strong>Google Play, the web, the Amazon Appstore, the Huawei AppGallery, and the Microsoft Store</strong>, with more platforms rolling out. The marketing site speaks seven languages.
             </p>
             <p class="project-metric"><strong>Live on Google Play + web + Amazon Appstore + Microsoft Store + Huawei AppGallery</strong> &nbsp;·&nbsp; Free tier + Pro &nbsp;·&nbsp; 7 languages &nbsp;·&nbsp; <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="project_clauseshift_domain">clauseshift.com</a></p>
             <div class="project-tags">
@@ -1456,17 +1678,50 @@
               <span class="project-tag">Web</span>
             </div>
           </div>
-<a href="https://clauseshift.com" class="project-arrow" target="_blank" rel="noopener noreferrer" title="ClauseShift landing page">↗</a>        </div>
+          <a href="https://clauseshift.com" class="project-arrow" target="_blank" rel="noopener noreferrer" title="ClauseShift landing page">↗</a>
+        </div>
 
 
         <div class="project-card">
           <div>
             <p class="project-number">02 //</p>
+            <h3 class="project-name">Custom RR
+              <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_custom_rr_release" title="Custom RR latest release, see full changelog on GitHub">New · <span data-cr="version">v1.3.6</span></a>
+            </h3>
+            <a href="/custom-rr/" data-ga="project_custom_rr_banner" aria-label="Custom RR project page">
+              <img src="/custom-rr/banner-2x.png" alt="Custom RR Android app banner: a hub for custom ROMs and recoveries" class="project-banner" loading="lazy" decoding="async" width="1440" height="360" />
+            </a>
+            <p class="project-desc">
+              The single home for popular Android custom ROMs and custom recoveries. Curates <strong>18 actively maintained ROMs</strong> (LineageOS, crDroid, PixelOS, Project Elixir, Project Infinity X, Evolution X, DerpFest, GrapheneOS, CalyxOS, /e/, and more), 5 recoveries (TWRP, OrangeFox, PBRP, SHRP), and 500+ devices, sourced live from the LineageOS wiki and the PixelOS official_devices repo, refreshed nightly by GitHub Actions. Distributed via <strong>five app stores</strong> (Google Play, the Amazon Appstore, F-Droid, Zapstore, and the Microsoft Store) plus <strong>GitHub Releases</strong>, with a <strong>Root section</strong> (Magisk, KernelSU, KernelSU Next, APatch, SukiSU Ultra) and native <strong>Windows, macOS, and Linux desktop builds</strong> alongside Android. Material 3, dynamic color, zero tracking, no Play Services, GPL-3.0.
+            </p>
+            <p class="project-metric"><strong><span data-cr="version">v1.3.6</span> released <span data-cr="date">Jul 2026</span></strong> &nbsp;·&nbsp; <strong><span data-cr="stars">130</span>+ GitHub stars</strong> &nbsp;·&nbsp; 18 ROMs · 5 recoveries · 500+ devices &nbsp;·&nbsp; Android · Windows · macOS · Linux &nbsp;·&nbsp; GPL-3.0</p>
+            <div class="project-tags">
+              <span class="project-tag">Flutter</span>
+              <span class="project-tag">Dart</span>
+              <span class="project-tag">Android</span>
+              <span class="project-tag">Windows Desktop</span>
+              <span class="project-tag">macOS Desktop</span>
+              <span class="project-tag">Linux Desktop</span>
+              <span class="project-tag">Material 3</span>
+              <span class="project-tag">go_router</span>
+              <span class="project-tag">GitHub Actions</span>
+              <span class="project-tag">Magisk</span>
+              <span class="project-tag">KernelSU</span>
+              <span class="project-tag">Open Source</span>
+            </div>
+          </div>
+          <a href="https://github.com/monsiu/Custom-RR" class="project-arrow" target="_blank" rel="noopener noreferrer" title="Custom RR source on GitHub">↗</a>
+        </div>
+
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">03 //</p>
             <h3 class="project-name">PesaShift
               <a href="https://github.com/monsiu/pesashift-android/releases/latest" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_pesashift_release" title="PesaShift v0.1.0, first release">New · v0.1.0</a>
             </h3>
             <a href="/pesashift-android/" data-ga="project_pesashift_banner" aria-label="PesaShift landing page">
-              <img src="https://raw.githubusercontent.com/monsiu/pesashift-android/main/docs/images/feature-graphic.png" alt="PesaShift: see every shilling M-PESA takes" class="project-banner" loading="lazy" decoding="async" />
+              <img src="https://raw.githubusercontent.com/monsiu/pesashift-android/main/docs/images/feature-graphic.png" alt="PesaShift: see every shilling M-PESA takes" class="project-banner" loading="lazy" decoding="async" width="1024" height="500" />
             </a>
             <p class="project-desc">
               An on-device statement analyser for Kenya's mobile money. PesaShift reads your <strong>M-PESA or Airtel Money PDF statement on your phone</strong> and shows every fee, every Fuliza charge, and where the money actually went. It walks the statement's balance column to <strong>recover charges that are never itemised</strong>, arithmetic, not estimates. No SMS permission, no accounts, and the statement never leaves the device. Free to explore recent months; Pro is a <strong>one-time unlock, never a subscription</strong>, sold through Google Play Billing on Play and M-PESA (Paystack) everywhere else. Live today on the <strong>Amazon Appstore, the Huawei AppGallery, Zapstore, and direct APK</strong>, with Google Play in review.
@@ -1490,44 +1745,20 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">03 //</p>
-            <h3 class="project-name">Custom RR
-              <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_custom_rr_release" title="Custom RR latest release, see full changelog on GitHub">New · <span data-cr="version">v1.3.6</span></a>
-            </h3>
-            <a href="/custom-rr/" data-ga="project_custom_rr_banner" aria-label="Custom RR project page">
-              <img src="/custom-rr/banner-2x.png" alt="Custom RR Android app banner: a hub for custom ROMs and recoveries" class="project-banner" loading="lazy" decoding="async" />
-            </a>
-            <p class="project-desc">
-              The single home for popular Android custom ROMs and custom recoveries. Curates <strong>18 actively maintained ROMs</strong> (LineageOS, crDroid, PixelOS, Project Elixir, Project Infinity X, Evolution X, DerpFest, GrapheneOS, CalyxOS, /e/, and more), 5 recoveries (TWRP, OrangeFox, PBRP, SHRP), and 500+ devices, sourced live from the LineageOS wiki and the PixelOS official_devices repo, refreshed nightly by GitHub Actions. Distributed via <strong>five app stores</strong> (Google Play, the Amazon Appstore, F-Droid, Zapstore, and the Microsoft Store) plus <strong>GitHub Releases</strong>, with a <strong>Root section</strong> (Magisk, KernelSU, KernelSU Next, APatch, SukiSU Ultra) and native <strong>Windows, macOS, and Linux desktop builds</strong> alongside Android. Material 3, dynamic color, zero tracking, no Play Services, GPL-3.0.
-            </p>
-            <p class="project-metric"><strong><span data-cr="version">v1.3.6</span> released <span data-cr="date">Jul 2026</span></strong> &nbsp;·&nbsp; <strong><span data-cr="stars">130</span>+ GitHub stars</strong> &nbsp;·&nbsp; 18 ROMs · 5 recoveries · 500+ devices &nbsp;·&nbsp; Android · Windows · macOS · Linux &nbsp;·&nbsp; GPL-3.0</p>
-            <div class="project-tags">
-              <span class="project-tag">Flutter</span>
-              <span class="project-tag">Dart</span>
-              <span class="project-tag">Android</span>
-              <span class="project-tag">Windows Desktop</span>
-              <span class="project-tag">macOS Desktop</span>
-              <span class="project-tag">Linux Desktop</span>
-              <span class="project-tag">Material 3</span>
-              <span class="project-tag">go_router</span>
-              <span class="project-tag">GitHub Actions</span>
-              <span class="project-tag">Magisk</span>
-              <span class="project-tag">KernelSU</span>
-              <span class="project-tag">Open Source</span>
-            </div>
-          </div>
-<a href="https://github.com/monsiu/Custom-RR" class="project-arrow" target="_blank" rel="noopener noreferrer" title="Custom RR source on GitHub">↗</a>        </div>
-
-
-        <div class="project-card">
-          <div>
             <p class="project-number">04 //</p>
             <h3 class="project-name">NanoPay</h3>
+            <div class="project-banner-custom banner-nanopay" role="img" aria-label="NanoPay: onchain micropayment API on Arc blockchain">
+              <span class="banner-icon-circle" aria-hidden="true">⚡</span>
+              <span class="banner-copy">
+                <span class="banner-title">NanoPay</span>
+                <span class="banner-tag">$0.001 per query, settled onchain</span>
+              </span>
+            </div>
             <p class="project-desc">
-              Built a per-request AI API where every query costs $0.001 USDC, settled onchain on Arc blockchain. Deployed a Solidity smart contract that accepts USDC micropayments, built a Node.js API server that verifies payments before returning Gemini AI responses, and demonstrated 57+ live onchain transactions. The project proves sub-cent API monetization is only economically viable on Arc, where gas costs are 100,000x cheaper than Ethereum. <br><br>This was part of a hackathon submission for the Arc Blockchain Hackathon which you can view the details 
+              Built a per-request AI API where every query costs $0.001 USDC, settled onchain on Arc blockchain. A Solidity smart contract accepts the USDC micropayments, a Node.js API server verifies each one before returning a Gemini AI response, and the system has processed 57+ live onchain transactions. The project proves sub-cent API monetization only works on Arc, where gas costs are 100,000x cheaper than Ethereum. <br><br>Built for the Arc Blockchain Hackathon. View the submission
 <a href="https://lablab.ai/ai-hackathons/nano-payments-arc" target="_blank" rel="noopener noreferrer">
   here
-</a> <br><br>You can also demo this system <a href="https://agentic-economy-on-arc-production.up.railway.app" target="_blank" rel="noopener noreferrer" title="Live demo of NanoPay onchain micropayment API on Arc blockchain">
+</a>, or try the live demo <a href="https://agentic-economy-on-arc-production.up.railway.app" target="_blank" rel="noopener noreferrer" title="Live demo of NanoPay onchain micropayment API on Arc blockchain">
   here
 </a>
             </p>
@@ -1545,29 +1776,39 @@
           </div>
           <a href="https://lablab.ai/ai-hackathons/nano-payments-arc/lone-pringle/nanopay-arc-ai-nanopayment-api-on-arc" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
         </div>
-<div class="project-card">
-  <div>
-    <p class="project-number">05 //</p>
-    <h3 class="project-name">Aegis, SRE Guardian</h3>
-    <p class="project-desc">
-      An autonomous incident-response system that monitors cloud infrastructure in real time, diagnoses issues with a three-agent AI pipeline (Monitor, Diagnosis, Remediation), and executes safe SSH-based fixes on remote servers. Streams live metrics over WebSockets, searches past incidents with a ChromaDB vector store, and auto-generates PDF post-mortems. Handles CPU surges, memory pressure, disk I/O, DDoS, and DB bottlenecks with a whitelisted command set, no arbitrary shell input.
-      <br><br>Built for the AMD Developer Hackathon 2025 under Track 1: AI Agents &amp; Agentic Workflows. You can demo this system <a href="https://autonomous-sre-self-healing-cloud-g.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live demo of Aegis SRE Guardian autonomous incident-response system">here</a>.
-    </p>
-    <p class="project-metric"><strong>AMD Developer Hackathon 2025 submission</strong> &nbsp;·&nbsp; 3-agent autonomous pipeline &nbsp;·&nbsp; Real SSH remediation with whitelisted commands</p>
-    <div class="project-tags">
-      <span class="project-tag">Python</span>
-      <span class="project-tag">FastAPI</span>
-      <span class="project-tag">React</span>
-      <span class="project-tag">TypeScript</span>
-      <span class="project-tag">ChromaDB</span>
-      <span class="project-tag">WebSockets</span>
-      <span class="project-tag">Paramiko (SSH)</span>
-      <span class="project-tag">AMD Cloud</span>
-      <span class="project-tag">Hackathon</span>
-    </div>
-  </div>
-  <a href="https://github.com/monsiu/Autonomous-SRE-Self-Healing-Cloud-Guardian" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
-</div>
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">05 //</p>
+            <h3 class="project-name">Aegis, SRE Guardian</h3>
+            <div class="project-banner-custom banner-aegis" role="img" aria-label="Aegis, SRE Guardian: autonomous incident-response system">
+              <span class="banner-icon-circle" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="1.9rem" height="1.9rem" fill="none" stroke="#7fb3ff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              </span>
+              <span class="banner-copy">
+                <span class="banner-title">Aegis</span>
+                <span class="banner-tag">Autonomous incident response</span>
+              </span>
+            </div>
+            <p class="project-desc">
+              An autonomous incident-response system that monitors cloud infrastructure in real time, diagnoses issues with a three-agent AI pipeline (Monitor, Diagnosis, Remediation), and executes safe SSH-based fixes on remote servers. Streams live metrics over WebSockets, searches past incidents with a ChromaDB vector store, and auto-generates PDF post-mortems. Handles CPU surges, memory pressure, disk I/O, DDoS, and DB bottlenecks with a whitelisted command set, no arbitrary shell input.
+              <br><br>Built for the AMD Developer Hackathon 2025 under Track 1: AI Agents &amp; Agentic Workflows. You can demo this system <a href="https://autonomous-sre-self-healing-cloud-g.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live demo of Aegis SRE Guardian autonomous incident-response system">here</a>.
+            </p>
+            <p class="project-metric"><strong>AMD Developer Hackathon 2025 submission</strong> &nbsp;·&nbsp; 3-agent autonomous pipeline &nbsp;·&nbsp; Real SSH remediation with whitelisted commands</p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">ChromaDB</span>
+              <span class="project-tag">WebSockets</span>
+              <span class="project-tag">Paramiko (SSH)</span>
+              <span class="project-tag">AMD Cloud</span>
+              <span class="project-tag">Hackathon</span>
+            </div>
+          </div>
+          <a href="https://github.com/monsiu/Autonomous-SRE-Self-Healing-Cloud-Guardian" target="_blank" rel="noopener noreferrer" class="project-arrow">↗</a>
+        </div>
 
       </div>
 
@@ -1581,25 +1822,14 @@
           <a href="/services/" class="btn btn-primary" data-ga="projects_hire_strip">Get your project built</a>
         </div>
       </div>
-
-      <h2 class="section-label reveal" style="margin-top: 4rem;">Programs &amp; Hackathons</h2>
-      <ul class="skill-list reveal" style="margin-top: 1rem;">
-        <li class="skill-tag">AMD Developer Hackathon 2025</li>
-        <li class="skill-tag">AI Agent Olympics, Milan AI Week</li>
-        <li class="skill-tag">TechEx Intelligent Enterprise Hackathon</li>
-        <li class="skill-tag">Arc Blockchain Hackathon</li>
-        <li class="skill-tag">Safaricom Decode, Google ADK Workshop</li>
-        <li class="skill-tag">Safaricom Decode, Cyber Defender Workshop</li>
-        <li class="skill-tag">GitHub Copilot Dev Days</li>
-      </ul>
     </div>
   </section>
 
   <section id="certifications">
     <div class="container">
       <h2 class="section-label reveal">Certifications</h2>
-      <p class="project-desc reveal" style="margin-bottom: 1.5rem; max-width: 100%;">
-        A selection of my credentials. Tap any card to view the certificate as a PDF, in the browser.
+      <p class="project-desc section-intro reveal">
+        A selection of my credentials. Tap any card to view the certificate as a PDF in the browser.
       </p>
       <div class="cert-grid reveal">
         <button type="button" class="cert-card" data-pdf="/certs/google-play-store-listing.pdf" data-verify="https://www.credential.net/15f67881-05fe-4c1e-928b-108bc0881891" data-ga="cert_google_play">
@@ -1672,12 +1902,38 @@
     </div>
   </section>
 
+  <section id="programs">
+    <div class="container">
+      <h2 class="section-label reveal">Programs &amp; Hackathons</h2>
+      <ul class="skill-list reveal">
+        <li class="skill-tag">AMD Developer Hackathon 2025</li>
+        <li class="skill-tag">AI Agent Olympics, Milan AI Week</li>
+        <li class="skill-tag">TechEx Intelligent Enterprise Hackathon</li>
+        <li class="skill-tag">Arc Blockchain Hackathon</li>
+        <li class="skill-tag">Safaricom Decode, Google ADK Workshop</li>
+        <li class="skill-tag">Safaricom Decode, Cyber Defender Workshop</li>
+        <li class="skill-tag">GitHub Copilot Dev Days</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="experience">
     <div class="container">
       <h2 class="section-label reveal">Experience</h2>
       <div class="exp-list">
 
-        <div class="exp-item reveal">
+        <div class="exp-item is-current reveal">
+          <span class="exp-date">Sep 2026 - Present</span>
+          <div>
+            <h3 class="exp-role">AI/Automation Engineer (Consultant)</h3>
+            <p class="exp-company">Invent Consulting - Nairobi</p>
+            <p class="exp-desc">
+              Consultant on a banking-sector client engagement, building AI and automation solutions in Python on Azure with the Microsoft Agent Framework. Working on agent workflows, integrations, and automation against tracked milestones.
+            </p>
+          </div>
+        </div>
+
+        <div class="exp-item is-current reveal">
           <span class="exp-date">2026 - Present</span>
           <div>
             <h3 class="exp-role">Founder &amp; Developer</h3>
@@ -1733,6 +1989,27 @@
         <div class="project-card">
           <div>
             <p class="project-number">01 //</p>
+            <h3 class="project-name">AI &amp; Automation Engineering</h3>
+            <p class="project-desc">
+              Production AI systems, not demos. LLM-powered pipelines, agent workflows, and
+              automation that plugs into your existing stack. I've shipped this for a
+              banking-sector client on Azure, and it's the engine behind ClauseShift's AI
+              contract-review pipeline.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">LLM Integration</span>
+              <span class="project-tag">AI Agents</span>
+              <span class="project-tag">Agentic Workflows</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Azure</span>
+            </div>
+          </div>
+          <a href="/services/" class="project-arrow" aria-label="Request AI and automation work">↗</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <p class="project-number">02 //</p>
             <h3 class="project-name">Web Services</h3>
             <p class="project-desc">
               Need a website or full-stack web app? I build fast, accessible, modern sites and
@@ -1751,7 +2028,7 @@
 
         <div class="project-card">
           <div>
-            <p class="project-number">02 //</p>
+            <p class="project-number">03 //</p>
             <h3 class="project-name">Mobile App Development</h3>
             <p class="project-desc">
               Cross-platform Android and iOS apps built with Flutter and Firebase. From idea
@@ -1769,13 +2046,36 @@
         </div>
 
       </div>
-      <div class="hero-cta reveal" style="margin-top: 2.5rem;">
+      <div class="hero-cta reveal">
         <a href="/services/" class="btn btn-primary">Request a Service</a>
         <a href="/services/" class="btn btn-ghost">See Details</a>
       </div>
-      <p class="reveal" style="margin-top: 1.25rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 0.06em; color: var(--muted);">
-        Want proof? I'm a verified freelancer on Upwork -
-        <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">check my client reviews ↗</a>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-label reveal">Client Feedback</h2>
+      <div class="testimonial-grid reveal">
+        <blockquote class="testimonial-card">
+          <p class="testimonial-quote">"Very patient et always trying to get things done. I recommend"</p>
+          <footer class="testimonial-meta">
+            <span class="testimonial-stars" aria-hidden="true">★★★★★</span>
+            <span class="testimonial-job">You will get root for your device with Magisk</span>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial-card">
+          <p class="testimonial-quote">"Great to work with, 100% recommend."</p>
+          <footer class="testimonial-meta">
+            <span class="testimonial-stars" aria-hidden="true">★★★★★</span>
+            <span class="testimonial-job">Increase number of downloads for free templates on Flutterflow marketplace</span>
+            <cite class="testimonial-author">Zan C.</cite>
+          </footer>
+        </blockquote>
+      </div>
+      <p class="mono-note reveal">
+        5.0 rating &nbsp;·&nbsp; 100% Job Success &nbsp;·&nbsp; Rising Talent &nbsp;·&nbsp;
+        <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">verify on Upwork ↗</a>
       </p>
     </div>
   </section>
@@ -1910,17 +2210,38 @@
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 20);
     });
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function animateCount(el) {
+      if (el.dataset.animated) return;
+      el.dataset.animated = '1';
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      if (isNaN(target)) return;
+      if (reduceMotion) { el.textContent = target + suffix; return; }
+      const duration = 900;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
     const observer = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          e.target.querySelectorAll('.about-stat-value[data-count]').forEach(animateCount);
+        }
+      }),
       { threshold: 0.1 }
     );
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     const toggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    const saved = localStorage.getItem('theme') || 'dark';
-    html.setAttribute('data-theme', saved);
-    toggle.textContent = saved === 'dark' ? '☀' : '☾';
+    toggle.textContent = html.getAttribute('data-theme') === 'dark' ? '☀' : '☾';
 
     toggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
@@ -1939,6 +2260,27 @@
         });
       });
     });
+
+    /* Load Turnstile only once the contact section is about to enter view */
+    (function () {
+      var contactSection = document.getElementById('contact');
+      if (!contactSection) return;
+      var loaded = false;
+      function loadTurnstile() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        s.async = true;
+        s.defer = true;
+        document.head.appendChild(s);
+      }
+      var tsObserver = new IntersectionObserver(
+        entries => entries.forEach(e => { if (e.isIntersecting) { loadTurnstile(); tsObserver.disconnect(); } }),
+        { rootMargin: '600px 0px' }
+      );
+      tsObserver.observe(contactSection);
+    })();
 
     /* Contact form: same pipeline as ClauseShift (Resend + Turnstile + honeypot) */
     (function () {
