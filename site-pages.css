@@ -1,0 +1,94 @@
+:root {
+  color-scheme: dark;
+  --page-bg: #0b0b0d;
+  --page-surface: #121316;
+  --page-text: #f2f3f5;
+  --page-muted: #a1a4ad;
+  --page-line: #292b31;
+  --page-accent: #79a9ff;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--page-text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  line-height: 1.7;
+}
+a { color: var(--page-accent); text-underline-offset: 0.2em; }
+a:hover { color: #a9c7ff; }
+a:focus-visible { outline: 2px solid var(--page-accent); outline-offset: 4px; }
+.site-shell { width: min(100% - 40px, 1040px); margin: 0 auto; }
+.site-nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--page-line);
+}
+.site-brand {
+  color: var(--page-text);
+  font: 600 0.82rem 'IBM Plex Mono', monospace;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+}
+.site-nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.site-nav-links a { color: var(--page-muted); font-size: 0.85rem; text-decoration: none; }
+.site-nav-links a:hover { color: var(--page-text); }
+.page-main { padding: clamp(42px, 8vw, 88px) 0 80px; }
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--page-accent);
+  font: 500 0.72rem 'IBM Plex Mono', monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.page-title {
+  max-width: 850px;
+  margin: 0;
+  font: 600 clamp(2.6rem, 7vw, 5rem)/1.06 Fraunces, Georgia, serif;
+  letter-spacing: -0.04em;
+}
+.page-intro { max-width: 720px; margin: 22px 0 0; color: var(--page-muted); font-size: clamp(1rem, 2vw, 1.2rem); }
+.page-hero { padding-bottom: 46px; border-bottom: 1px solid var(--page-line); }
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 32px; }
+.stat-card, .case-card { border: 1px solid var(--page-line); background: var(--page-surface); }
+.stat-card { padding: 16px; }
+.stat-card strong { display: block; color: var(--page-text); font: 500 1rem 'IBM Plex Mono', monospace; }
+.stat-card span { display: block; margin-top: 4px; color: var(--page-muted); font-size: 0.78rem; }
+.content-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 38px; }
+.content-block { padding: 22px; border: 1px solid var(--page-line); background: var(--page-surface); }
+.content-block h2 { margin: 0 0 10px; font: 600 1.35rem Fraunces, Georgia, serif; }
+.content-block p, .content-block li { color: var(--page-muted); font-size: 0.94rem; }
+.content-block p:last-child { margin-bottom: 0; }
+.content-block ul { margin: 12px 0 0; padding-left: 1.2rem; }
+.stack-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.stack-list span { padding: 5px 9px; border: 1px solid var(--page-line); color: var(--page-muted); font: 0.72rem 'IBM Plex Mono', monospace; }
+.case-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 32px; }
+.case-card { display: flex; flex-direction: column; padding: 22px; text-decoration: none; transition: transform 160ms ease, border-color 160ms ease; }
+.case-card:hover { transform: translateY(-2px); border-color: #526d9e; }
+.case-card h2 { margin: 10px 0 6px; color: var(--page-text); font: 600 1.55rem Fraunces, Georgia, serif; }
+.case-card p { margin: 0; color: var(--page-muted); font-size: 0.9rem; }
+.case-card .eyebrow { margin-bottom: 0; }
+.case-card .card-link { margin-top: 18px; color: var(--page-accent); font: 0.78rem 'IBM Plex Mono', monospace; }
+.privacy-content { max-width: 780px; }
+.privacy-content section { padding: 24px 0; border-bottom: 1px solid var(--page-line); }
+.privacy-content h2 { margin: 0 0 8px; font: 600 1.45rem Fraunces, Georgia, serif; }
+.privacy-content p, .privacy-content li { color: var(--page-muted); }
+.site-footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 22px 0 30px; border-top: 1px solid var(--page-line); color: var(--page-muted); font-size: 0.78rem; }
+.site-footer a { text-decoration: none; }
+@media (max-width: 650px) {
+  .site-shell { width: min(100% - 28px, 1040px); }
+  .site-nav { min-height: 68px; align-items: flex-start; padding: 18px 0; }
+  .site-nav-links { justify-content: flex-end; gap: 8px 14px; }
+  .stat-grid { grid-template-columns: 1fr; }
+  .content-grid, .case-list { grid-template-columns: 1fr; }
+  .page-main { padding-top: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

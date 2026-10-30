@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NanoPay Case Study | Martin Nzau (Monsiu)</title>
+  <meta name="description" content="NanoPay combines USDC micropayments, a Solidity contract, and Gemini to charge one tenth of a cent per AI query on Arc." />
+  <link rel="canonical" href="https://monsiu.github.io/case-studies/nanopay/" />
+  <meta property="og:type" content="article" /><meta property="og:site_name" content="Monsiu" /><meta property="og:title" content="NanoPay Case Study | Monsiu" /><meta property="og:description" content="A pay-per-query AI API using USDC micropayments on Arc." /><meta property="og:url" content="https://monsiu.github.io/case-studies/nanopay/" /><meta property="og:image" content="https://monsiu.github.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" /><link rel="stylesheet" href="/site-pages.css" />
+</head>
+<body><div class="site-shell">
+  <nav class="site-nav" aria-label="Main navigation"><a class="site-brand" href="/">MONSIU</a><div class="site-nav-links"><a href="/case-studies/">Case studies</a><a href="/services/">Services</a><a href="/cv/">CV</a></div></nav>
+  <main class="page-main">
+    <header class="page-hero"><p class="eyebrow">AI · Web3 · Hackathon</p><h1 class="page-title">NanoPay</h1><p class="page-intro">A pay-per-query AI API that settles a tiny USDC payment before returning a Gemini response.</p>
+      <div class="stat-grid"><div class="stat-card"><strong>$0.001</strong><span>per query</span></div><div class="stat-card"><strong>57+</strong><span>live on-chain transactions</span></div><div class="stat-card"><strong>Arc</strong><span>USDC settlement network</span></div></div>
+    </header>
+    <div class="content-grid">
+      <section class="content-block"><h2>Experiment</h2><p>Test whether an AI API can charge at request scale without a subscription or account balance. The prototype prices each query at one tenth of a cent in USDC.</p></section>
+      <section class="content-block"><h2>Request flow</h2><p>A Solidity contract accepts micropayments. The Node.js API verifies payment before requesting a Gemini response, then returns the answer only after the payment check passes.</p></section>
+      <section class="content-block"><h2>Why Arc</h2><p>The demo uses Arc for settlement because its low transaction costs make repeated sub-cent payments practical to explore. The project submission reports gas costs far below Ethereum for this use case.</p><div class="stack-list"><span>Solidity</span><span>Foundry</span><span>Node.js</span><span>Ethers.js</span><span>Gemini</span><span>USDC</span><span>Arc</span></div></section>
+      <section class="content-block"><h2>Result</h2><p>The working demo processed more than 57 live on-chain transactions and was submitted to the Arc Blockchain Hackathon.</p><p><a href="https://agentic-economy-on-arc-production.up.railway.app" target="_blank" rel="noopener noreferrer">Try the demo ↗</a> · <a href="https://lablab.ai/ai-hackathons/nano-payments-arc" target="_blank" rel="noopener noreferrer">Hackathon submission ↗</a></p></section>
+    </div>
+  </main>
+  <footer class="site-footer"><span>Hackathon project by Monsiu</span><span><a href="/case-studies/">All case studies</a> · <a href="/privacy/">Privacy</a></span></footer>
+</div></body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aegis SRE Guardian Case Study | Martin Nzau (Monsiu)</title>
+  <meta name="description" content="Aegis is a three-agent incident response system with live infrastructure metrics and allowlisted SSH remediation." />
+  <link rel="canonical" href="https://monsiu.github.io/case-studies/aegis/" />
+  <meta property="og:type" content="article" /><meta property="og:site_name" content="Monsiu" /><meta property="og:title" content="Aegis SRE Guardian Case Study | Monsiu" /><meta property="og:description" content="A three-agent incident response system with constrained SSH remediation." /><meta property="og:url" content="https://monsiu.github.io/case-studies/aegis/" /><meta property="og:image" content="https://monsiu.github.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" /><link rel="stylesheet" href="/site-pages.css" />
+</head>
+<body><div class="site-shell">
+  <nav class="site-nav" aria-label="Main navigation"><a class="site-brand" href="/">MONSIU</a><div class="site-nav-links"><a href="/case-studies/">Case studies</a><a href="/services/">Services</a><a href="/cv/">CV</a></div></nav>
+  <main class="page-main">
+    <header class="page-hero"><p class="eyebrow">AI agents · SRE · Hackathon</p><h1 class="page-title">Aegis, SRE Guardian</h1><p class="page-intro">An incident response demo that monitors infrastructure, diagnoses common failures, and applies constrained remote fixes.</p>
+      <div class="stat-grid"><div class="stat-card"><strong>3 agents</strong><span>monitor, diagnose, remediate</span></div><div class="stat-card"><strong>Live</strong><span>metrics streamed over WebSockets</span></div><div class="stat-card"><strong>Allowlisted</strong><span>SSH remediation commands</span></div></div>
+    </header>
+    <div class="content-grid">
+      <section class="content-block"><h2>System goal</h2><p>Demonstrate an agent workflow that can respond to infrastructure incidents while keeping remediation bounded and inspectable.</p></section>
+      <section class="content-block"><h2>Response workflow</h2><p>A Monitor agent detects conditions, a Diagnosis agent analyzes them, and a Remediation agent selects from a whitelisted set of SSH actions. Arbitrary shell input is not passed through to the remote server.</p></section>
+      <section class="content-block"><h2>Operator view</h2><p>The dashboard streams infrastructure metrics over WebSockets. A ChromaDB vector store supports retrieval from prior incidents, and the system can generate PDF post-mortems.</p><div class="stack-list"><span>Python</span><span>FastAPI</span><span>React</span><span>TypeScript</span><span>ChromaDB</span><span>WebSockets</span><span>Paramiko</span></div></section>
+      <section class="content-block"><h2>Scenarios and demo</h2><p>The demo covers CPU surges, memory pressure, disk I/O, DDoS, and database bottlenecks. Built for the AMD Developer Hackathon 2025, AI Agents &amp; Agentic Workflows track.</p><p><a href="https://autonomous-sre-self-healing-cloud-g.vercel.app/" target="_blank" rel="noopener noreferrer">Try the demo ↗</a> · <a href="https://github.com/monsiu/Autonomous-SRE-Self-Healing-Cloud-Guardian" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a></p></section>
+    </div>
+  </main>
+  <footer class="site-footer"><span>Hackathon project by Monsiu</span><span><a href="/case-studies/">All case studies</a> · <a href="/privacy/">Privacy</a></span></footer>
+</div></body>
+</html>
