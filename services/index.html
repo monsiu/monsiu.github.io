@@ -603,6 +603,21 @@
     }
     .proof-card:hover { background: var(--bg-hover); }
     .proof-banner { width: 100%; height: 108px; object-fit: cover; border: 1px solid var(--border); display: block; }
+    .rom-proof-banner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 1rem;
+      background: var(--bg);
+      color: var(--accent);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.83rem;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+    .rom-proof-banner span { font-weight: 700; }
+    .rom-proof-banner small { color: var(--muted); font-size: 0.6rem; }
     .proof-role {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.62rem;
@@ -925,6 +940,21 @@
       <h2 class="section-label">Proof, Not Promises</h2>
 
       <div class="proof-grid">
+        <a class="proof-card" href="https://xdaforums.com/t/rom-unofficial-15-lineageos-22-2-for-galaxy-a8-2018-sm-a530f.4806794/#post-90798855" target="_blank" rel="noopener noreferrer" data-ga="svc_proof_lineageos_a530f" style="text-decoration:none;">
+          <div class="proof-banner rom-proof-banner" aria-hidden="true">
+            <span>LINEAGEOS 22.2</span>
+            <small>ANDROID 15 · SM-A530F</small>
+          </div>
+          <div>
+            <p class="proof-role">Custom ROM · Samsung Galaxy A8 (2018)</p>
+            <p class="proof-name">Unofficial LineageOS 22.2</p>
+            <p class="proof-desc">An Android 15 ROM build for the Galaxy A8 (2018), model SM-A530F. See the XDA thread for the build and device details.</p>
+            <div class="store-chips">
+              <span class="store-chip">Android 15</span><span class="store-chip">SM-A530F</span><span class="store-chip">XDA thread ↗</span>
+            </div>
+          </div>
+        </a>
+
         <a class="proof-card" href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="svc_proof_clauseshift" style="text-decoration:none;">
           <img class="proof-banner" src="/clauseshift-banner.png" alt="ClauseShift: AI contract review" width="1200" height="400" loading="lazy" decoding="async" />
           <div>
@@ -1005,6 +1035,7 @@
             <li>Build troubleshooting and test support</li>
             <li>Release packaging and maintenance planning</li>
           </ul>
+          <p class="service-desc rom-checklist"><strong>For a feasibility check, send:</strong> the exact model and codename, target ROM or Android version, and links to any device, kernel, vendor, or ROM sources you have.</p>
         </div>
 
         <div class="service-card">
@@ -1589,6 +1620,9 @@
             if (res.ok && data.ok !== false) {
               if (typeof gtag === 'function') {
                 gtag('event', 'generate_lead', { form_id: 'services_request', form_destination: 'contact_form' });
+                if (services.indexOf('Custom ROM / Device Bring-up') !== -1) {
+                  gtag('event', 'rom_service_lead', { form_id: 'services_request' });
+                }
               }
               window.location.href = '/services/thanks.html';
             } else {
