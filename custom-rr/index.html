@@ -3,22 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZYEZ8XEN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-VJZYEZ8XEN');
-  </script>
-  <script defer src="/consent.js"></script>
+  <script defer src="/analytics-config.js"></script>
+  <script defer src="/analytics.js"></script>
   <script defer src="/release.js"></script>
   <title>Custom RR - A Hub for Android Custom ROMs, Recoveries & Root | Monsiu</title>
   <meta name="description" content="Custom RR is the single home for popular Android custom ROMs, custom recoveries, and root solutions. 18 actively maintained ROMs (LineageOS, crDroid, PixelOS, GrapheneOS, and more), 5 recoveries, 500+ devices, with nightly freshness signals, deep links, and native Android, Windows, macOS, and Linux builds. Open source, GPL-3.0." />
@@ -753,20 +739,20 @@
 <header class="band">
   <div class="band-inner">
     <nav class="topbar" aria-label="Site">
-      <a href="/" class="topbar-home" data-ga="customrr_home">Monsiu Tech</a>
+      <a href="/" class="topbar-home">Monsiu Tech</a>
       <div class="topbar-nav">
-        <a href="/" data-ga="customrr_portfolio">Portfolio</a>
-        <a href="/#projects" data-ga="customrr_work">Work</a>
-        <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_nav_play">Google Play</a>
+        <a href="/">Portfolio</a>
+        <a href="/#projects">Work</a>
+        <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Google Play</a>
         <span class="nav-dd" id="navApps">
           <button type="button" class="nav-dd-btn" aria-haspopup="true" aria-expanded="false" aria-controls="navAppsMenu">Apps <span aria-hidden="true">▾</span></button>
           <span class="nav-dd-menu" id="navAppsMenu">
-            <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="customrr_nav_clauseshift">ClauseShift</a>
-            <a href="/pesashift-android/" data-ga="customrr_nav_pesashift">PesaShift</a>
-            <a href="/custom-rr/" data-ga="customrr_nav_self">Custom RR</a>
+            <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer">ClauseShift</a>
+            <a href="/pesashift-android/">PesaShift</a>
+            <a href="/custom-rr/">Custom RR</a>
           </span>
         </span>
-        <a href="/services/" class="hire" data-ga="customrr_hire">Hire me</a>
+        <a href="/services/" class="hire">Hire me</a>
       </div>
     </nav>
 
@@ -796,11 +782,11 @@
     </div>
 
     <div class="cta-row">
-      <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-ga="customrr_play">Get it on Google Play</a>
-      <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-ga="customrr_download">APK on GitHub</a>
-      <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-ga="customrr_github">View on GitHub</a>
-      <a href="https://github.com/sponsors/monsiu" target="_blank" rel="noopener noreferrer" class="btn btn-sponsor" data-ga="customrr_sponsor">&#9829; Sponsor on GitHub</a>
-      <a href="/custom-rr/privacy/" class="btn btn-ghost" data-ga="customrr_privacy">Privacy Policy</a>
+      <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get it on Google Play</a>
+      <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">APK on GitHub</a>
+      <a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View on GitHub</a>
+      <a href="https://github.com/sponsors/monsiu" target="_blank" rel="noopener noreferrer" class="btn btn-sponsor">&#9829; Sponsor on GitHub</a>
+      <a href="/custom-rr/privacy/" class="btn btn-ghost">Privacy Policy</a>
     </div>
 
     <img src="/custom-rr/banner-2x.png" alt="Custom RR banner: the single home for Android custom ROMs and recoveries" class="banner" width="1440" height="360" loading="lazy" decoding="async" />
@@ -814,9 +800,9 @@
       <h2>New to flashing? Get the in-depth guide</h2>
       <p>A complete, beginner-friendly walkthrough for unlocking your bootloader, installing a custom recovery, flashing a custom ROM, and rooting your phone safely, the same steps Custom RR links you to, explained start to finish in one place.</p>
       <div class="cta-row">
-        <a href="https://buymeacoffee.com/monsiutech/e/545611" target="_blank" rel="noopener noreferrer" class="btn btn-coffee" data-ga="customrr_guide_hero">Get the flashing guide</a>
+        <a href="https://buymeacoffee.com/monsiutech/e/545611" target="_blank" rel="noopener noreferrer" class="btn btn-coffee">Get the flashing guide</a>
       </div>
-      <p class="callout-note">Already comfortable flashing? Just <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" data-ga="customrr_guide_hero_skip">grab the app</a> and dive into your device's catalog.</p>
+      <p class="callout-note">Already comfortable flashing? Just <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer">grab the app</a> and dive into your device's catalog.</p>
     </section>
 
     <section>
@@ -829,7 +815,7 @@
         <li><strong>Better-timed &quot;rate the app&quot; ask on Google Play.</strong> After the app has actually helped you (a couple of ROM or recovery downloads opened), the Play version now asks for a quick rating in a small bottom sheet, at most once a week, and never again once you rate or decline. A &quot;Rate the app&quot; shortcut also joined the app menu.</li>
         <li><strong>Device detection matches many more phones.</strong> The &quot;your device&quot; card now recognizes vendor-prefixed codenames (an Infinix Note 30 reporting <code>Infinix-X6833B</code>), regional variants (a realme 7 reporting <code>rmx2151l1</code>), stock OnePlus names (<code>OnePlus6T</code> finds fajita), and unified family builds (a Redmi 8 reporting <code>olive</code> finds the shared <code>mi439</code> builds), instead of telling you the phone is not in the catalog.</li>
         <!-- cr:changelog:end -->
-        <li><a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" data-ga="customrr_full_changelog">Full changelog on GitHub →</a></li>
+        <li><a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer">Full changelog on GitHub →</a></li>
       </ul>
     </section>
 
@@ -837,11 +823,11 @@
     <section class="callout" id="google-play">
       <h2>Now on Google Play</h2>
       <p>Custom RR is live on <strong>Google Play</strong>. Installs and updates come straight from the Play Store, so you always get the latest version.</p>
-      <p style="margin-bottom:1.1rem;"><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_cta">Get it on Google Play &rarr;</a></p>
-      <p class="callout-note">Prefer not to use Google Play? Grab the <a href="https://github.com/monsiu/Custom-RR/releases" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_apk">APK from GitHub Releases</a>, the <a href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_amazon">Amazon Appstore</a>, <a href="https://f-droid.org/packages/io.github.monsiu.custom_rr/" target="_blank" rel="noopener noreferrer" data-ga="customrr_fdroid">F-Droid</a>, or <a href="https://zapstore.dev/apps/io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_zapstore">Zapstore</a>. Questions? <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer" data-ga="customrr_discord">Join the Discord</a>.</p>
+      <p style="margin-bottom:1.1rem;"><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Get it on Google Play &rarr;</a></p>
+      <p class="callout-note">Prefer not to use Google Play? Grab the <a href="https://github.com/monsiu/Custom-RR/releases" target="_blank" rel="noopener noreferrer">APK from GitHub Releases</a>, the <a href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Amazon Appstore</a>, <a href="https://f-droid.org/packages/io.github.monsiu.custom_rr/" target="_blank" rel="noopener noreferrer">F-Droid</a>, or <a href="https://zapstore.dev/apps/io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Zapstore</a>. Questions? <a href="https://discord.gg/uWZR8vR855" target="_blank" rel="noopener noreferrer">Join the Discord</a>.</p>
       <div class="callout-sub">
         <h3>Also: macOS testers wanted</h3>
-        <p class="callout-note">The new macOS build has not yet been verified on real Apple hardware and ships unsigned. If you run it on an Apple Silicon or Intel Mac, please report whether it launches, the catalog loads, and screenshots and the update check work, plus your macOS version, on the <a href="https://github.com/monsiu/Custom-RR/issues" target="_blank" rel="noopener noreferrer" data-ga="customrr_macos_testers">issue tracker</a> or the Discord. Signing and notarization help is very welcome too.</p>
+        <p class="callout-note">The new macOS build has not yet been verified on real Apple hardware and ships unsigned. If you run it on an Apple Silicon or Intel Mac, please report whether it launches, the catalog loads, and screenshots and the update check work, plus your macOS version, on the <a href="https://github.com/monsiu/Custom-RR/issues" target="_blank" rel="noopener noreferrer">issue tracker</a> or the Discord. Signing and notarization help is very welcome too.</p>
       </div>
     </section>
 
@@ -883,32 +869,32 @@
       <div class="download-grid">
         <div class="download-card">
           <h3>App stores</h3>
-          <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_play_store_dl">Get it on Google Play &rarr;</a>
-          <a href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_amazon_dl">Amazon Appstore</a>
-          <a href="https://f-droid.org/packages/io.github.monsiu.custom_rr/" target="_blank" rel="noopener noreferrer" data-ga="customrr_fdroid_dl">F-Droid</a>
-          <a href="https://zapstore.dev/apps/io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_zapstore_dl">Zapstore</a>
-          <a href="https://apps.microsoft.com/detail/9NTS7Q5V12RG" target="_blank" rel="noopener noreferrer" data-ga="customrr_msstore_dl">Microsoft Store (Windows)</a>
+          <a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Get it on Google Play &rarr;</a>
+          <a href="https://www.amazon.com/gp/mas/dl/android?p=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Amazon Appstore</a>
+          <a href="https://f-droid.org/packages/io.github.monsiu.custom_rr/" target="_blank" rel="noopener noreferrer">F-Droid</a>
+          <a href="https://zapstore.dev/apps/io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Zapstore</a>
+          <a href="https://apps.microsoft.com/detail/9NTS7Q5V12RG" target="_blank" rel="noopener noreferrer">Microsoft Store (Windows)</a>
         </div>
         <div class="download-card">
           <h3>Android</h3>
-          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-arm64-v8a.apk" data-cr-asset="arm64-v8a.apk" data-ga="customrr_apk_arm64">arm64-v8a (most phones)</a>
-          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-armeabi-v7a.apk" data-cr-asset="armeabi-v7a.apk" data-ga="customrr_apk_arm32">armeabi-v7a (32-bit)</a>
-          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-x86_64.apk" data-cr-asset="x86_64.apk" data-ga="customrr_apk_x86">x86_64 (emulators)</a>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-arm64-v8a.apk" data-cr-asset="arm64-v8a.apk">arm64-v8a (most phones)</a>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-armeabi-v7a.apk" data-cr-asset="armeabi-v7a.apk">armeabi-v7a (32-bit)</a>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-x86_64.apk" data-cr-asset="x86_64.apk">x86_64 (emulators)</a>
         </div>
         <div class="download-card">
           <h3>Windows</h3>
-          <a href="https://apps.microsoft.com/detail/9NTS7Q5V12RG" target="_blank" rel="noopener noreferrer" data-ga="customrr_msstore_win">Microsoft Store (auto-updates) &rarr;</a>
-          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-windows-x64.zip" data-cr-asset="windows-x64.zip" data-ga="customrr_win_x64">windows-x64.zip</a>
-          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-windows-arm64.zip" data-cr-asset="windows-arm64.zip" data-ga="customrr_win_arm64">windows-arm64.zip</a>
+          <a href="https://apps.microsoft.com/detail/9NTS7Q5V12RG" target="_blank" rel="noopener noreferrer">Microsoft Store (auto-updates) &rarr;</a>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-windows-x64.zip" data-cr-asset="windows-x64.zip">windows-x64.zip</a>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-windows-arm64.zip" data-cr-asset="windows-arm64.zip">windows-arm64.zip</a>
         </div>
         <div class="download-card">
           <h3>macOS</h3>
-          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-macos-universal.zip" data-cr-asset="macos-universal.zip" data-ga="customrr_macos">macos-universal.zip (Apple Silicon &amp; Intel)</a>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-macos-universal.zip" data-cr-asset="macos-universal.zip">macos-universal.zip (Apple Silicon &amp; Intel)</a>
         </div>
         <div class="download-card">
           <h3>Linux</h3>
-          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-linux-x64.tar.gz" data-cr-asset="linux-x64.tar.gz" data-ga="customrr_linux_x64">linux-x64.tar.gz</a>
-          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-linux-arm64.tar.gz" data-cr-asset="linux-arm64.tar.gz" data-ga="customrr_linux_arm64">linux-arm64.tar.gz</a>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-linux-x64.tar.gz" data-cr-asset="linux-x64.tar.gz">linux-x64.tar.gz</a>
+          <a href="https://github.com/monsiu/Custom-RR/releases/download/v1.3.6/custom_rr-v1.3.6-linux-arm64.tar.gz" data-cr-asset="linux-arm64.tar.gz">linux-arm64.tar.gz</a>
         </div>
       </div>
     </section>
@@ -923,7 +909,7 @@ cd custom_rr-<span data-cr="version">v1.3.6</span>-linux-x64
 ./custom_rr</pre>
       <p>Optional: run <code>./install.sh</code> to register a desktop entry.</p>
       <h3>Windows</h3>
-      <p>Easiest route: install from the <a href="https://apps.microsoft.com/detail/9NTS7Q5V12RG" target="_blank" rel="noopener noreferrer" data-ga="customrr_msstore_install">Microsoft Store</a> and it updates itself. Prefer portable? Extract the zip and double-click <code>Custom_RR.exe</code>. No admin rights needed.</p>
+      <p>Easiest route: install from the <a href="https://apps.microsoft.com/detail/9NTS7Q5V12RG" target="_blank" rel="noopener noreferrer">Microsoft Store</a> and it updates itself. Prefer portable? Extract the zip and double-click <code>Custom_RR.exe</code>. No admin rights needed.</p>
       <h3>macOS</h3>
       <p>Requires macOS 10.15 (Catalina) or newer. Extract the zip and move the Custom RR app to your Applications folder. The build is unsigned for now, so Gatekeeper blocks it on first launch: on macOS 14 and earlier, right-click the app and choose <strong>Open</strong>; on macOS 15 (Sequoia) and newer, double-click it, then open <strong>System Settings → Privacy &amp; Security</strong> and click <strong>Open Anyway</strong>. You only need to do this once.</p>
     </section>
@@ -934,7 +920,7 @@ cd custom_rr-<span data-cr="version">v1.3.6</span>-linux-x64
 cd Custom-RR
 flutter pub get
 flutter run</pre>
-      <p>Requirements: Flutter 3.22+, Dart 3.4+, Java 17, Android SDK 36, minSdk 21. See the <a href="https://github.com/monsiu/Custom-RR#build-from-source" target="_blank" rel="noopener noreferrer" data-ga="customrr_build_docs">build docs</a> for desktop prereqs.</p>
+      <p>Requirements: Flutter 3.22+, Dart 3.4+, Java 17, Android SDK 36, minSdk 21. See the <a href="https://github.com/monsiu/Custom-RR#build-from-source" target="_blank" rel="noopener noreferrer">build docs</a> for desktop prereqs.</p>
     </section>
 
 </div>
@@ -957,8 +943,8 @@ flutter run</pre>
         <div class="hn-stat"><span class="hn-num">1</span><span class="hn-label">developer, end to end</span></div>
       </div>
       <div class="cta-row hn-cta">
-        <a href="/services/" class="btn btn-primary" data-ga="customrr_hire_nudge">Get your project built</a>
-        <a href="/#projects" class="btn btn-ghost" data-ga="customrr_hire_nudge_work">See everything I have shipped</a>
+        <a href="/services/" class="btn btn-primary">Get your project built</a>
+        <a href="/#projects" class="btn btn-ghost">See everything I have shipped</a>
       </div>
       <p class="hn-note">Tell me what you have in mind and you get back a plan, a timeline, and a quote. No obligation.</p>
     </section>
@@ -988,15 +974,15 @@ flutter run</pre>
         </details>
         <details class="faq-item">
           <summary>How do I install a custom ROM?</summary>
-          <div class="faq-answer"><p>Installing a custom ROM generally means unlocking your bootloader, flashing a custom recovery, then flashing the ROM build for your exact device, but the precise steps differ from phone to phone. Custom RR pulls the right ROM, official downloads, and per-device flashing notes into one place. Install Custom RR and follow the in-app guide, or grab the complete, beginner-friendly <a href="https://buymeacoffee.com/monsiutech/e/545611" target="_blank" rel="noopener noreferrer" data-ga="customrr_guide_rom">in-depth flashing guide</a> for the full step-by-step walkthrough.</p></div>
+          <div class="faq-answer"><p>Installing a custom ROM generally means unlocking your bootloader, flashing a custom recovery, then flashing the ROM build for your exact device, but the precise steps differ from phone to phone. Custom RR pulls the right ROM, official downloads, and per-device flashing notes into one place. Install Custom RR and follow the in-app guide, or grab the complete, beginner-friendly <a href="https://buymeacoffee.com/monsiutech/e/545611" target="_blank" rel="noopener noreferrer">in-depth flashing guide</a> for the full step-by-step walkthrough.</p></div>
         </details>
         <details class="faq-item">
           <summary>How do I install a custom recovery?</summary>
-          <div class="faq-answer"><p>Installing a custom recovery such as TWRP or OrangeFox usually means unlocking your bootloader and flashing the recovery image over fastboot, though the exact image and commands depend on your device. Custom RR lists the right recovery for your phone with direct downloads and the notes you need. Install Custom RR and open the recovery for your device, or get the full walkthrough in the <a href="https://buymeacoffee.com/monsiutech/e/545611" target="_blank" rel="noopener noreferrer" data-ga="customrr_guide_recovery">in-depth flashing guide</a>.</p></div>
+          <div class="faq-answer"><p>Installing a custom recovery such as TWRP or OrangeFox usually means unlocking your bootloader and flashing the recovery image over fastboot, though the exact image and commands depend on your device. Custom RR lists the right recovery for your phone with direct downloads and the notes you need. Install Custom RR and open the recovery for your device, or get the full walkthrough in the <a href="https://buymeacoffee.com/monsiutech/e/545611" target="_blank" rel="noopener noreferrer">in-depth flashing guide</a>.</p></div>
         </details>
         <details class="faq-item">
           <summary>How do I root my Android phone?</summary>
-          <div class="faq-answer"><p>Rooting normally means flashing a root solution like Magisk, KernelSU, or APatch, often by patching and flashing your boot image, but the method varies by device and ROM. Custom RR's Root section gathers every supported solution with official sources and guidance. Install Custom RR and open the Root section, or follow the complete, beginner-friendly steps in the <a href="https://buymeacoffee.com/monsiutech/e/545611" target="_blank" rel="noopener noreferrer" data-ga="customrr_guide_root">in-depth flashing guide</a>.</p></div>
+          <div class="faq-answer"><p>Rooting normally means flashing a root solution like Magisk, KernelSU, or APatch, often by patching and flashing your boot image, but the method varies by device and ROM. Custom RR's Root section gathers every supported solution with official sources and guidance. Install Custom RR and open the Root section, or follow the complete, beginner-friendly steps in the <a href="https://buymeacoffee.com/monsiutech/e/545611" target="_blank" rel="noopener noreferrer">in-depth flashing guide</a>.</p></div>
         </details>
         <details class="faq-item">
           <summary>Which root solutions does Custom RR cover?</summary>
@@ -1029,8 +1015,8 @@ flutter run</pre>
       <h2>Support the project</h2>
       <p>Custom RR is free, open source, and ad-free. If it saved you time before a flash, you can help keep it maintained:</p>
       <div class="cta-row">
-        <a href="https://github.com/sponsors/monsiu" target="_blank" rel="noopener noreferrer" class="btn btn-sponsor" data-ga="customrr_sponsor_section">&#9829; Sponsor on GitHub</a>
-        <button type="button" id="shareBtn" class="btn btn-primary" data-ga="customrr_share">Share</button>
+        <a href="https://github.com/sponsors/monsiu" target="_blank" rel="noopener noreferrer" class="btn btn-sponsor">&#9829; Sponsor on GitHub</a>
+        <button type="button" id="shareBtn" class="btn btn-primary">Share</button>
       </div>
       <details class="faq-item crypto-details">
         <summary>Crypto donations (same addresses shipped in the app)</summary>
@@ -1050,7 +1036,7 @@ flutter run</pre>
               <tr><td><strong>XMR</strong> (Monero)</td><td><code>8ADyd3DvN5D6wAauq2Q2BSZp7aG3LhYZAFswk5dNQohVUBDT8G84MjPimsj5vzfB8TBrwtC3y3BATNm76bX21kWfUys3ehE</code></td></tr>
             </tbody>
           </table>
-          <p>Have a different coin? Use the in-app <strong>Swap to XMR</strong> button (powered by <a href="https://trocador.app/anonpay/" target="_blank" rel="noopener noreferrer" data-ga="customrr_trocador">Trocador AnonPay</a>, no account, no KYC).</p>
+          <p>Have a different coin? Use the in-app <strong>Swap to XMR</strong> button (powered by <a href="https://trocador.app/anonpay/" target="_blank" rel="noopener noreferrer">Trocador AnonPay</a>, no account, no KYC).</p>
         </div>
       </details>
     </section>
@@ -1058,11 +1044,11 @@ flutter run</pre>
     <section>
       <h2>Links</h2>
       <ul>
-        <li><a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer" data-ga="customrr_link_github">Source on GitHub</a></li>
-        <li><a href="https://github.com/monsiu/Custom-RR/releases" target="_blank" rel="noopener noreferrer" data-ga="customrr_link_releases">All releases</a></li>
-        <li><a href="https://github.com/monsiu/Custom-RR/issues" target="_blank" rel="noopener noreferrer" data-ga="customrr_link_issues">Issues &amp; bug reports</a></li>
-        <li><a href="https://github.com/monsiu/Custom-RR/discussions" target="_blank" rel="noopener noreferrer" data-ga="customrr_link_discussions">Discussions</a></li>
-        <li><a href="/custom-rr/privacy/" data-ga="customrr_link_privacy">Privacy policy</a></li>
+        <li><a href="https://github.com/monsiu/Custom-RR" target="_blank" rel="noopener noreferrer">Source on GitHub</a></li>
+        <li><a href="https://github.com/monsiu/Custom-RR/releases" target="_blank" rel="noopener noreferrer">All releases</a></li>
+        <li><a href="https://github.com/monsiu/Custom-RR/issues" target="_blank" rel="noopener noreferrer">Issues &amp; bug reports</a></li>
+        <li><a href="https://github.com/monsiu/Custom-RR/discussions" target="_blank" rel="noopener noreferrer">Discussions</a></li>
+        <li><a href="/custom-rr/privacy/">Privacy policy</a></li>
       </ul>
     </section>
 
@@ -1081,21 +1067,11 @@ flutter run</pre>
 
   <footer>
     <span>© <span id="year"></span> Martin Nzau (Monsiu) · GPL-3.0</span>
-    <span><a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer" data-ga="customrr_footer_play">Google Play</a> · <a href="/">Portfolio</a> · <a href="/services/">Hire me</a> · <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a></span>
+    <span><a href="https://play.google.com/store/apps/details?id=io.github.monsiu.custom_rr" target="_blank" rel="noopener noreferrer">Google Play</a> · <a href="/">Portfolio</a> · <a href="/services/">Hire me</a> · <a href="/privacy/#site-analytics">Analytics settings</a> · <a href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer">github.com/monsiu</a></span>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.querySelectorAll('[data-ga]').forEach(function (el) {
-      el.addEventListener('click', function () {
-        if (typeof gtag !== 'function') return;
-        gtag('event', 'cta_click', {
-          cta_id: el.getAttribute('data-ga'),
-          cta_text: (el.textContent || '').trim().slice(0, 60),
-          cta_href: el.getAttribute('href') || ''
-        });
-      });
-    });
 
     /* Share button: native share sheet with clipboard fallback */
     (function () {
@@ -1249,7 +1225,6 @@ flutter run</pre>
         counter.style.display = multi ? '' : 'none';
         show(i);
         btnClose.focus();
-        if (typeof gtag === 'function') gtag('event', 'screenshot_view', { screenshot_index: i + 1 });
       }
       function close() {
         box.classList.remove('open');

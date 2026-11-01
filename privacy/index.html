@@ -4,12 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy | Martin Nzau (Monsiu)</title>
-  <meta name="description" content="How the Monsiu portfolio handles contact form submissions, Turnstile verification, and optional analytics." />
+  <meta name="description" content="How the Monsiu portfolio handles contact requests, spam protection, and privacy-focused site analytics." />
   <link rel="canonical" href="https://monsiu.github.io/privacy/" />
-  <meta property="og:type" content="website" /><meta property="og:site_name" content="Monsiu" /><meta property="og:title" content="Privacy | Monsiu" /><meta property="og:description" content="How contact requests, Turnstile, and optional analytics are handled on the Monsiu portfolio." /><meta property="og:url" content="https://monsiu.github.io/privacy/" /><meta property="og:image" content="https://monsiu.github.io/og-image.png" />
+  <meta property="og:type" content="website" /><meta property="og:site_name" content="Monsiu" /><meta property="og:title" content="Privacy | Monsiu" /><meta property="og:description" content="How contact requests, spam protection, and privacy-focused site analytics are handled on the Monsiu portfolio." /><meta property="og:url" content="https://monsiu.github.io/privacy/" /><meta property="og:image" content="https://monsiu.github.io/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
   <link rel="stylesheet" href="/site-pages.css" />
+  <script defer src="/analytics-config.js"></script>
+  <script defer src="/analytics.js"></script>
+  <style>
+    .privacy-analytics-toggle {
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--page-line);
+      background: var(--page-surface);
+      color: var(--page-text);
+      font: 500 0.78rem 'IBM Plex Mono', monospace;
+      cursor: pointer;
+    }
+    .privacy-analytics-toggle:hover { border-color: var(--page-accent); }
+    .privacy-analytics-toggle:focus-visible { outline: 2px solid var(--page-accent); outline-offset: 3px; }
+  </style>
 </head>
 <body>
   <div class="site-shell">
@@ -35,15 +49,17 @@
         <h2>Spam protection</h2>
         <p>The forms use Cloudflare Turnstile to help distinguish genuine submissions from automated spam. Cloudflare processes the verification token and related request data to provide this check. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare's privacy policy</a>.</p>
       </section>
-      <section>
-        <h2>Optional analytics</h2>
-        <p>Google Analytics is set to denied unless you accept the site's analytics prompt. Your choice is stored in this browser so the prompt can remember it. You can change your choice by clearing this site's local storage.</p>
+      <section id="site-analytics">
+        <h2>Site analytics</h2>
+        <p>Cloudflare Web Analytics provides aggregate page-view and performance measurements. Its beacon does not use cookies or browser storage and Cloudflare says it does not collect or use visitors’ personal data. The choice to turn analytics off is stored in this browser's local storage.</p>
+        <p><button type="button" class="privacy-analytics-toggle" id="analyticsOptOut">Turn analytics off</button></p>
+        <p id="analyticsStatus" role="status" aria-live="polite"></p>
       </section>
       <section>
         <h2>Questions or deletion requests</h2>
         <p>For questions about a submission or to ask me to delete its email copy, contact <a href="mailto:contactmonsiu@gmail.com">contactmonsiu@gmail.com</a>.</p>
       </section>
-      <p class="eyebrow" style="margin-top:26px">Last updated: 30 October 2026</p>
+      <p class="eyebrow" style="margin-top:26px">Last updated: 1 November 2026</p>
     </main>
     <footer class="site-footer"><span>Martin Nzau (Monsiu)</span><span><a href="/">Home</a> · <a href="/services/">Services</a> · <a href="/cv/">CV</a></span></footer>
   </div>

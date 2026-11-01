@@ -4,22 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZYEZ8XEN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-VJZYEZ8XEN');
-  </script>
-  <script defer src="/consent.js"></script>
+  <script defer src="/analytics-config.js"></script>
+  <script defer src="/analytics.js"></script>
   <script defer src="/release.js"></script>
   <script defer src="/contact-config.js"></script>
   <title>Martin Nzau (Monsiu) - AI Engineer & Full-Stack Developer</title>
@@ -1537,9 +1523,9 @@
         <li class="nav-dd" id="navApps">
           <button type="button" class="nav-dd-btn" aria-haspopup="true" aria-expanded="false" aria-controls="navAppsMenu">Apps <span class="nav-dd-caret" aria-hidden="true">▾</span></button>
           <ul class="nav-dd-menu" id="navAppsMenu">
-            <li><a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="nav_clauseshift">ClauseShift</a></li>
-            <li><a href="/pesashift-android/" data-ga="nav_pesashift">PesaShift</a></li>
-            <li><a href="/custom-rr/" data-ga="nav_custom_rr">Custom RR</a></li>
+            <li><a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer">ClauseShift</a></li>
+            <li><a href="/pesashift-android/">PesaShift</a></li>
+            <li><a href="/custom-rr/">Custom RR</a></li>
           </ul>
         </li>
         <li><a href="#certifications">Certs</a></li>
@@ -1547,7 +1533,7 @@
         <li><a href="/services/">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a class="gh-link" href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub" data-ga="nav_github">
+      <a class="gh-link" href="https://github.com/monsiu" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" title="GitHub">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
       </a>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☀</button>
@@ -1571,11 +1557,11 @@
           </p>
           <p class="availability-note">Open to AI engineering and full-stack roles, plus select freelance work.</p>
           <div class="hero-cta">
-            <a href="/cv/" class="btn btn-primary" data-ga="hero_view_cv">View CV</a>
-            <a href="#contact" class="btn btn-ghost" data-ga="hero_contact">Contact</a>
+            <a href="/cv/" class="btn btn-primary">View CV</a>
+            <a href="#contact" class="btn btn-ghost">Contact</a>
           </div>
           <p class="mono-note">
-            <a href="#projects" data-ga="hero_view_work">Explore selected work ↓</a>
+            <a href="#projects">Explore selected work ↓</a>
             &nbsp;·&nbsp; Trusted on Upwork -
             <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">read client reviews ↗</a>
           </p>
@@ -1717,15 +1703,15 @@
           <div>
             <p class="project-number">01 //</p>
             <h3 class="project-name">ClauseShift
-              <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_clauseshift_live" title="ClauseShift, live now on the web and app stores">Live</a>
+              <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" class="release-badge" title="ClauseShift, live now on the web and app stores">Live</a>
             </h3>
-            <a href="https://clauseshift.com" data-ga="project_clauseshift_banner" target="_blank" rel="noopener noreferrer" aria-label="ClauseShift landing page">
+            <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" aria-label="ClauseShift landing page">
               <img src="clauseshift-banner.png" alt="ClauseShift: AI contract review that cites every clause" class="project-banner" loading="lazy" decoding="async" width="1200" height="400" />
             </a>
             <p class="project-desc">
               An AI contract reviewer that shows its receipts: every risk it flags quotes the <strong>exact clause</strong> it came from, so you verify the wording yourself instead of trusting a black box. Two AI models cross-check every review and hand you a clear risk score, a plain-English summary, and every key date and deadline pulled out automatically. Built as <strong>one product across web, Android, iOS, and desktop</strong>, with self-serve billing: free tier, Pro subscription, pay-as-you-go credits. Live on <strong>Google Play, the web, the Amazon Appstore, the Huawei AppGallery, and the Microsoft Store</strong>, with more platforms rolling out. The marketing site speaks seven languages.
             </p>
-            <p class="project-metric"><strong>Live on Google Play + web + Amazon Appstore + Microsoft Store + Huawei AppGallery</strong> &nbsp;·&nbsp; Free tier + Pro &nbsp;·&nbsp; 7 languages &nbsp;·&nbsp; <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer" data-ga="project_clauseshift_domain">clauseshift.com</a></p>
+            <p class="project-metric"><strong>Live on Google Play + web + Amazon Appstore + Microsoft Store + Huawei AppGallery</strong> &nbsp;·&nbsp; Free tier + Pro &nbsp;·&nbsp; 7 languages &nbsp;·&nbsp; <a href="https://clauseshift.com" target="_blank" rel="noopener noreferrer">clauseshift.com</a></p>
             <a class="case-study-link" href="/case-studies/clauseshift/">Read the case study →</a>
             <div class="project-tags">
               <span class="project-tag">Flutter</span>
@@ -1750,9 +1736,9 @@
           <div>
             <p class="project-number">02 //</p>
             <h3 class="project-name">Custom RR
-              <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_custom_rr_release" title="Custom RR latest release, see full changelog on GitHub">New · <span data-cr="version">v1.3.6</span></a>
+              <a href="https://github.com/monsiu/Custom-RR/releases/tag/v1.3.6" data-cr-href="release" target="_blank" rel="noopener noreferrer" class="release-badge" title="Custom RR latest release, see full changelog on GitHub">New · <span data-cr="version">v1.3.6</span></a>
             </h3>
-            <a href="/custom-rr/" data-ga="project_custom_rr_banner" aria-label="Custom RR project page">
+            <a href="/custom-rr/" aria-label="Custom RR project page">
               <img src="/custom-rr/banner-2x.png" alt="Custom RR Android app banner: a hub for custom ROMs and recoveries" class="project-banner" loading="lazy" decoding="async" width="1440" height="360" />
             </a>
             <p class="project-desc">
@@ -1783,15 +1769,15 @@
           <div>
             <p class="project-number">03 //</p>
             <h3 class="project-name">PesaShift
-              <a href="https://github.com/monsiu/pesashift-android/releases/latest" target="_blank" rel="noopener noreferrer" class="release-badge" data-ga="project_pesashift_release" title="PesaShift v0.1.1, latest release">Updated · v0.1.1</a>
+              <a href="https://github.com/monsiu/pesashift-android/releases/latest" target="_blank" rel="noopener noreferrer" class="release-badge" title="PesaShift v0.1.1, latest release">Updated · v0.1.1</a>
             </h3>
-            <a href="/pesashift-android/" data-ga="project_pesashift_banner" aria-label="PesaShift landing page">
+            <a href="/pesashift-android/" aria-label="PesaShift landing page">
               <img src="https://raw.githubusercontent.com/monsiu/pesashift-android/main/docs/images/feature-graphic.png" alt="PesaShift: see every shilling M-PESA takes" class="project-banner" loading="lazy" decoding="async" width="1024" height="500" />
             </a>
             <p class="project-desc">
               An on-device statement analyser for Kenya's mobile money. PesaShift reads your <strong>M-PESA or Airtel Money PDF statement on your phone</strong> and shows every fee, every Fuliza charge, and where the money actually went. It walks the statement's balance column to <strong>recover charges that are never itemised</strong>, arithmetic, not estimates. No SMS permission, no accounts, and the statement never leaves the device. Free to explore recent months; Pro is a <strong>one-time unlock, never a subscription</strong>, sold through Google Play Billing on Play and M-PESA (Paystack) everywhere else. Live today on the <strong>Amazon Appstore, the Huawei AppGallery, Zapstore, and direct APK</strong>, with Google Play in review.
             </p>
-            <p class="project-metric"><strong>v0.1.1 shipped Aug 2026</strong> &nbsp;·&nbsp; Live on the Amazon Appstore &nbsp;·&nbsp; On-device, no SMS permission &nbsp;·&nbsp; Pay once, no subscription &nbsp;·&nbsp; <a href="/pesashift-android/" data-ga="project_pesashift_site">PesaShift site</a></p>
+            <p class="project-metric"><strong>v0.1.1 shipped Aug 2026</strong> &nbsp;·&nbsp; Live on the Amazon Appstore &nbsp;·&nbsp; On-device, no SMS permission &nbsp;·&nbsp; Pay once, no subscription &nbsp;·&nbsp; <a href="/pesashift-android/">PesaShift site</a></p>
             <a class="case-study-link" href="/case-studies/pesashift/">Read the case study →</a>
             <div class="project-tags">
               <span class="project-tag">Flutter</span>
@@ -1887,7 +1873,7 @@
           <p>Websites from $500, web apps from $1,500, mobile apps from $3,000. Fixed quotes, store submission included, reply within 24-48 hours.</p>
         </div>
         <div class="hire-strip-cta">
-          <a href="/services/" class="btn btn-primary" data-ga="projects_hire_strip">Get your project built</a>
+          <a href="/services/" class="btn btn-primary">Get your project built</a>
         </div>
       </div>
     </div>
@@ -1900,67 +1886,67 @@
         A selection of my credentials. Tap any card to view the certificate as a PDF in the browser.
       </p>
       <div class="cert-grid reveal">
-        <button type="button" class="cert-card" data-pdf="/certs/google-play-store-listing.pdf" data-verify="https://www.credential.net/15f67881-05fe-4c1e-928b-108bc0881891" data-ga="cert_google_play">
+        <button type="button" class="cert-card" data-pdf="/certs/google-play-store-listing.pdf" data-verify="https://www.credential.net/15f67881-05fe-4c1e-928b-108bc0881891">
           <span class="cert-issuer">Google Play Academy</span>
           <span class="cert-title">Store Listing Certificate</span>
           <span class="cert-meta">Issued Aug 2026 · valid through Aug 2029 · ID 192588061</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/ceh-ec-council.pdf" data-ga="cert_ceh">
+        <button type="button" class="cert-card" data-pdf="/certs/ceh-ec-council.pdf">
           <span class="cert-issuer">EC-Council</span>
           <span class="cert-title">Certified Ethical Hacker (CEH)</span>
           <span class="cert-meta">Issued Feb 2024 · valid through Feb 2027</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/ai-agent-olympics-hackathon.pdf" data-ga="cert_ai_olympics">
+        <button type="button" class="cert-card" data-pdf="/certs/ai-agent-olympics-hackathon.pdf">
           <span class="cert-issuer">lablab.ai · NativelyAI</span>
           <span class="cert-title">AI Agent Olympics Hackathon</span>
           <span class="cert-meta">May 2026 · Gemini 3 Pro, AI/ML API, Speechmatics</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/amd-developer-hackathon.pdf" data-ga="cert_amd_hackathon">
+        <button type="button" class="cert-card" data-pdf="/certs/amd-developer-hackathon.pdf">
           <span class="cert-issuer">lablab.ai · NativelyAI</span>
           <span class="cert-title">AMD Developer Hackathon</span>
           <span class="cert-meta">May 2026 · AMD Developer Cloud, ROCm, Llama</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/ai-training-ict-authority.pdf" data-verify="https://training.smartacademy.go.ke/?p=508&amp;certificate_id=ICTA-1782716509-7426-43308" data-ga="cert_icta_ai">
+        <button type="button" class="cert-card" data-pdf="/certs/ai-training-ict-authority.pdf" data-verify="https://training.smartacademy.go.ke/?p=508&amp;certificate_id=ICTA-1782716509-7426-43308">
           <span class="cert-issuer">ICT Authority Kenya</span>
           <span class="cert-title">Artificial Intelligence Training</span>
           <span class="cert-meta">Jun 2026 · with Pathways Technologies</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/agentic-economy-on-arc.pdf" data-ga="cert_arc">
+        <button type="button" class="cert-card" data-pdf="/certs/agentic-economy-on-arc.pdf">
           <span class="cert-issuer">lablab.ai · NativelyAI</span>
           <span class="cert-title">Agentic Economy on Arc</span>
           <span class="cert-meta">Apr 2026 · Gemini 3 Flash, Circle, Arc</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/data-protection-cipit.pdf" data-ga="cert_data_protection">
+        <button type="button" class="cert-card" data-pdf="/certs/data-protection-cipit.pdf">
           <span class="cert-issuer">Strathmore CIPIT</span>
           <span class="cert-title">Data Protection Course</span>
           <span class="cert-meta">Oct 2024</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/introduction-to-cybersecurity-cisco.pdf" data-ga="cert_intro_cyber">
+        <button type="button" class="cert-card" data-pdf="/certs/introduction-to-cybersecurity-cisco.pdf">
           <span class="cert-issuer">Cisco Networking Academy</span>
           <span class="cert-title">Introduction to Cybersecurity</span>
           <span class="cert-meta">Aug 2020</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/introduction-to-iot-cisco.pdf" data-ga="cert_intro_iot">
+        <button type="button" class="cert-card" data-pdf="/certs/introduction-to-iot-cisco.pdf">
           <span class="cert-issuer">Cisco Networking Academy</span>
           <span class="cert-title">Introduction to IoT</span>
           <span class="cert-meta">Aug 2020</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/get-connected-cisco.pdf" data-ga="cert_get_connected">
+        <button type="button" class="cert-card" data-pdf="/certs/get-connected-cisco.pdf">
           <span class="cert-issuer">Cisco Networking Academy</span>
           <span class="cert-title">Get Connected</span>
           <span class="cert-meta">Aug 2020</span>
           <span class="cert-view">View certificate →</span>
         </button>
-        <button type="button" class="cert-card" data-pdf="/certs/icdl-profile.pdf" data-ga="cert_icdl">
+        <button type="button" class="cert-card" data-pdf="/certs/icdl-profile.pdf">
           <span class="cert-issuer">ICDL Africa</span>
           <span class="cert-title">ICDL Profile Certificate</span>
           <span class="cert-meta">Nov 2019 · 7 modules · reg KE1374149</span>
@@ -2204,7 +2190,7 @@
 
             <p class="cf-alert" id="cf-alert" role="alert" hidden></p>
 
-            <button type="submit" class="btn btn-primary" id="cf-submit" data-ga="contact_send">Send Message</button>
+            <button type="submit" class="btn btn-primary" id="cf-submit">Send Message</button>
 
             <p class="cf-consent">
               By sending this, you agree I may use your email to reply. I never resell your data. <a href="/privacy/">Privacy details</a>.
@@ -2256,7 +2242,7 @@
 
   <footer>
     <p>© <span id="year"></span> <span class="accent">Martin Nzau (Monsiu)</span></p>
-    <p>Built clean. Deployed sharp. <a href="/privacy/">Privacy</a></p>
+    <p>Built clean. Deployed sharp. <a href="/privacy/#site-analytics">Privacy &amp; analytics settings</a></p>
   </footer>
 
   <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true" aria-label="Certificate viewer" aria-hidden="true">
@@ -2317,18 +2303,6 @@
       toggle.textContent = next === 'dark' ? '☀' : '☾';
       localStorage.setItem('theme', next);
     });
-
-    document.querySelectorAll('[data-ga]').forEach(function (el) {
-      el.addEventListener('click', function () {
-        if (typeof gtag !== 'function') return;
-        gtag('event', 'cta_click', {
-          cta_id: el.getAttribute('data-ga'),
-          cta_text: (el.textContent || '').trim().slice(0, 60),
-          cta_href: el.getAttribute('href') || ''
-        });
-      });
-    });
-
     /* Load Turnstile only once the contact section is about to enter view */
     (function () {
       var contactSection = document.getElementById('contact');
@@ -2430,9 +2404,6 @@
               form.hidden = true;
               successBox.hidden = false;
               successBox.focus({ preventScroll: true });
-              if (typeof gtag === 'function') {
-                gtag('event', 'generate_lead', { form_id: 'portfolio_contact', form_destination: 'contact_form' });
-              }
             } else {
               throw new Error(data.error || 'Something went wrong. Please try again.');
             }
