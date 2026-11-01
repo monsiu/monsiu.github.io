@@ -4,22 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');</script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJZYEZ8XEN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-VJZYEZ8XEN');
-  </script>
-  <script defer src="/consent.js"></script>
+  <script defer src="/analytics-config.js"></script>
+  <script defer src="/analytics.js"></script>
   <title>Thanks - Martin Nzau (Monsiu)</title>
   <meta name="description" content="Thanks for your request. Martin Nzau will reply within 24 hours." />
   <meta name="robots" content="noindex" />
@@ -133,6 +119,7 @@
       <a href="/" class="btn btn-primary">Back to Home</a>
       <a href="/services/" class="btn btn-ghost">Submit Another</a>
     </div>
+    <p style="margin: 1.5rem 0 0; font-size: 0.78rem;"><a href="/privacy/#site-analytics" style="color: var(--muted);">Privacy &amp; analytics settings</a></p>
   </div>
 
 </body>
