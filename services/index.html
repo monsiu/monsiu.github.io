@@ -21,17 +21,17 @@
   </script>
   <script defer src="/consent.js"></script>
   <script defer src="/contact-config.js"></script>
-  <title>Hire a Web, Mobile & AI Engineer | Projects from $500 | Monsiu</title>
-  <meta name="description" content="Hire Martin Nzau (Monsiu) for web and mobile apps, AI integrations, and workflow automation. Websites from $500, AI integrations from $1,500, and fixed project quotes." />
-  <meta name="keywords" content="hire AI engineer, AI automation, AI agent development, LLM integration, hire full-stack developer, Flutter Android developer, web app developer, Upwork freelancer" />
+  <title>Custom ROM, Android App & Web Development | Monsiu</title>
+  <meta name="description" content="Custom ROM bring-up and builds for eligible Android devices, plus mobile apps, websites, and AI engineering. Start with a device feasibility check and a clear project quote." />
+  <meta name="keywords" content="custom ROM development, Android ROM builds, device bring-up, Flutter Android developer, web app developer, AI engineer, Upwork freelancer" />
   <link rel="canonical" href="https://monsiu.github.io/services/" />
   <link rel="icon" type="image/png" href="/profile.png" />
   <link rel="apple-touch-icon" href="/profile.png" />
   <meta name="theme-color" content="#0C0C0C" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Monsiu Tech" />
-  <meta property="og:title" content="Hire a Web, Mobile & AI Engineer | Monsiu" />
-  <meta property="og:description" content="Websites, web apps, Flutter mobile apps, AI integrations, and workflow automation with clear starting prices and fixed quotes." />
+  <meta property="og:title" content="Custom ROM, Android App & Web Development | Monsiu" />
+  <meta property="og:description" content="Custom ROM bring-up and builds for eligible Android devices, plus apps, websites, and AI engineering." />
   <meta property="og:url" content="https://monsiu.github.io/services/" />
   <meta property="og:image" content="https://monsiu.github.io/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -49,10 +49,10 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Martin Nzau (Monsiu) - Web & Mobile Development",
+    "name": "Martin Nzau (Monsiu) - Custom ROM, Web & Mobile Development",
     "url": "https://monsiu.github.io/services/",
     "image": "https://monsiu.github.io/profile.png",
-    "description": "Web and mobile app development, AI integrations, and workflow automation, with fixed project quotes. Verified Upwork freelancer.",
+    "description": "Custom ROM bring-up and builds for eligible Android devices, plus web and mobile app development and AI engineering. Verified Upwork freelancer.",
     "provider": {
       "@type": "Person",
       "name": "Martin Nzau",
@@ -128,7 +128,15 @@
         "name": "How fast will I hear back?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Within 24 to 48 hours, with a real plan: scope, milestones, timeline, and a fixed quote. Not a canned reply."
+          "text": "I reply within 24 to 48 hours. App, web, and AI projects get an initial plan and quote; ROM projects start with a device/source feasibility review, followed by a scoped quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you build custom ROMs for every device?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. I first check the exact model and codename, bootloader status, source availability, and testing path. I confirm feasibility, scope, and price before starting."
         }
       }
     ]
@@ -364,7 +372,7 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
@@ -424,6 +432,22 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
     .form-field { display: flex; flex-direction: column; margin-bottom: 1.25rem; min-width: 0; }
+
+    .rom-intake {
+      min-width: 0;
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+    }
+    .rom-intake legend {
+      padding: 0 0.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .rom-intake > .form-note { margin: 0 0 1rem; }
+    .rom-intake .form-field:last-child { margin-bottom: 0; }
 
     .form-field label {
       font-family: 'IBM Plex Mono', monospace;
@@ -879,18 +903,18 @@
   <section id="intro">
     <div class="container">
       <p class="page-eyebrow">// Services by Martin Nzau (aka Monsiu)</p>
-      <h1 class="page-title">Web, Mobile &amp; AI Engineering</h1>
+      <h1 class="page-title">Custom ROMs, Apps &amp; Web</h1>
       <p class="page-sub">
-        Need a website, mobile app, or practical AI automation? I design, build, and ship
-        production-ready software for individuals, startups, and businesses. Share the
-        workflow or product you have in mind and I will send a plan, timeline, and fixed quote.
+        I build and bring up custom ROMs for eligible Android devices, alongside mobile apps,
+        websites, and practical AI tools. ROM projects start with a check of the exact device,
+        available sources, and test path; you get a clear scope and quote before work begins.
       </p>
       <p class="proof-line">
         Verified on Upwork: 100% Job Success, 5.0/5 rating -
         <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">check my client reviews ↗</a>
       </p>
       <div class="cta-row">
-        <a href="#request" class="btn btn-primary" data-ga="svc_hero_start">Start your project ↓</a>
+        <a href="#request" class="btn btn-primary" data-ga="svc_hero_start" data-select-service="Custom ROM / Device Bring-up">Check ROM feasibility ↓</a>
         <a href="#proof" class="btn btn-ghost" data-ga="svc_hero_proof">Proof first? See what I ship</a>
       </div>
     </div>
@@ -969,7 +993,22 @@
       <div class="services-grid">
 
         <div class="service-card">
-          <span class="service-tag">01 - Web</span>
+          <span class="service-tag">01 - Android ROMs</span>
+          <h3 class="service-name">Custom ROM Bring-up &amp; Builds</h3>
+          <p class="service-desc">
+            Device-specific ROM work for eligible targets. I check the exact model,
+            bootloader status, available sources, and testing path before confirming scope.
+          </p>
+          <ul class="service-list">
+            <li>Device and source feasibility review</li>
+            <li>Custom ROM bring-up and build configuration</li>
+            <li>Build troubleshooting and test support</li>
+            <li>Release packaging and maintenance planning</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <span class="service-tag">02 - Web</span>
           <h3 class="service-name">Web Services</h3>
           <p class="service-desc">
             From simple landing pages to full-stack web applications. I focus on
@@ -986,7 +1025,7 @@
         </div>
 
         <div class="service-card">
-          <span class="service-tag">02 - Mobile</span>
+          <span class="service-tag">03 - Mobile</span>
           <h3 class="service-name">Mobile App Development</h3>
           <p class="service-desc">
             Cross-platform mobile apps for Android and iOS, built with Flutter so you
@@ -1003,7 +1042,7 @@
         </div>
 
         <div class="service-card">
-          <span class="service-tag">03 - AI &amp; Automation</span>
+          <span class="service-tag">04 - AI &amp; Automation</span>
           <h3 class="service-name">AI Engineering</h3>
           <p class="service-desc">
             Useful AI features and automations connected to your real products and business
@@ -1034,8 +1073,8 @@
         </div>
         <div class="process-step">
           <p class="step-num">02</p>
-          <p class="step-name">Plan &amp; quote within 48 hours</p>
-          <p class="step-desc">You get scope, milestones, a timeline, and a fixed price. No obligation, no pressure to proceed.</p>
+          <p class="step-name">Scope &amp; quote</p>
+          <p class="step-desc">For app, web, and AI work, I send a plan and fixed quote within 48 hours. ROM projects start with a device/source feasibility review; the quote follows.</p>
         </div>
         <div class="process-step">
           <p class="step-num">03</p>
@@ -1122,6 +1161,7 @@
           <p class="addon-price">from $100 / mo</p>
         </div>
       </div>
+      <p class="price-note">Custom ROM work is quoted per device after a feasibility check; there is no universal starting price.</p>
       <p class="price-note">AI model usage and third-party services are billed separately at provider cost. They are not included in the project build price.</p>
       <p class="price-note">Fixed project quotes are available when you prefer a defined scope and total price.</p>
     </div>
@@ -1245,6 +1285,10 @@
           <label>Service Type</label>
           <div class="checkbox-group">
             <label class="checkbox-chip">
+              <input type="checkbox" name="service" value="Custom ROM / Device Bring-up" />
+              <span>Custom ROM / Device Bring-up</span>
+            </label>
+            <label class="checkbox-chip">
               <input type="checkbox" name="service" value="Website" />
               <span>Website</span>
             </label>
@@ -1279,9 +1323,32 @@
           </div>
         </div>
 
+        <fieldset id="romDetails" class="form-field rom-intake" hidden>
+          <legend>Device details for ROM requests</legend>
+          <p class="form-note">Share what you know for a feasibility check. It’s okay if you don’t know every detail yet.</p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="romDeviceModel">Exact device model</label>
+              <input id="romDeviceModel" name="rom_device_model" autocomplete="off" placeholder="e.g. Samsung Galaxy S23 Ultra" />
+            </div>
+            <div class="form-field">
+              <label for="romDeviceCodename">Device codename</label>
+              <input id="romDeviceCodename" name="rom_device_codename" autocomplete="off" placeholder="e.g. r9q" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="romTarget">ROM or Android version</label>
+            <input id="romTarget" name="rom_target" autocomplete="off" placeholder="e.g. LineageOS 22 / Android 15" />
+          </div>
+          <div class="form-field">
+            <label for="romSourceLinks">Device, kernel, vendor or ROM source links</label>
+            <textarea id="romSourceLinks" name="rom_source_links" rows="3" placeholder="Paste any relevant GitHub repositories or documentation links"></textarea>
+          </div>
+        </fieldset>
+
         <div class="form-field">
           <label for="details">Project Details</label>
-          <textarea id="details" name="details" required placeholder="What are you trying to build? Who is it for? Any references or specific features?"></textarea>
+          <textarea id="details" name="details" required placeholder="Tell me what you need built or maintained. For ROM builds, include any goals, existing build errors, or other context."></textarea>
         </div>
 
         <div class="form-field">
@@ -1320,6 +1387,10 @@
         <p>Yes. Most of my work is remote for clients abroad. I work async-friendly with clear written updates, and payment is flexible: crypto is welcome too.</p>
       </details>
       <details class="faq-item">
+        <summary>Do you build custom ROMs for every device?</summary>
+        <p>No. I first check the exact model and codename, bootloader status, available sources, and testing path. I confirm feasibility, scope, and price before starting.</p>
+      </details>
+      <details class="faq-item">
         <summary>Fixed price or hourly?</summary>
         <p>Fixed price for anything with a defined scope: you approve the quote before work starts and it does not creep. Hourly only makes sense for open-ended maintenance and support.</p>
       </details>
@@ -1329,7 +1400,7 @@
       </details>
       <details class="faq-item">
         <summary>How fast will I hear back?</summary>
-        <p>Within 24 to 48 hours, with a real plan: scope, milestones, timeline, and a fixed quote. Not a canned reply.</p>
+        <p>I reply within 24 to 48 hours. App, web, and AI projects get an initial plan and quote; ROM projects start with a device/source feasibility review, followed by a scoped quote.</p>
       </details>
     </div>
   </section>
@@ -1433,6 +1504,23 @@
     var requestForm = document.getElementById('requestForm');
     if (requestForm) {
       var formError = document.getElementById('formError');
+      var romDetails = document.getElementById('romDetails');
+      var romService = requestForm.querySelector('input[name="service"][value="Custom ROM / Device Bring-up"]');
+      function syncRomDetails() {
+        romDetails.hidden = !romService.checked;
+      }
+      romService.addEventListener('change', syncRomDetails);
+      document.querySelectorAll('[data-select-service]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          var service = link.getAttribute('data-select-service');
+          var checkbox = requestForm.querySelector('input[name="service"][value="' + service + '"]');
+          if (checkbox) {
+            checkbox.checked = true;
+            checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        });
+      });
+      syncRomDetails();
       requestForm.addEventListener('submit', function (e) {
         e.preventDefault();
         formError.style.display = 'none';
@@ -1458,6 +1546,17 @@
           'Country: ' + f.country.value
         ];
         if (f.organization.value.trim()) lines.push('Company: ' + f.organization.value.trim());
+        if (services.indexOf('Custom ROM / Device Bring-up') !== -1) {
+          var romFields = [
+            ['Exact device model', f.rom_device_model.value],
+            ['Device codename', f.rom_device_codename.value],
+            ['ROM or Android version', f.rom_target.value],
+            ['Source links', f.rom_source_links.value]
+          ];
+          romFields.forEach(function (field) {
+            if (field[1].trim()) lines.push(field[0] + ': ' + field[1].trim());
+          });
+        }
         lines.push('', 'Details:', f.details.value.trim());
 
         var btn = requestForm.querySelector('button[type="submit"]');
@@ -1477,7 +1576,7 @@
             timeline: f.timeline.value,
             country: f.country.value,
             organization: f.organization.value.trim(),
-            details: f.details.value.trim(),
+            details: lines.join('\n'),
             companyTrap: f.company.value,
             message: lines.join('\n'),
             company: f.company.value,
