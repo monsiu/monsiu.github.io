@@ -433,6 +433,22 @@
 
     .form-field { display: flex; flex-direction: column; margin-bottom: 1.25rem; min-width: 0; }
 
+    .rom-intake {
+      min-width: 0;
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+    }
+    .rom-intake legend {
+      padding: 0 0.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .rom-intake > .form-note { margin: 0 0 1rem; }
+    .rom-intake .form-field:last-child { margin-bottom: 0; }
+
     .form-field label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.68rem;
@@ -898,7 +914,7 @@
         <a href="https://www.upwork.com/freelancers/~01d848dcebdf54f162" target="_blank" rel="noopener noreferrer">check my client reviews ↗</a>
       </p>
       <div class="cta-row">
-        <a href="#request" class="btn btn-primary" data-ga="svc_hero_start">Start your project ↓</a>
+        <a href="#request" class="btn btn-primary" data-ga="svc_hero_start" data-select-service="Custom ROM / Device Bring-up">Check ROM feasibility ↓</a>
         <a href="#proof" class="btn btn-ghost" data-ga="svc_hero_proof">Proof first? See what I ship</a>
       </div>
     </div>
@@ -1307,9 +1323,32 @@
           </div>
         </div>
 
+        <fieldset id="romDetails" class="form-field rom-intake" hidden>
+          <legend>Device details for ROM requests</legend>
+          <p class="form-note">Share what you know for a feasibility check. It’s okay if you don’t know every detail yet.</p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="romDeviceModel">Exact device model</label>
+              <input id="romDeviceModel" name="rom_device_model" autocomplete="off" placeholder="e.g. Samsung Galaxy S23 Ultra" />
+            </div>
+            <div class="form-field">
+              <label for="romDeviceCodename">Device codename</label>
+              <input id="romDeviceCodename" name="rom_device_codename" autocomplete="off" placeholder="e.g. r9q" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="romTarget">ROM or Android version</label>
+            <input id="romTarget" name="rom_target" autocomplete="off" placeholder="e.g. LineageOS 22 / Android 15" />
+          </div>
+          <div class="form-field">
+            <label for="romSourceLinks">Device, kernel, vendor or ROM source links</label>
+            <textarea id="romSourceLinks" name="rom_source_links" rows="3" placeholder="Paste any relevant GitHub repositories or documentation links"></textarea>
+          </div>
+        </fieldset>
+
         <div class="form-field">
           <label for="details">Project Details</label>
-          <textarea id="details" name="details" required placeholder="For ROM work, include the exact device model and codename, desired Android version, source links, and what you need built or maintained."></textarea>
+          <textarea id="details" name="details" required placeholder="Tell me what you need built or maintained. For ROM builds, include any goals, existing build errors, or other context."></textarea>
         </div>
 
         <div class="form-field">
@@ -1465,6 +1504,23 @@
     var requestForm = document.getElementById('requestForm');
     if (requestForm) {
       var formError = document.getElementById('formError');
+      var romDetails = document.getElementById('romDetails');
+      var romService = requestForm.querySelector('input[name="service"][value="Custom ROM / Device Bring-up"]');
+      function syncRomDetails() {
+        romDetails.hidden = !romService.checked;
+      }
+      romService.addEventListener('change', syncRomDetails);
+      document.querySelectorAll('[data-select-service]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          var service = link.getAttribute('data-select-service');
+          var checkbox = requestForm.querySelector('input[name="service"][value="' + service + '"]');
+          if (checkbox) {
+            checkbox.checked = true;
+            checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        });
+      });
+      syncRomDetails();
       requestForm.addEventListener('submit', function (e) {
         e.preventDefault();
         formError.style.display = 'none';
@@ -1490,6 +1546,17 @@
           'Country: ' + f.country.value
         ];
         if (f.organization.value.trim()) lines.push('Company: ' + f.organization.value.trim());
+        if (services.indexOf('Custom ROM / Device Bring-up') !== -1) {
+          var romFields = [
+            ['Exact device model', f.rom_device_model.value],
+            ['Device codename', f.rom_device_codename.value],
+            ['ROM or Android version', f.rom_target.value],
+            ['Source links', f.rom_source_links.value]
+          ];
+          romFields.forEach(function (field) {
+            if (field[1].trim()) lines.push(field[0] + ': ' + field[1].trim());
+          });
+        }
         lines.push('', 'Details:', f.details.value.trim());
 
         var btn = requestForm.querySelector('button[type="submit"]');
@@ -1509,7 +1576,7 @@
             timeline: f.timeline.value,
             country: f.country.value,
             organization: f.organization.value.trim(),
-            details: f.details.value.trim(),
+            details: lines.join('\n'),
             companyTrap: f.company.value,
             message: lines.join('\n'),
             company: f.company.value,
